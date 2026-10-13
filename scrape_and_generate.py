@@ -79,6 +79,22 @@ def extract(next_data):
     return show_dates, by_cinema
 
 
+def merge_shows(bucket, cname, shows):
+    """Add shows to bucket[cname], skipping any already present for that
+    cinema (same date+time+audi). District's per-city pages return a radius,
+    not a strict boundary, so the same cinema often comes back from several
+    fetches (e.g. the Kalyani and Maslandapur pages both include INOX Star
+    Mall) — without this, every overlapping fetch multiplies that cinema's
+    shows."""
+    existing = bucket.setdefault(cname, [])
+    seen = {(s["date"], s["time"], s.get("audi")) for s in existing}
+    for s in shows:
+        key = (s["date"], s["time"], s.get("audi"))
+        if key not in seen:
+            existing.append(s)
+            seen.add(key)
+
+
 # Eken also runs a handful of single-screen Cinepolis shows outside West Bengal
 # (likely for the Bengali diaspora). Kept separate from the main `cinemas` list
 # so head-to-head comparisons against the other three (West-Bengal-only) films
@@ -110,7 +126,7 @@ def scrape_pan_india_eken():
                     nd2 = fetch_next_data(url + "?fromdate=" + d)
                     _, more = extract(nd2)
                     for cname, shows2 in more.items():
-                        city_by_cinema.setdefault(cname, []).extend(shows2)
+                        merge_shows(city_by_cinema, cname, shows2)
                 except Exception as e:
                     print(f"  ! failed date {d} for pan-India {c['city']}: {e}")
             for cname, shows in city_by_cinema.items():
@@ -151,12 +167,12 @@ def scrape_extra_wb_cities(base_url):
                     nd2 = fetch_next_data(url + "?fromdate=" + d)
                     _, more = extract(nd2)
                     for cname, shows2 in more.items():
-                        city_by_cinema.setdefault(cname, []).extend(shows2)
+                        merge_shows(city_by_cinema, cname, shows2)
                 except Exception as e:
                     print(f"  ! failed date {d} for extra WB city {slug}: {e}")
             for cname, shows in city_by_cinema.items():
                 if shows:
-                    found.setdefault(cname, []).extend(shows)
+                    merge_shows(found, cname, shows)
         except Exception as e:
             print(f"  ! failed extra WB city {slug}: {e}")
         time.sleep(1)
@@ -178,7 +194,7 @@ def scrape_movie(m):
             nd2 = fetch_next_data(m["url"] + "?fromdate=" + d)
             _, by_cinema2 = extract(nd2)
             for cname, shows2 in by_cinema2.items():
-                by_cinema.setdefault(cname, []).extend(shows2)
+                merge_shows(by_cinema, cname, shows2)
             seen_dates.add(d)
         except Exception as e:
             print("  ! failed date", d, "for", m["name"], e)
@@ -186,7 +202,7 @@ def scrape_movie(m):
     extra = scrape_extra_wb_cities(m["url"])
     extra_new = sum(1 for cname in extra if cname not in by_cinema)
     for cname, shows in extra.items():
-        by_cinema.setdefault(cname, []).extend(shows)
+        merge_shows(by_cinema, cname, shows)
     if extra_new:
         print(f"  + {extra_new} extra West Bengal cinema(s) for {m['name']}")
 
