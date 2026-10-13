@@ -1,10 +1,17 @@
 name: Scrape and update data.json
 
+# No schedule trigger: district.in returns HTTP 403 to every request from
+# GitHub's hosted-runner IP ranges (confirmed 2026-10-13 — all four movies
+# failed with "HTTP Error 403: Forbidden" on every automated run since the
+# workflow was created). The scraper's own error handling silently falls
+# back to the last-known-good data on a failed fetch, so the job always
+# reported green while actually just re-stamping stale data every cycle.
+# data.json is now pushed directly to main from an environment district.in
+# doesn't block, which also means it's scraped once and reused for both
+# GitHub Pages and the Claude Artifact dashboards instead of twice.
+# workflow_dispatch is kept only as a manual escape hatch; expect it to
+# 403 too unless district.in's IP block changes.
 on:
-  schedule:
-    # GitHub's scheduler runs on a best-effort basis and can lag a few
-    # minutes at busy times — treat "every 30 min" as approximate.
-    - cron: "5,35 * * * *"
   workflow_dispatch: {}
 
 permissions:
