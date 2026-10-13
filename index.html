@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎟️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Outfit:wght@400;500;600;700&family=PT+Mono&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     /* hoichoi design system — light theme tokens, read from project/tokens.json */
@@ -86,7 +86,7 @@
     margin: 0;
     text-wrap: balance;
   }
-  .updated { font-family: "PT Mono", "Outfit", monospace; font-size: 12px; color: var(--text-3); text-align: right; }
+  .updated { font-family: "Outfit", monospace; font-size: 12px; color: var(--text-3); text-align: right; }
   .updated b { color: var(--text-1); font-weight: 400; }
   .brand-rule { height: 3px; border-radius: 999px; background: var(--gradient-brand); margin: 18px 0 26px; width: 100%; }
 
@@ -112,7 +112,7 @@
     transition: box-shadow 120ms ease, opacity 120ms ease;
   }
   .film-chip .sw { width: 10px; height: 10px; border-radius: 999px; flex: 0 0 auto; }
-  .film-chip .n { font-family: "PT Mono", "Outfit", monospace; font-size: 11px; color: var(--text-3); }
+  .film-chip .n { font-family: "Outfit", monospace; font-size: 11px; color: var(--text-3); }
   .film-chip.off { opacity: 0.4; }
   .film-chip:hover { box-shadow: var(--shadow-card); }
   .film-chip:focus-visible { outline: none; box-shadow: var(--glow-focus); }
@@ -162,12 +162,12 @@
   }
   .kpi-card .big { font-family: "Manrope", sans-serif; font-weight: 800; font-size: 32px; padding-left: 6px; display: flex; align-items: baseline; gap: 8px; }
   .kpi-card .big .unit { font-size: 15px; font-weight: 600; color: var(--text-3); }
-  .kpi-card .delta { font-family: "PT Mono", "Outfit", monospace; font-size: 12px; padding-left: 6px; margin-top: 2px; }
+  .kpi-card .delta { font-family: "Outfit", monospace; font-size: 12px; padding-left: 6px; margin-top: 2px; }
   .kpi-card .delta.up { color: var(--good); }
   .kpi-card .delta.down { color: var(--crit); }
   .kpi-card .delta.flat { color: var(--text-3); }
   .kpi-card .meta { padding-left: 6px; margin-top: 10px; font-size: 11.5px; color: var(--text-3); display: flex; gap: 12px; }
-  .kpi-card .meta b { font-family: "PT Mono", "Outfit", monospace; color: var(--text-2); font-weight: 400; }
+  .kpi-card .meta b { font-family: "Outfit", monospace; color: var(--text-2); font-weight: 400; }
 
   /* chart panel */
   .panel {
@@ -218,8 +218,8 @@
   table.h2h tbody tr.is-today { background: var(--bg-tint); }
   table.h2h td.date-cell { font-weight: 600; font-size: 13.5px; }
   table.h2h td.date-cell .dow { font-weight: 400; color: var(--text-3); font-size: 11.5px; margin-left: 6px; }
-  .cell-fill { font-family: "PT Mono", "Outfit", monospace; font-weight: 600; font-size: 13px; }
-  .cell-rev { font-family: "PT Mono", "Outfit", monospace; font-size: 11px; color: var(--text-3); margin-top: 2px; }
+  .cell-fill { font-family: "Outfit", monospace; font-weight: 600; font-size: 13px; }
+  .cell-rev { font-family: "Outfit", monospace; font-size: 11px; color: var(--text-3); margin-top: 2px; }
   .leader-badge {
     display: inline-block;
     width: 6px; height: 6px;
@@ -264,7 +264,7 @@
   /* show-wise tab (per movie) */
   .date-pills { display: flex; gap: 6px; overflow-x: auto; margin-bottom: 20px; }
   .date-pill {
-    font-family: "PT Mono", "Outfit", monospace;
+    font-family: "Outfit", monospace;
     font-size: 12.5px;
     padding: 6px 13px;
     border-radius: 999px;
@@ -296,7 +296,7 @@
   .cinema-block { padding: 16px 0; border-top: 1px solid var(--border-subtle); }
   .cinema-block:first-child { border-top: none; }
   .cinema-block .cname { font-weight: 600; font-size: 14.5px; margin: 0 0 10px; display: flex; gap: 8px; align-items: baseline; }
-  .cinema-block .cname .avg { font-family: "PT Mono", "Outfit", monospace; font-size: 11.5px; color: var(--text-3); font-weight: 400; }
+  .cinema-block .cname .avg { font-family: "Outfit", monospace; font-size: 11.5px; color: var(--text-3); font-weight: 400; }
   .ticket-row { display: flex; flex-wrap: wrap; gap: 8px; }
   .ticket {
     width: 128px;
@@ -318,11 +318,11 @@
   }
   .ticket::before { left: -5px; }
   .ticket::after { right: -5px; }
-  .ticket .time { font-family: "PT Mono", "Outfit", monospace; font-weight: 600; font-size: 13px; }
+  .ticket .time { font-family: "Outfit", monospace; font-weight: 600; font-size: 13px; }
   .ticket .tag { font-size: 9.5px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.03em; height: 12px; overflow: hidden; }
   .ticket .bar-track { margin-top: 6px; height: 5px; border-radius: 3px; background: var(--bg-surface-2); overflow: hidden; }
   .ticket .bar-fill { height: 100%; border-radius: 3px; }
-  .ticket .pct { margin-top: 5px; font-family: "PT Mono", "Outfit", monospace; font-size: 11.5px; display: flex; justify-content: space-between; }
+  .ticket .pct { margin-top: 5px; font-family: "Outfit", monospace; font-size: 11.5px; display: flex; justify-content: space-between; }
   .status-good { color: var(--good); } .status-warn { color: var(--warn); } .status-crit { color: var(--crit); } .status-sold { color: var(--sold); }
   .bar-good { background: var(--good); } .bar-warn { background: var(--warn); } .bar-crit { background: var(--crit); } .bar-sold { background: var(--sold); }
   .bg-good { background: var(--good-bg); } .bg-warn { background: var(--warn-bg); } .bg-crit { background: var(--crit-bg); } .bg-sold { background: var(--sold-bg); }
@@ -364,7 +364,7 @@
     font-size: 12.5px;
     color: var(--text-3);
   }
-  .pan-india-stat b { font-family: "PT Mono", "Outfit", monospace; color: var(--text-1); font-weight: 600; font-size: 14px; display: block; }
+  .pan-india-stat b { font-family: "Outfit", monospace; color: var(--text-1); font-weight: 600; font-size: 14px; display: block; }
 
   /* insights */
   .insights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
