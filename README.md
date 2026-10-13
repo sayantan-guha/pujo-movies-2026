@@ -16,10 +16,19 @@ can be opened by anyone with the link, no Claude account required.
   (booked seats × the listed ticket price per seat category), and writes the
   result to `data.json`.
 - `.github/workflows/update.yml` runs that script on a schedule (roughly
-  hourly) via GitHub Actions and commits the refreshed `data.json` — no
-  server, no database, nothing else to maintain.
-- `index.html` is a static page that fetches `data.json` directly and
-  renders the dashboard client-side. No backend.
+  every 30 minutes) via GitHub Actions and commits the refreshed `data.json`
+  — no server, no database, nothing else to maintain.
+- `bms_halls.json` is a separate, hand-maintained file: showtimes for cinemas
+  that only list on BookMyShow (not District), checked manually since
+  BookMyShow sits behind bot-detection that this project won't try to
+  automate around. The GitHub Action never touches this file — update it by
+  hand when you re-check BookMyShow. It carries a status band per show
+  (Available / Filling Fast / Housefull), not an exact seat count, so it has
+  no fill % or revenue — the page renders it as a visually distinct
+  "BookMyShow — other halls" section and never mixes it into the District
+  numbers.
+- `index.html` is a static page that fetches `data.json` (and `bms_halls.json`
+  if present) directly and renders the dashboard client-side. No backend.
 - GitHub Pages serves `index.html` straight from this repo.
 
 ## Data notes

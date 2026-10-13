@@ -1130,12 +1130,24 @@
       const payload = await res.json();
       MOVIES = (payload.movies || []).sort((a, b) => a.name.localeCompare(b.name));
       MOVIES.forEach(m => ACTIVE.add(m.id));
+
+      // Hand-curated BookMyShow halls — a static sibling file, not touched by the
+      // GitHub Action. Missing/unreachable is fine: the page just shows none.
+      try {
+        const bmsRes = await fetch("bms_halls.json?t=" + Date.now(), { cache: "no-store" });
+        if (bmsRes.ok) {
+          const bmsPayload = await bmsRes.json();
+          Object.entries(bmsPayload || {}).forEach(([id, v]) => { BMS_HALLS[id] = v; });
+          attachBmsHalls();
+        }
+      } catch (e) { console.error("bms_halls.json failed to load", e); }
+
       const newest = MOVIES.reduce((acc, m) => !acc || (m.scrapedAt || "") > acc ? m.scrapedAt : acc, null);
       document.getElementById("updatedLine").innerHTML = MOVIES.length
         ? `Last scraped <b>${timeAgo(newest)}</b>`
         : "No data yet.";
       document.getElementById("footnote").innerHTML =
-        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Head-to-head comparisons (trends, revenue, chain breakdown, insights) are West-Bengal-only for all four films, even for The Eken, which also plays a handful of single-screen shows outside West Bengal (see its own tab). Source: public showtime pages on district.in, refreshed roughly every 30 minutes via GitHub Actions.";
+        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Head-to-head comparisons (trends, revenue, chain breakdown, insights) are West-Bengal-only for all four films, even for The Eken, which also plays a handful of single-screen shows outside West Bengal (see its own tab). Source: public showtime pages on district.in, refreshed roughly every 30 minutes via GitHub Actions; BookMyShow-only halls are checked by hand and refreshed on request, not automatically.";
       renderAll();
     } catch (e) {
       document.getElementById("updatedLine").textContent = "Couldn't load data.json.";
