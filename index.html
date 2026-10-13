@@ -52,6 +52,7 @@
   }
 
   * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
   body {
     margin: 0;
     background: var(--bg-base);
@@ -340,7 +341,20 @@
     display: inline-block;
   }
 
-  .source-section { margin-top: 28px; padding-top: 20px; border-top: 1px dashed var(--border-default); }
+  .jump-nav { display: flex; gap: 8px; flex-wrap: wrap; margin: -6px 0 16px; }
+  .jump-link {
+    font-family: "Outfit", sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--text-2);
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-subtle);
+    border-radius: 999px;
+    padding: 6px 13px;
+    text-decoration: none;
+  }
+  .jump-link:hover { color: var(--accent); border-color: var(--accent); }
+  .source-section { margin-top: 28px; padding-top: 20px; border-top: 1px dashed var(--border-default); scroll-margin-top: 16px; }
   .source-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; flex-wrap: wrap; }
   .source-head h3 { font-family: "Manrope", sans-serif; font-weight: 700; font-size: 16px; margin: 0; }
   .source-badge {
@@ -994,7 +1008,7 @@
         const panRev = movie.panIndiaCinemas.reduce((a, c) => a + c.shows.filter(s => s.date === state.date).reduce((b, s) => b + (s.revenue || 0), 0), 0);
         const panShows = movie.panIndiaCinemas.reduce((a, c) => a + c.shows.filter(s => s.date === state.date).length, 0);
         panIndiaHtml = `
-          <div class="source-section">
+          <div class="source-section" id="panindia-section">
             <div class="source-head"><h3>Beyond West Bengal</h3><span class="source-badge bg-good status-good">District &middot; live</span></div>
             <p class="source-note">A handful of single-screen Cinepolis shows outside West Bengal — kept separate so the head-to-head tab's comparisons across all four films stay West-Bengal-only and apples-to-apples.</p>
             <div class="pan-india-stat"><span>Revenue, this date<b>${fmtRevenue(panRev)}</b></span><span>Shows<b>${panShows}</b></span></div>
@@ -1008,12 +1022,20 @@
     if (movie.bmsHalls && movie.bmsHalls.cinemas && movie.bmsHalls.cinemas.length) {
       const bmsGroups = buildBmsGroups(movie.bmsHalls);
       bmsHtml = `
-        <div class="source-section">
+        <div class="source-section" id="bms-section">
           <div class="source-head"><h3>BookMyShow &mdash; other halls</h3><span class="source-badge bg-warn status-warn">Directional &middot; checked ${fmtDate(movie.bmsHalls.checkedAt.slice(0,10))}</span></div>
           <p class="source-note">Not listed on District. BookMyShow shows only a status band per show (Available / Filling Fast / Housefull), not an exact seat count — so these carry no fill % or revenue, and are refreshed by hand on request, not hourly.</p>
           ${bmsGroups}
         </div>`;
     }
+
+    // This list can run long (20+ cinemas before you'd ever reach BookMyShow
+    // or pan-India), so surface a jump-nav right up top rather than make
+    // either section something you only find by scrolling past everything else.
+    const jumpLinks = [];
+    if (bmsHtml) jumpLinks.push('<a href="#bms-section" class="jump-link">BookMyShow halls &darr;</a>');
+    if (panIndiaHtml) jumpLinks.push('<a href="#panindia-section" class="jump-link">Beyond West Bengal &darr;</a>');
+    const jumpNav = jumpLinks.length ? `<div class="jump-nav">${jumpLinks.join("")}</div>` : "";
 
     content.innerHTML = `
       <div class="date-pills">${datePills}</div>
@@ -1023,6 +1045,7 @@
         <div class="kpi-card stat-tile"><p class="label">Housefull shows</p><div class="big">${housefull}</div></div>
         <div class="kpi-card stat-tile"><p class="label">Cinemas screening</p><div class="big">${cinemaCount}</div></div>
       </div>
+      ${jumpNav}
       <div class="status-legend">
         <span><i class="dot" style="background:var(--good)"></i>Available &lt;40%</span>
         <span><i class="dot" style="background:var(--warn)"></i>Filling fast 40&ndash;74%</span>
@@ -1119,10 +1142,7 @@
 
   // Static-site data loading: no account, no login, no live db — this page is
   // regenerated roughly every 30 minutes (see .github/workflows/update.yml) and
-  // simply fetches the JSON snapshot that run produced. There's no bms_halls
-  // source here (that's a manually-curated dataset only the Claude Artifact
-  // version carries) — movie.bmsHalls just stays unset, and renderShowTab
-  // already skips the section entirely when it's absent.
+  // simply fetches the JSON snapshot that run produced.
   async function loadFromStatic() {
     try {
       const res = await fetch("data.json?t=" + Date.now(), { cache: "no-store" });
