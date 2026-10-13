@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Pujo Movies 2026</title>
-<meta name="description" content="Head-to-head box-office analysis for four Kolkata Pujo releases, refreshed hourly.">
+<meta name="description" content="Head-to-head box-office analysis for four Kolkata Pujo releases, refreshed every 30 minutes.">
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎟️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -325,6 +325,46 @@
   .ticket .pct { margin-top: 5px; font-family: "PT Mono", "Outfit", monospace; font-size: 11.5px; display: flex; justify-content: space-between; }
   .status-good { color: var(--good); } .status-warn { color: var(--warn); } .status-crit { color: var(--crit); } .status-sold { color: var(--sold); }
   .bar-good { background: var(--good); } .bar-warn { background: var(--warn); } .bar-crit { background: var(--crit); } .bar-sold { background: var(--sold); }
+  .bg-good { background: var(--good-bg); } .bg-warn { background: var(--warn-bg); } .bg-crit { background: var(--crit-bg); } .bg-sold { background: var(--sold-bg); }
+
+  /* directional (BookMyShow) tickets — a band, never a fabricated percentage */
+  .ticket.directional { border-style: dashed; }
+  .ticket.directional .band {
+    margin-top: 6px;
+    font-size: 10.5px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    padding: 2px 6px;
+    border-radius: var(--radius-xs);
+    display: inline-block;
+  }
+
+  .source-section { margin-top: 28px; padding-top: 20px; border-top: 1px dashed var(--border-default); }
+  .source-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; flex-wrap: wrap; }
+  .source-head h3 { font-family: "Manrope", sans-serif; font-weight: 700; font-size: 16px; margin: 0; }
+  .source-badge {
+    font-family: "Outfit", sans-serif;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 2px 9px;
+    border-radius: 999px;
+  }
+  .source-note { font-size: 12px; color: var(--text-3); margin: 0 0 14px; }
+  .pan-india-stat {
+    display: inline-flex;
+    gap: 18px;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-lg);
+    padding: 10px 18px;
+    margin-bottom: 16px;
+    font-size: 12.5px;
+    color: var(--text-3);
+  }
+  .pan-india-stat b { font-family: "PT Mono", "Outfit", monospace; color: var(--text-1); font-weight: 600; font-size: 14px; display: block; }
 
   /* insights */
   .insights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
@@ -373,7 +413,7 @@
 <body>
 
 <div class="wrap">
-  <p class="eyebrow">Box office &middot; Kolkata</p>
+  <p class="eyebrow">Box office tracker</p>
   <header class="top">
     <h1 class="title">Pujo Movies 2026</h1>
     <div class="updated" id="updatedLine">Loading&hellip;</div>
@@ -864,32 +904,24 @@
     return rows;
   }
 
-  function renderShowTab(movie) {
-    const content = document.getElementById("content");
-    const state = SHOW_TAB_STATE[movie.id] || (SHOW_TAB_STATE[movie.id] = { date: (movie.showDates || [])[0], sort: "fill-desc" });
-    if (!state.date || !(movie.showDates || []).includes(state.date)) state.date = (movie.showDates || [])[0];
-
-    const dates = movie.showDates || [];
-    const todayRows = showsForDate(movie, state.date);
-    const totalShows = todayRows.length;
-    const avgFill = totalShows ? Math.round(todayRows.reduce((a, r) => a + (r.fillRate || 0), 0) / totalShows) : 0;
-    const housefull = todayRows.filter(r => r.fillRate >= 95).length;
-    const cinemaCount = new Set(todayRows.map(r => r.cinema)).size;
-
-    const datePills = dates.map(d => `<div class="date-pill ${d === state.date ? "active" : ""}" data-date="${d}">${fmtDate(d)}</div>`).join("");
-
+  // Shared renderer for a list of {name, shows} cinemas on one date, sorted by
+  // fill rate (or name). Used for the West Bengal list, the pan-India list, and
+  // reused nowhere else — the BookMyShow directional list has its own renderer
+  // since it has no real fill% to sort or bar-chart by.
+  function buildCinemaGroups(cinemas, date, sortMode) {
     const groups = {};
-    movie.cinemas.forEach(c => {
-      const shows = c.shows.filter(s => s.date === state.date).sort((a, b) => a.time.localeCompare(b.time));
+    cinemas.forEach(c => {
+      const shows = c.shows.filter(s => s.date === date).sort((a, b) => a.time.localeCompare(b.time));
       if (shows.length) groups[c.name] = shows;
     });
     let names = Object.keys(groups);
+    if (!names.length) return null;
     const avgOf = n => groups[n].reduce((a, s) => a + (s.fillRate || 0), 0) / groups[n].length;
-    if (state.sort === "fill-desc") names.sort((a, b) => avgOf(b) - avgOf(a));
-    else if (state.sort === "fill-asc") names.sort((a, b) => avgOf(a) - avgOf(b));
+    if (sortMode === "fill-desc") names.sort((a, b) => avgOf(b) - avgOf(a));
+    else if (sortMode === "fill-asc") names.sort((a, b) => avgOf(a) - avgOf(b));
     else names.sort((a, b) => a.localeCompare(b));
 
-    const cinemaHtml = names.length ? names.map(name => {
+    return names.map(name => {
       const shows = groups[name];
       const avg = Math.round(avgOf(name));
       const tickets = shows.map(s => {
@@ -907,7 +939,81 @@
         <p class="cname">${name}<span class="avg">avg ${avg}% fill &middot; ${shows.length} show${shows.length > 1 ? "s" : ""}</span></p>
         <div class="ticket-row">${tickets}</div>
       </div>`;
-    }).join("") : '<div class="empty-state">No shows found for this date.</div>';
+    }).join("");
+  }
+
+  // BookMyShow-only halls: no real seat count, just a status band (Available /
+  // Filling Fast / Housefull) — rendered with dashed tickets and no bar/number
+  // so it never reads as the same precision as the District-sourced data.
+  function buildBmsGroups(bmsData) {
+    if (!bmsData || !bmsData.cinemas || !bmsData.cinemas.length) return null;
+    const bandCls = status => {
+      const s = (status || "").toUpperCase();
+      if (s.includes("HOUSEFULL") || s.includes("SOLD")) return "sold";
+      if (s.includes("FAST") || s.includes("FILLING")) return "warn";
+      return "good";
+    };
+    return bmsData.cinemas.map(c => {
+      const tickets = (c.shows || []).map(s => {
+        const cls = bandCls(s.status);
+        return `<div class="ticket directional">
+          <div class="time">${fmtTime(s.time)}</div>
+          <div class="tag">${s.tag || ""}</div>
+          <span class="band bg-${cls} status-${cls}">${s.status || "Available"}</span>
+        </div>`;
+      }).join("");
+      return `<div class="cinema-block">
+        <p class="cname">${c.name}<span class="avg">${(c.shows || []).length} show${(c.shows || []).length > 1 ? "s" : ""}</span></p>
+        <div class="ticket-row">${tickets}</div>
+      </div>`;
+    }).join("");
+  }
+
+  function renderShowTab(movie) {
+    const content = document.getElementById("content");
+    const state = SHOW_TAB_STATE[movie.id] || (SHOW_TAB_STATE[movie.id] = { date: (movie.showDates || [])[0], sort: "fill-desc" });
+    if (!state.date || !(movie.showDates || []).includes(state.date)) state.date = (movie.showDates || [])[0];
+
+    const dates = movie.showDates || [];
+    const todayRows = showsForDate(movie, state.date);
+    const totalShows = todayRows.length;
+    const avgFill = totalShows ? Math.round(todayRows.reduce((a, r) => a + (r.fillRate || 0), 0) / totalShows) : 0;
+    const housefull = todayRows.filter(r => r.fillRate >= 95).length;
+    const cinemaCount = new Set(todayRows.map(r => r.cinema)).size;
+
+    const datePills = dates.map(d => `<div class="date-pill ${d === state.date ? "active" : ""}" data-date="${d}">${fmtDate(d)}</div>`).join("");
+
+    const cinemaHtml = buildCinemaGroups(movie.cinemas, state.date, state.sort) || '<div class="empty-state">No shows found for this date.</div>';
+
+    // Pan-India section (Eken only, for now) — District-sourced, real numbers,
+    // but kept out of every West-Bengal-vs-West-Bengal comparison elsewhere.
+    let panIndiaHtml = "";
+    if (movie.panIndiaCinemas && movie.panIndiaCinemas.length) {
+      const panGroups = buildCinemaGroups(movie.panIndiaCinemas, state.date, state.sort);
+      if (panGroups) {
+        const panRev = movie.panIndiaCinemas.reduce((a, c) => a + c.shows.filter(s => s.date === state.date).reduce((b, s) => b + (s.revenue || 0), 0), 0);
+        const panShows = movie.panIndiaCinemas.reduce((a, c) => a + c.shows.filter(s => s.date === state.date).length, 0);
+        panIndiaHtml = `
+          <div class="source-section">
+            <div class="source-head"><h3>Beyond West Bengal</h3><span class="source-badge bg-good status-good">District &middot; live</span></div>
+            <p class="source-note">A handful of single-screen Cinepolis shows outside West Bengal — kept separate so the head-to-head tab's comparisons across all four films stay West-Bengal-only and apples-to-apples.</p>
+            <div class="pan-india-stat"><span>Revenue, this date<b>${fmtRevenue(panRev)}</b></span><span>Shows<b>${panShows}</b></span></div>
+            ${panGroups}
+          </div>`;
+      }
+    }
+
+    // BookMyShow-only halls — manually checked, not part of the hourly refresh.
+    let bmsHtml = "";
+    if (movie.bmsHalls && movie.bmsHalls.cinemas && movie.bmsHalls.cinemas.length) {
+      const bmsGroups = buildBmsGroups(movie.bmsHalls);
+      bmsHtml = `
+        <div class="source-section">
+          <div class="source-head"><h3>BookMyShow &mdash; other halls</h3><span class="source-badge bg-warn status-warn">Directional &middot; checked ${fmtDate(movie.bmsHalls.checkedAt.slice(0,10))}</span></div>
+          <p class="source-note">Not listed on District. BookMyShow shows only a status band per show (Available / Filling Fast / Housefull), not an exact seat count — so these carry no fill % or revenue, and are refreshed by hand on request, not hourly.</p>
+          ${bmsGroups}
+        </div>`;
+    }
 
     content.innerHTML = `
       <div class="date-pills">${datePills}</div>
@@ -932,6 +1038,8 @@
         </select>
       </div>
       ${cinemaHtml}
+      ${bmsHtml}
+      ${panIndiaHtml}
     `;
 
     content.querySelectorAll(".date-pill").forEach(p => {
@@ -1003,10 +1111,18 @@
     });
   }
 
+  let BMS_HALLS = {}; // movieId -> bms_halls doc data
+
+  function attachBmsHalls() {
+    MOVIES.forEach(m => { m.bmsHalls = BMS_HALLS[m.id] || null; });
+  }
+
   // Static-site data loading: no account, no login, no live db — this page is
-  // regenerated hourly (see .github/workflows/update.yml) and simply fetches the
-  // JSON snapshot that run produced. Cache-bust so a visitor always gets the
-  // latest hourly snapshot, not a stale cached copy of data.json.
+  // regenerated roughly every 30 minutes (see .github/workflows/update.yml) and
+  // simply fetches the JSON snapshot that run produced. There's no bms_halls
+  // source here (that's a manually-curated dataset only the Claude Artifact
+  // version carries) — movie.bmsHalls just stays unset, and renderShowTab
+  // already skips the section entirely when it's absent.
   async function loadFromStatic() {
     try {
       const res = await fetch("data.json?t=" + Date.now(), { cache: "no-store" });
@@ -1019,11 +1135,11 @@
         ? `Last scraped <b>${timeAgo(newest)}</b>`
         : "No data yet.";
       document.getElementById("footnote").innerHTML =
-        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Source: public showtime pages on district.in for Kolkata, refreshed hourly via GitHub Actions.";
+        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Head-to-head comparisons (trends, revenue, chain breakdown, insights) are West-Bengal-only for all four films, even for The Eken, which also plays a handful of single-screen shows outside West Bengal (see its own tab). Source: public showtime pages on district.in, refreshed roughly every 30 minutes via GitHub Actions.";
       renderAll();
     } catch (e) {
       document.getElementById("updatedLine").textContent = "Couldn't load data.json.";
-      document.getElementById("content").innerHTML = '<div class="empty-state">Data snapshot failed to load. It refreshes hourly — try again shortly.</div>';
+      document.getElementById("content").innerHTML = '<div class="empty-state">Data snapshot failed to load. It refreshes every 30 minutes — try again shortly.</div>';
       console.error(e);
     }
   }

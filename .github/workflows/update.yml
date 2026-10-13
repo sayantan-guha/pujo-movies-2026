@@ -3,8 +3,8 @@ name: Scrape and update data.json
 on:
   schedule:
     # GitHub's scheduler runs on a best-effort basis and can lag a few
-    # minutes at busy times — treat "hourly" as approximate.
-    - cron: "5 * * * *"
+    # minutes at busy times — treat "every 30 min" as approximate.
+    - cron: "5,35 * * * *"
   workflow_dispatch: {}
 
 permissions:

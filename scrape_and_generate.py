@@ -79,6 +79,49 @@ def extract(next_data):
     return show_dates, by_cinema
 
 
+# Eken also runs a handful of single-screen Cinepolis shows outside West Bengal
+# (likely for the Bengali diaspora). Kept separate from the main `cinemas` list
+# so head-to-head comparisons against the other three (West-Bengal-only) films
+# stay apples-to-apples; the page renders it as its own "Beyond West Bengal"
+# section on Eken's tab only.
+PAN_INDIA_EKEN_CITIES = [
+    {"city": "Gurugram", "slug": "gurgaon"},
+    {"city": "Jamshedpur", "slug": "jamshedpur"},
+    {"city": "Bhubaneswar", "slug": "bhubaneswar"},
+    {"city": "Pune", "slug": "pune"},
+    {"city": "Thane", "slug": "thane"},
+]
+PAN_INDIA_EKEN_BASE = "https://www.district.in/movies/the-eken-kerala-e-kurukshetra-movie-tickets-in-{slug}-MV230309"
+
+
+def scrape_pan_india_eken():
+    by_cinema = {}
+    for c in PAN_INDIA_EKEN_CITIES:
+        url = PAN_INDIA_EKEN_BASE.format(slug=c["slug"])
+        try:
+            nd = fetch_next_data(url)
+            show_dates, city_by_cinema = extract(nd)
+            seen_dates = set(s["date"] for shows in city_by_cinema.values() for s in shows)
+            for d in show_dates:
+                if d in seen_dates:
+                    continue
+                time.sleep(1)
+                try:
+                    nd2 = fetch_next_data(url + "?fromdate=" + d)
+                    _, more = extract(nd2)
+                    for cname, shows2 in more.items():
+                        city_by_cinema.setdefault(cname, []).extend(shows2)
+                except Exception as e:
+                    print(f"  ! failed date {d} for pan-India {c['city']}: {e}")
+            for cname, shows in city_by_cinema.items():
+                if shows:
+                    by_cinema[cname] = {"shows": shows, "city": c["city"]}
+        except Exception as e:
+            print(f"  ! failed pan-India city {c['city']}: {e}")
+        time.sleep(1)
+    return [{"name": name, "city": v["city"], "shows": v["shows"]} for name, v in by_cinema.items()]
+
+
 def scrape_movie(m):
     nd = fetch_next_data(m["url"])
     show_dates, by_cinema = extract(nd)
@@ -123,8 +166,12 @@ def main():
     for m in MOVIES:
         try:
             data = scrape_movie(m)
+            if m["id"] == "230309":
+                data["panIndiaCinemas"] = scrape_pan_india_eken()
             total_shows = sum(len(c["shows"]) for c in data["cinemas"])
-            print(f"{m['name']}: {total_shows} shows, {len(data['cinemas'])} cinemas")
+            pan_shows = sum(len(c["shows"]) for c in data.get("panIndiaCinemas", []))
+            extra = f", +{pan_shows} pan-India shows" if pan_shows else ""
+            print(f"{m['name']}: {total_shows} shows, {len(data['cinemas'])} cinemas{extra}")
             movies.append(data)
         except Exception as e:
             # Keep last-known-good data for this movie rather than wiping it out
