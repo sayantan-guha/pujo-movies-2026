@@ -122,6 +122,47 @@ def scrape_pan_india_eken():
     return [{"name": name, "city": v["city"], "shows": v["shows"]} for name, v in by_cinema.items()]
 
 
+# District's "-in-kolkata-" page has a limited catchment radius — it covers
+# Kolkata metro plus a close commuter belt (Howrah, Serampore, Narendrapur...)
+# but misses further West Bengal towns that District does serve, just via
+# their own city pages. These ARE West Bengal, so they're merged straight
+# into the main `cinemas` list for every movie, not treated specially like
+# the pan-India cities above. ("kalna" has no working District city slug as
+# of this check — skipped, not silently dropped.)
+EXTRA_WB_CITY_SLUGS = [
+    "burdwan", "siliguri", "durgapur", "malda", "krishnanagar",
+    "jalpaiguri", "cooch-behar", "raiganj", "kalyani", "maslandapur",
+]
+
+
+def scrape_extra_wb_cities(base_url):
+    found = {}
+    for slug in EXTRA_WB_CITY_SLUGS:
+        url = re.sub(r"-in-[a-z-]+-MV", f"-in-{slug}-MV", base_url)
+        try:
+            nd = fetch_next_data(url)
+            show_dates, city_by_cinema = extract(nd)
+            seen_dates = set(s["date"] for shows in city_by_cinema.values() for s in shows)
+            for d in show_dates:
+                if d in seen_dates:
+                    continue
+                time.sleep(1)
+                try:
+                    nd2 = fetch_next_data(url + "?fromdate=" + d)
+                    _, more = extract(nd2)
+                    for cname, shows2 in more.items():
+                        city_by_cinema.setdefault(cname, []).extend(shows2)
+                except Exception as e:
+                    print(f"  ! failed date {d} for extra WB city {slug}: {e}")
+            for cname, shows in city_by_cinema.items():
+                if shows:
+                    found.setdefault(cname, []).extend(shows)
+        except Exception as e:
+            print(f"  ! failed extra WB city {slug}: {e}")
+        time.sleep(1)
+    return found
+
+
 def scrape_movie(m):
     nd = fetch_next_data(m["url"])
     show_dates, by_cinema = extract(nd)
@@ -141,6 +182,14 @@ def scrape_movie(m):
             seen_dates.add(d)
         except Exception as e:
             print("  ! failed date", d, "for", m["name"], e)
+
+    extra = scrape_extra_wb_cities(m["url"])
+    extra_new = sum(1 for cname in extra if cname not in by_cinema)
+    for cname, shows in extra.items():
+        by_cinema.setdefault(cname, []).extend(shows)
+    if extra_new:
+        print(f"  + {extra_new} extra West Bengal cinema(s) for {m['name']}")
+
     cinemas = [{"name": cname, "shows": shows} for cname, shows in by_cinema.items() if shows]
     return {
         "id": m["id"],
