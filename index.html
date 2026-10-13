@@ -380,14 +380,16 @@
   }
   .pan-india-stat b { font-family: "Outfit", monospace; color: var(--text-1); font-weight: 600; font-size: 14px; display: block; }
 
-  /* insights */
-  .insights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  /* insights — executive-summary style: one headline statement per bullet,
+     a short supporting line underneath, capped to the top few that matter
+     rather than a long dump of every signal found. */
+  .insights { display: flex; flex-direction: column; gap: 10px; }
   .insight-card {
     background: var(--bg-base);
     border: 1px solid var(--border-subtle);
     border-left: 3px solid var(--accent);
     border-radius: var(--radius-md);
-    padding: 14px 16px;
+    padding: 14px 18px;
     font-size: 13.5px;
     line-height: 1.55;
     color: var(--text-2);
@@ -403,6 +405,16 @@
     color: var(--accent);
     margin-bottom: 6px;
   }
+  .insight-card .headline {
+    display: block;
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: var(--text-1);
+    line-height: 1.35;
+    margin-bottom: 4px;
+  }
+  .insight-card .support { display: block; font-size: 12.5px; color: var(--text-2); line-height: 1.55; }
 
   footer.note {
     margin-top: 28px;
@@ -420,7 +432,6 @@
 
   @media (max-width: 860px) {
     .kpi-row { grid-template-columns: repeat(2, 1fr); }
-    .insights { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -797,35 +808,59 @@
   }
 
   // ---- insights engine ---------------------------------------------------
+  // Executive-summary style: every candidate is scored by how much it actually
+  // matters, then only the top MAX_INSIGHTS survive — each as a headline
+  // "so what" statement with one line of supporting data underneath, the way
+  // a consulting deck leads with the takeaway rather than a wall of findings.
+  const MAX_INSIGHTS = 5;
+
   function renderInsights(dates) {
     const aggs = {};
     MOVIES.forEach(m => aggs[m.id] = aggregate(m));
-    const insights = [];
+    const candidates = []; // {priority, tag, headline, support}
 
-    // 1. overall leader by average fill rate across tracked days
     const overall = MOVIES.map(m => {
       let seats = 0, filled = 0, rev = 0;
       dates.forEach(d => { const a = aggs[m.id][d]; if (a) { seats += a.totalSeats; filled += a.totalFilled; rev += a.revenue; } });
       return { m, pct: seats ? (filled / seats) * 100 : 0, rev, seats, filled };
     }).sort((a, b) => b.pct - a.pct);
+    const revSorted = [...overall].sort((a, b) => b.rev - a.rev);
+
+    // 1. the single most important fact: who's winning, on fill and revenue —
+    // merged into one headline when it's the same film on both counts.
     if (overall.length && overall[0].seats) {
-      insights.push(`<span class="tag">Overall leader</span><b>${overall[0].m.name}</b> is running the highest average fill rate across every tracked date so far, at <b>${overall[0].pct.toFixed(1)}%</b> of seats sold. ${overall[1] ? `<b>${overall[1].m.name}</b> follows at ${overall[1].pct.toFixed(1)}%.` : ""}`);
+      const fillLeader = overall[0], revLeader = revSorted[0];
+      if (revLeader && revLeader.rev > 0 && revLeader.m.id === fillLeader.m.id) {
+        candidates.push({
+          priority: 100, tag: "Clear leader",
+          headline: `${fillLeader.m.name} leads on both fill rate and revenue`,
+          support: `<b>${fillLeader.pct.toFixed(1)}%</b> average fill and <b>${fmtRevenue(revLeader.rev)}</b> booked so far &mdash; the strongest position of the four films tracked.`,
+        });
+      } else {
+        candidates.push({
+          priority: 95, tag: "Fill-rate leader",
+          headline: `${fillLeader.m.name} runs the highest average fill rate`,
+          support: `<b>${fillLeader.pct.toFixed(1)}%</b> of seats sold across tracked dates${overall[1] ? `, ahead of ${overall[1].m.name} at ${overall[1].pct.toFixed(1)}%` : ""}.`,
+        });
+        if (revLeader && revLeader.rev > 0) {
+          candidates.push({
+            priority: 90, tag: "Revenue leader",
+            headline: `${revLeader.m.name} leads on estimated gross`,
+            support: `<b>${fmtRevenue(revLeader.rev)}</b> booked to date (seats booked &times; listed price, across all tracked dates).`,
+          });
+        }
+      }
     }
 
-    // 2. who leads on how many days — only days where at least two films have a
-    // comparable number of shows count, so a single lone show can't "win" a day.
+    // 2. day-by-day split — only days where at least two films had enough shows
+    // to compare like-for-like, so a single lone show can't "win" a day.
     const leaderCount = {};
     let comparableDays = 0;
-    const thinCells = [];
     dates.forEach(d => {
       const eligible = [];
       MOVIES.forEach(m => {
         const a = aggs[m.id][d];
-        if (a && a.totalSeats) {
-          const pct = (a.totalFilled / a.totalSeats) * 100;
-          if (a.shows >= MIN_SHOWS_FOR_COMPARISON) eligible.push({ m, pct });
-          else thinCells.push({ m, d, pct: Math.round(pct), shows: a.shows });
-        }
+        if (a && a.totalSeats && a.shows >= MIN_SHOWS_FOR_COMPARISON) eligible.push({ m, pct: (a.totalFilled / a.totalSeats) * 100 });
       });
       if (eligible.length >= 2) {
         comparableDays++;
@@ -834,20 +869,17 @@
       }
     });
     const leaderEntries = Object.entries(leaderCount).sort((a, b) => b[1] - a[1]);
-    if (leaderEntries.length) {
+    if (leaderEntries.length && comparableDays) {
       const byId = id => MOVIES.find(m => m.id === id);
-      const parts = leaderEntries.map(([id, n]) => `<b>${byId(id).name}</b> leads on ${n} day${n > 1 ? "s" : ""}`);
-      insights.push(`<span class="tag">Day-by-day split</span>${parts.join("; ")} of ${comparableDays} date${comparableDays === 1 ? "" : "s"} where at least two films had ${MIN_SHOWS_FOR_COMPARISON}+ shows to compare like-for-like.`);
+      candidates.push({
+        priority: 80, tag: "Day-by-day",
+        headline: `${byId(leaderEntries[0][0]).name} wins the most individual days`,
+        support: `Leads on <b>${leaderEntries[0][1]}</b> of ${comparableDays} day${comparableDays === 1 ? "" : "s"} with a like-for-like comparison (${MIN_SHOWS_FOR_COMPARISON}+ shows on both sides)${leaderEntries[1] ? `; ${byId(leaderEntries[1][0]).name} leads on ${leaderEntries[1][1]}` : ""}.`,
+      });
     }
 
-    // 2b. call out thin-sample cells explicitly, so a lone show never reads as a lead
-    if (thinCells.length) {
-      const parts = thinCells.slice(0, 3).map(t => `<b>${t.m.name}</b>'s ${t.pct}% on ${fmtDate(t.d)} (just ${t.shows} show${t.shows > 1 ? "s" : ""})`);
-      insights.push(`<span class="tag">Thin-sample caution</span>${parts.join("; ")} ${thinCells.length > 1 ? "aren't" : "isn't"} compared against the other films above — too few shows that day to mean anything next to a wide release still filling up its screens.`);
-    }
-
-    // 3. trend direction (first tracked day vs most recent) per film — thin-sample
-    // dates are excluded here too, so a single lone show can't anchor a "trend".
+    // 3. booking pace — the single film with the largest swing, not all four
+    let bestTrend = null;
     MOVIES.forEach(m => {
       const tracked = dates.filter(d => aggs[m.id][d] && aggs[m.id][d].totalSeats && aggs[m.id][d].shows >= MIN_SHOWS_FOR_COMPARISON);
       if (tracked.length < 2) return;
@@ -855,61 +887,48 @@
       const firstPct = (first.totalFilled / first.totalSeats) * 100;
       const lastPct = (last.totalFilled / last.totalSeats) * 100;
       const diff = lastPct - firstPct;
-      if (Math.abs(diff) >= 8) {
-        insights.push(`<span class="tag">Trend</span><b>${m.name}</b>'s fill rate moves from ${firstPct.toFixed(0)}% on ${fmtDate(tracked[0])} to ${lastPct.toFixed(0)}% on ${fmtDate(tracked[tracked.length - 1])} &mdash; later dates naturally show lower fill simply because advance booking has been open for less time, so read this as booking pace, not a verdict on demand.`);
-      }
+      if (!bestTrend || Math.abs(diff) > Math.abs(bestTrend.diff)) bestTrend = { m, firstPct, lastPct, diff, tracked };
     });
+    if (bestTrend && Math.abs(bestTrend.diff) >= 8) {
+      candidates.push({
+        priority: 70, tag: "Booking pace",
+        headline: `${bestTrend.m.name}'s fill rate is ${bestTrend.diff > 0 ? "climbing" : "tapering"} closer to show date`,
+        support: `<b>${bestTrend.firstPct.toFixed(0)}%</b> on ${fmtDate(bestTrend.tracked[0])} to <b>${bestTrend.lastPct.toFixed(0)}%</b> on ${fmtDate(bestTrend.tracked[bestTrend.tracked.length - 1])} &mdash; read as booking pace, not demand, since later dates have had less time to fill.`,
+      });
+    }
 
-    // 4. housefull call-outs
-    MOVIES.forEach(m => {
+    // 4. housefull — one aggregated bullet across films, not one per film
+    const hfByFilm = MOVIES.map(m => {
       let hfShows = 0, hfCinemas = new Set();
       m.cinemas.forEach(c => c.shows.forEach(s => { if (s.fillRate >= 95) { hfShows++; hfCinemas.add(c.name); } }));
-      if (hfShows > 0) {
-        insights.push(`<span class="tag">Housefull</span><b>${m.name}</b> already shows <b>${hfShows}</b> housefull show${hfShows > 1 ? "s" : ""} (95%+ filled) across <b>${hfCinemas.size}</b> cinema${hfCinemas.size > 1 ? "s" : ""} as of the last scrape.`);
-      }
-    });
-
-    // 5. revenue leader
-    const revSorted = [...overall].sort((a, b) => b.rev - a.rev);
-    if (revSorted.length && revSorted[0].rev > 0) {
-      insights.push(`<span class="tag">Revenue so far</span><b>${revSorted[0].m.name}</b> leads on estimated gross booked to date at <b>${fmtRevenue(revSorted[0].rev)}</b> (seats booked &times; listed ticket price, across all tracked dates).`);
+      return { m, hfShows, hfCinemas: hfCinemas.size };
+    }).filter(x => x.hfShows > 0).sort((a, b) => b.hfShows - a.hfShows);
+    if (hfByFilm.length) {
+      const totalHf = hfByFilm.reduce((a, x) => a + x.hfShows, 0);
+      const parts = hfByFilm.slice(0, 3).map(x => `${x.m.name} (${x.hfShows})`);
+      candidates.push({
+        priority: 60, tag: "Housefull",
+        headline: `${totalHf} housefull show${totalHf > 1 ? "s" : ""} recorded so far`,
+        support: `${parts.join(", ")}${hfByFilm.length > 3 ? ", and others" : ""} &mdash; 95%+ filled as of the last scrape.`,
+      });
     }
 
-    // 6. distribution footprint
+    // 5. distribution footprint — only worth a mention if the spread is wide
     const footprint = MOVIES.map(m => ({ m, cinemas: m.cinemas.filter(c => c.shows.length).length })).sort((a, b) => b.cinemas - a.cinemas);
-    if (footprint.length) {
-      insights.push(`<span class="tag">Screen count</span><b>${footprint[0].m.name}</b> has the widest footprint at <b>${footprint[0].cinemas}</b> screening cinemas in Kolkata; <b>${footprint[footprint.length - 1].m.name}</b> the narrowest at <b>${footprint[footprint.length - 1].cinemas}</b> &mdash; a wider release naturally dilutes average fill rate per show, so weigh the two numbers together.`);
+    if (footprint.length && footprint[0].cinemas - footprint[footprint.length - 1].cinemas >= 8) {
+      candidates.push({
+        priority: 40, tag: "Screen count",
+        headline: `${footprint[0].m.name} has the widest distribution footprint`,
+        support: `<b>${footprint[0].cinemas}</b> screening cinemas vs. <b>${footprint[footprint.length - 1].cinemas}</b> for ${footprint[footprint.length - 1].m.name} &mdash; a wider release naturally dilutes average fill rate per show.`,
+      });
     }
 
-    // 7. best-fit chain per film — only counting chains with enough shows for that
-    // film to mean something, same threshold as everywhere else.
-    const chainAgg = {}; // movieId -> chain -> {seats, filled, shows}
-    MOVIES.forEach(m => {
-      chainAgg[m.id] = {};
-      m.cinemas.forEach(c => {
-        const chain = chainOf(c.name);
-        const cell = (chainAgg[m.id][chain] || (chainAgg[m.id][chain] = { seats: 0, filled: 0, shows: 0 }));
-        c.shows.forEach(s => { cell.seats += s.total || 0; cell.filled += s.filled || 0; cell.shows += 1; });
-      });
-    });
-    const chainFits = [];
-    MOVIES.forEach(m => {
-      let best = null, bestPct = -1;
-      Object.entries(chainAgg[m.id]).forEach(([chain, c]) => {
-        if (c.shows >= MIN_SHOWS_FOR_COMPARISON && c.seats) {
-          const pct = (c.filled / c.seats) * 100;
-          if (pct > bestPct) { bestPct = pct; best = chain; }
-        }
-      });
-      if (best) chainFits.push(`<b>${m.name}</b> performs best at <b>${best}</b> (${bestPct.toFixed(0)}%)`);
-    });
-    if (chainFits.length) {
-      insights.push(`<span class="tag">Chain fit</span>${chainFits.join("; ")} &mdash; cumulative fill rate, chains with fewer than ${MIN_SHOWS_FOR_COMPARISON} shows for that film excluded.`);
-    }
-
-    if (!insights.length) return '<div class="empty-state">Not enough data yet for insights.</div>';
-    return `<div class="insights">${insights.map(t => `<div class="insight-card">${t}</div>`).join("")}</div>`;
+    if (!candidates.length) return '<div class="empty-state">Not enough data yet for insights.</div>';
+    candidates.sort((a, b) => b.priority - a.priority);
+    const topInsights = candidates.slice(0, MAX_INSIGHTS);
+    return `<div class="insights">${topInsights.map(c => `<div class="insight-card"><span class="tag">${c.tag}</span><span class="headline">${c.headline}</span><span class="support">${c.support}</span></div>`).join("")}</div>`;
   }
+
 
   // ---- show-wise tab (per movie, ported from the ticket-tile dashboard) ----
   function showsForDate(movie, date) {
