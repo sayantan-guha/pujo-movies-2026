@@ -416,6 +416,17 @@
   }
   .insight-card .support { display: block; font-size: 12.5px; color: var(--text-2); line-height: 1.55; }
 
+  /* anomaly cards — share the insight-card shell but signal severity through
+     the left-rail colour, same red/amber/green vocabulary as the fill-rate
+     bands elsewhere, so "this needs a look" never reads as the brand accent. */
+  .insight-card.anomaly.severe { border-left-color: var(--sold); background: var(--sold-bg); }
+  .insight-card.anomaly.moderate { border-left-color: var(--crit); }
+  .insight-card.anomaly.mild { border-left-color: var(--warn); }
+  .insight-card.anomaly .tag.sev-severe { color: var(--sold); }
+  .insight-card.anomaly .tag.sev-moderate { color: var(--crit); }
+  .insight-card.anomaly .tag.sev-mild { color: var(--warn); }
+  .anomaly-caveat { font-size: 12.5px; color: var(--text-3); margin: -6px 0 14px; line-height: 1.6; }
+
   footer.note {
     margin-top: 28px;
     font-size: 11.5px;
@@ -929,6 +940,169 @@
     return `<div class="insights">${topInsights.map(c => `<div class="insight-card"><span class="tag">${c.tag}</span><span class="headline">${c.headline}</span><span class="support">${c.support}</span></div>`).join("")}</div>`;
   }
 
+  // ---- anomaly / data-integrity detection --------------------------------
+  // This does NOT accuse anyone of anything — it flags statistical patterns
+  // that are very hard to produce through organic, ticket-by-ticket sales,
+  // so a human can look closer. Three independent, generic signals (nothing
+  // here names a specific cinema; any venue tripping the same pattern in a
+  // future scrape gets caught the same way):
+  //
+  //   (A) FROZEN — the exact same (total, avail, filled) triple repeats,
+  //       completely unchanged, across many distinct calendar dates for one
+  //       film at one cinema, while seats remain unsold (avail > 0).
+  //   (B) CROSS-FILM — the identical (total, avail, filled) triple shows up
+  //       for TWO DIFFERENT FILMS at the same cinema.
+  //   (C) OUTLIER — a single showtime whose fill rate is a dramatic jump
+  //       above that same cinema's *other* shows for the same film on the
+  //       same date. Consistent with — but not proof of — a single bulk or
+  //       corporate block buyout landing all at once.
+  //
+  // We only ever see one point-in-time snapshot per scrape, so this is all
+  // inferred from patterns already sitting inside a single snapshot.
+  const FROZEN_MIN_DATES = 4;   // signature must repeat, unchanged, across at least this many distinct dates
+  const OUTLIER_MIN_GAP = 45;   // percentage points above the cinema's own same-day/same-film average
+  const OUTLIER_MIN_PCT = 70;   // and the show itself must be at least this filled
+
+  function detectAnomalies() {
+    const byCinema = {};
+    MOVIES.forEach(m => {
+      m.cinemas.forEach(c => {
+        const bucket = (byCinema[c.name] || (byCinema[c.name] = {}));
+        (bucket[m.id] || (bucket[m.id] = [])).push(...c.shows);
+      });
+    });
+
+    const frozen = [], crossFilm = [], outliers = [];
+    const frozenKeys = new Set();
+
+    Object.entries(byCinema).forEach(([cinemaName, byMovie]) => {
+      Object.entries(byMovie).forEach(([movieId, shows]) => {
+        const movie = MOVIES.find(m => m.id === movieId);
+        const sigGroups = {};
+        shows.forEach(s => {
+          if (s.total == null || s.filled == null || s.avail == null) return;
+          const key = `${s.total}|${s.avail}|${s.filled}`;
+          (sigGroups[key] || (sigGroups[key] = [])).push(s);
+        });
+        Object.entries(sigGroups).forEach(([key, group]) => {
+          const [total, avail, filled] = key.split("|").map(Number);
+          if (avail <= 0) return;
+          const distinctDates = Array.from(new Set(group.map(s => s.date))).sort();
+          if (distinctDates.length >= FROZEN_MIN_DATES) {
+            frozenKeys.add(`${cinemaName}|${movieId}|${key}`);
+            frozen.push({
+              cinema: cinemaName, movie, total, avail, filled,
+              fillRate: Math.round((filled / total) * 100),
+              dates: distinctDates,
+              times: Array.from(new Set(group.map(s => s.time))).sort(),
+              count: group.length,
+            });
+          }
+        });
+      });
+
+      const sigToEntry = {};
+      Object.entries(byMovie).forEach(([movieId, shows]) => {
+        shows.forEach(s => {
+          if (s.total == null || s.filled == null || s.avail == null) return;
+          const key = `${s.total}|${s.avail}|${s.filled}`;
+          const entry = (sigToEntry[key] || (sigToEntry[key] = { movieIds: new Set(), shows: [] }));
+          entry.movieIds.add(movieId);
+          entry.shows.push({ movieId, ...s });
+        });
+      });
+      Object.entries(sigToEntry).forEach(([key, entry]) => {
+        if (entry.movieIds.size < 2) return;
+        const wasFrozenSomewhere = Array.from(entry.movieIds).some(mid => frozenKeys.has(`${cinemaName}|${mid}|${key}`));
+        if (!wasFrozenSomewhere) return;
+        const [total, avail, filled] = key.split("|").map(Number);
+        if (filled <= 0 || !total || (filled / total) * 100 < 35) return;
+        const byMovieName = {};
+        entry.shows.forEach(s => {
+          const mv = MOVIES.find(m => m.id === s.movieId);
+          (byMovieName[mv.name] || (byMovieName[mv.name] = [])).push(s);
+        });
+        crossFilm.push({
+          cinema: cinemaName, total, avail, filled,
+          fillRate: total ? Math.round((filled / total) * 100) : null,
+          byMovieName,
+          showCount: entry.shows.length,
+        });
+      });
+
+      Object.entries(byMovie).forEach(([movieId, shows]) => {
+        const movie = MOVIES.find(m => m.id === movieId);
+        const byDate = {};
+        shows.forEach(s => { if (s.fillRate != null) (byDate[s.date] || (byDate[s.date] = [])).push(s); });
+        Object.entries(byDate).forEach(([date, dayShows]) => {
+          if (dayShows.length < 3) return;
+          dayShows.forEach(s => {
+            const others = dayShows.filter(x => x !== s);
+            const otherAvg = others.reduce((a, x) => a + (x.fillRate || 0), 0) / others.length;
+            if (s.fillRate >= OUTLIER_MIN_PCT && (s.fillRate - otherAvg) >= OUTLIER_MIN_GAP) {
+              outliers.push({ cinema: cinemaName, movie, date, time: s.time, fillRate: s.fillRate, otherAvg: Math.round(otherAvg), total: s.total, filled: s.filled });
+            }
+          });
+        });
+      });
+    });
+
+    frozen.sort((a, b) => b.fillRate - a.fillRate || b.count - a.count);
+    crossFilm.sort((a, b) => b.fillRate - a.fillRate);
+    outliers.sort((a, b) => (b.fillRate - b.otherAvg) - (a.fillRate - a.otherAvg));
+    return { frozen, crossFilm, outliers };
+  }
+
+  // Executive-summary style: at most one bullet per anomaly type (never one
+  // per venue), each a headline + the single most notable example, so the
+  // full-section size stays readable regardless of how many venues trip the
+  // same pattern.
+  const MAX_ANOMALY_BULLETS = 5;
+
+  function renderAnomalies() {
+    const { frozen, crossFilm, outliers } = detectAnomalies();
+    if (!frozen.length && !crossFilm.length && !outliers.length) {
+      return '<div class="empty-state">No frozen-inventory, cross-film duplicate, or bulk-booking patterns detected in the latest scrape.</div>';
+    }
+
+    const bullets = [];
+
+    if (crossFilm.length) {
+      const top = crossFilm[0];
+      const names = Object.keys(top.byMovieName).join(" and ");
+      bullets.push({
+        priority: 100, sev: "severe", tag: "Shared seat counts",
+        headline: `${crossFilm.length} venue${crossFilm.length > 1 ? "s report" : " reports"} identical booking counts across different films`,
+        support: `Most notable: <b>${top.cinema}</b> shows the exact same <b>${top.filled}/${top.total}</b> seats (${top.fillRate}%) for ${names} &mdash; consistent with a shared or placeholder feed rather than live bookings. Worth excluding from head-to-head totals pending manual verification.`,
+      });
+    }
+
+    if (frozen.length) {
+      const top = frozen[0];
+      bullets.push({
+        priority: 90, sev: "moderate", tag: "Frozen booking counts",
+        headline: `${frozen.length} cinema/film pair${frozen.length > 1 ? "s" : ""} show booking counts that never move`,
+        support: `Highest: <b>${top.cinema}</b>'s <b>${top.movie.name}</b> stuck at <b>${top.filled}/${top.total}</b> seats (${top.fillRate}%) across ${top.dates.length} different dates &mdash; inconsistent with ticket-by-ticket sales, more likely a stale or placeholder feed.`,
+      });
+    }
+
+    if (outliers.length) {
+      const top = outliers[0];
+      bullets.push({
+        priority: 70, sev: "mild", tag: "Possible bulk booking",
+        headline: `${outliers.length} showtime${outliers.length > 1 ? "s look" : " looks"} like a possible bulk or corporate buyout`,
+        support: `Sharpest jump: <b>${top.cinema}</b>'s ${fmtTime(top.time)} show of <b>${top.movie.name}</b> on ${fmtDate(top.date)} at <b>${top.fillRate}%</b> vs. ${top.otherAvg}% average for that cinema's other shows the same day. Could also be a popular prime-time slot.`,
+      });
+    }
+
+    bullets.sort((a, b) => b.priority - a.priority);
+    const topBullets = bullets.slice(0, MAX_ANOMALY_BULLETS);
+
+    return `
+      <p class="anomaly-caveat">Patterns flagged automatically from the latest scrape, not accusations &mdash; district.in is the only source here. Summarized to the headline case per pattern.</p>
+      <div class="insights">${topBullets.map(b => `<div class="insight-card anomaly ${b.sev}"><span class="tag sev-${b.sev}">${b.tag}</span><span class="headline">${b.headline}</span><span class="support">${b.support}</span></div>`).join("")}</div>
+    `;
+  }
 
   // ---- show-wise tab (per movie, ported from the ticket-tile dashboard) ----
   function showsForDate(movie, date) {
@@ -1145,6 +1319,11 @@
         <div><p class="section-title">Insights</p><p class="section-sub">Generated fresh from the latest scrape, not static commentary</p></div>
       </div>
       ${renderInsights(dates)}
+
+      <div class="kpi-head">
+        <div><p class="section-title">Anomalies &amp; possible block booking</p><p class="section-sub">Patterns flagged automatically from the latest scrape &mdash; see each card for why</p></div>
+      </div>
+      ${renderAnomalies()}
     `;
 
     wireFilmLegend(content);
