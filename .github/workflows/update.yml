@@ -1,0 +1,36 @@
+name: Scrape and update data.json
+
+on:
+  schedule:
+    # GitHub's scheduler runs on a best-effort basis and can lag a few
+    # minutes at busy times — treat "hourly" as approximate.
+    - cron: "5 * * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scrape-update
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Scrape district.in and regenerate data.json
+        run: python3 scrape_and_generate.py
+
+      - name: Commit data.json if it changed
+        run: |
+          git config user.name "pujo-movies-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data.json
+          git diff --cached --quiet || git commit -m "Update data.json [skip ci]"
+          git push

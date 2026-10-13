@@ -1,0 +1,1034 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Pujo Movies 2026</title>
+<meta name="description" content="Head-to-head box-office analysis for four Kolkata Pujo releases, refreshed hourly.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎟️</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Outfit:wght@400;500;600;700&family=PT+Mono&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* hoichoi design system — light theme tokens, read from project/tokens.json */
+    --bg-base: #ffffff;
+    --bg-surface-2: #f4f4f4;
+    --bg-tint: rgba(0,0,0,0.03);
+    --text-1: #0a0a0a;
+    --text-2: #404040;
+    --text-3: #6a6a6a;
+    --border-subtle: rgba(0,0,0,0.06);
+    --border-default: rgba(0,0,0,0.12);
+    --accent: #d20820;        /* red-primary */
+    --accent-strong: #ec2028; /* red-bright */
+    --accent-deep: #770d11;   /* red-deep / oxblood */
+    --magenta-deep: #6d0550;
+    --gradient-brand: linear-gradient(90deg, #D20820 0%, #6D0550 100%);
+    --shadow-card: 0 1px 3px rgba(0,0,0,0.06), 0 8px 24px rgba(0,0,0,0.08);
+    --shadow-card-hover: 0 2px 6px rgba(0,0,0,0.08), 0 16px 40px rgba(0,0,0,0.14);
+    --glow-focus: 0 0 0 3px rgba(210,8,32,0.30);
+    --radius-xs: 4px; --radius-sm: 6px; --radius-md: 8px; --radius-lg: 12px; --radius-xl: 16px; --radius-2xl: 24px;
+    --space-8: 8px; --space-12: 12px; --space-16: 16px; --space-20: 20px; --space-24: 24px; --space-32: 32px;
+    --caps-tracking: 0.12em;
+
+    /* film series colors — drawn from the same brand palette, not a separate accent */
+    --film-1: #d20820; /* The Eken — red-primary */
+    --film-2: #404040; /* DeSu7 — slate */
+    --film-3: #770d11; /* Bohurupi — red-deep/oxblood */
+    --film-4: #6d0550; /* Emperor vs Sarat Chandra — magenta-deep */
+
+    /* fill-rate semantic bands — distinct from the brand accent on purpose */
+    --good: #3f8f66;
+    --good-bg: #e7f3ec;
+    --warn: #b8862c;
+    --warn-bg: #faf0db;
+    --crit: #c1572c;
+    --crit-bg: #fbe9e0;
+    --sold: #7a2420;
+    --sold-bg: #f3dcd8;
+
+    color-scheme: light;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg-base);
+    color: var(--text-1);
+    font-family: "Outfit", system-ui, sans-serif;
+    font-variant-numeric: tabular-nums;
+  }
+  .wrap { max-width: 1240px; margin: 0 auto; padding: 32px 24px 72px; }
+
+  .eyebrow {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 11.5px;
+    letter-spacing: var(--caps-tracking);
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 8px;
+  }
+  header.top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 8px;
+  }
+  h1.title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 800;
+    font-size: 36px;
+    letter-spacing: -0.01em;
+    margin: 0;
+    text-wrap: balance;
+  }
+  .updated { font-family: "PT Mono", "Outfit", monospace; font-size: 12px; color: var(--text-3); text-align: right; }
+  .updated b { color: var(--text-1); font-weight: 400; }
+  .brand-rule { height: 3px; border-radius: 999px; background: var(--gradient-brand); margin: 18px 0 26px; width: 100%; }
+
+  /* film legend / toggle chips */
+  .legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+  }
+  .film-chip {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 14px 8px 10px;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-subtle);
+    border-radius: 999px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-2);
+    transition: box-shadow 120ms ease, opacity 120ms ease;
+  }
+  .film-chip .sw { width: 10px; height: 10px; border-radius: 999px; flex: 0 0 auto; }
+  .film-chip .n { font-family: "PT Mono", "Outfit", monospace; font-size: 11px; color: var(--text-3); }
+  .film-chip.off { opacity: 0.4; }
+  .film-chip:hover { box-shadow: var(--shadow-card); }
+  .film-chip:focus-visible { outline: none; box-shadow: var(--glow-focus); }
+
+  /* KPI head-to-head row */
+  .kpi-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin: 36px 0 14px;
+  }
+  .section-title {
+    font-family: "Manrope", sans-serif;
+    font-weight: 700;
+    font-size: 19px;
+    margin: 0;
+  }
+  .section-sub { font-size: 13px; color: var(--text-3); margin: 2px 0 0; }
+
+  .kpi-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+    margin-bottom: 8px;
+  }
+  .kpi-card {
+    background: var(--bg-base);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-card);
+    padding: 18px 18px 16px;
+    position: relative;
+    overflow: hidden;
+  }
+  .kpi-card .stripe { position: absolute; left: 0; top: 0; bottom: 0; width: 4px; }
+  .kpi-card .film-name { font-size: 13.5px; font-weight: 600; margin: 0 0 10px; padding-left: 6px; display: flex; align-items: center; gap: 8px; }
+  .leading-tag {
+    font-family: "Outfit", sans-serif;
+    font-size: 9.5px;
+    font-weight: 700;
+    letter-spacing: var(--caps-tracking);
+    text-transform: uppercase;
+    color: #fff;
+    background: var(--gradient-brand);
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+  .kpi-card .big { font-family: "Manrope", sans-serif; font-weight: 800; font-size: 32px; padding-left: 6px; display: flex; align-items: baseline; gap: 8px; }
+  .kpi-card .big .unit { font-size: 15px; font-weight: 600; color: var(--text-3); }
+  .kpi-card .delta { font-family: "PT Mono", "Outfit", monospace; font-size: 12px; padding-left: 6px; margin-top: 2px; }
+  .kpi-card .delta.up { color: var(--good); }
+  .kpi-card .delta.down { color: var(--crit); }
+  .kpi-card .delta.flat { color: var(--text-3); }
+  .kpi-card .meta { padding-left: 6px; margin-top: 10px; font-size: 11.5px; color: var(--text-3); display: flex; gap: 12px; }
+  .kpi-card .meta b { font-family: "PT Mono", "Outfit", monospace; color: var(--text-2); font-weight: 400; }
+
+  /* chart panel */
+  .panel {
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-2xl);
+    padding: 22px 24px 18px;
+    margin-bottom: 8px;
+  }
+  .panel-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 6px; }
+  .toggle-group { display: flex; background: var(--bg-base); border: 1px solid var(--border-subtle); border-radius: 999px; padding: 3px; }
+  .toggle-btn {
+    font-family: "Outfit", sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border-radius: 999px;
+    color: var(--text-3);
+    cursor: pointer;
+    border: none;
+    background: transparent;
+  }
+  .toggle-btn.active { background: var(--text-1); color: #fff; }
+  svg.chart { width: 100%; height: auto; display: block; }
+  svg.chart text { font-family: "Outfit", sans-serif; fill: var(--text-3); }
+  svg.chart .axis-line { stroke: var(--border-default); stroke-width: 1; }
+  svg.chart .grid-line { stroke: var(--border-subtle); stroke-width: 1; }
+  svg.chart .today-line { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 3 3; }
+  svg.chart .series-line { fill: none; stroke-width: 2.5; }
+  svg.chart .series-dot { stroke: var(--bg-base); stroke-width: 1.5; }
+  svg.chart .bar { }
+  svg.chart .dim { opacity: 0.15; }
+
+  /* head-to-head table */
+  .table-scroll { overflow-x: auto; border-radius: var(--radius-lg); border: 1px solid var(--border-subtle); }
+  table.h2h { border-collapse: collapse; width: 100%; min-width: 720px; background: var(--bg-base); }
+  table.h2h th, table.h2h td { padding: 10px 14px; text-align: left; border-bottom: 1px solid var(--border-subtle); white-space: nowrap; }
+  table.h2h thead th {
+    font-family: "Outfit", sans-serif;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: var(--caps-tracking);
+    color: var(--text-3);
+    font-weight: 600;
+    background: var(--bg-surface-2);
+  }
+  table.h2h tbody tr:last-child td { border-bottom: none; }
+  table.h2h tbody tr.is-today { background: var(--bg-tint); }
+  table.h2h td.date-cell { font-weight: 600; font-size: 13.5px; }
+  table.h2h td.date-cell .dow { font-weight: 400; color: var(--text-3); font-size: 11.5px; margin-left: 6px; }
+  .cell-fill { font-family: "PT Mono", "Outfit", monospace; font-weight: 600; font-size: 13px; }
+  .cell-rev { font-family: "PT Mono", "Outfit", monospace; font-size: 11px; color: var(--text-3); margin-top: 2px; }
+  .leader-badge {
+    display: inline-block;
+    width: 6px; height: 6px;
+    border-radius: 999px;
+    background: var(--accent);
+    margin-right: 6px;
+    vertical-align: middle;
+  }
+  .thin-note { font-size: 10px; color: var(--text-3); font-style: italic; }
+
+  /* page-level tab bar */
+  .tab-bar {
+    display: flex;
+    gap: 28px;
+    border-bottom: 1px solid var(--border-subtle);
+    margin-bottom: 26px;
+    overflow-x: auto;
+  }
+  .tab-item {
+    font-family: "Outfit", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--text-3);
+    padding: 10px 1px 12px;
+    cursor: pointer;
+    white-space: nowrap;
+    position: relative;
+    background: none;
+    border: none;
+  }
+  .tab-item:hover { color: var(--text-1); }
+  .tab-item.active { color: var(--text-1); }
+  .tab-item.active::after {
+    content: "";
+    position: absolute;
+    left: 0; right: 0; bottom: -1px;
+    height: 3px;
+    border-radius: 999px;
+    background: var(--gradient-brand);
+  }
+
+  /* show-wise tab (per movie) */
+  .date-pills { display: flex; gap: 6px; overflow-x: auto; margin-bottom: 20px; }
+  .date-pill {
+    font-family: "PT Mono", "Outfit", monospace;
+    font-size: 12.5px;
+    padding: 6px 13px;
+    border-radius: 999px;
+    border: 1px solid var(--border-subtle);
+    background: var(--bg-surface-2);
+    color: var(--text-3);
+    cursor: pointer;
+    white-space: nowrap;
+  }
+  .date-pill.active { background: var(--text-1); border-color: var(--text-1); color: #fff; font-weight: 600; }
+
+  .stat-tile .label { font-size: 11px; text-transform: uppercase; letter-spacing: var(--caps-tracking); color: var(--text-3); margin-bottom: 8px; padding-left: 6px; }
+  .stat-tile .big { padding-left: 6px; }
+
+  .status-legend { display: flex; gap: 16px; flex-wrap: wrap; font-size: 12px; color: var(--text-3); margin: -4px 0 18px; }
+  .status-legend .dot { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 5px; }
+
+  .sort-row { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--text-3); margin-bottom: 16px; }
+  .sort-row select {
+    font-family: "Outfit", sans-serif;
+    font-size: 12.5px;
+    padding: 5px 10px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-default);
+    background: var(--bg-base);
+    color: var(--text-1);
+  }
+
+  .cinema-block { padding: 16px 0; border-top: 1px solid var(--border-subtle); }
+  .cinema-block:first-child { border-top: none; }
+  .cinema-block .cname { font-weight: 600; font-size: 14.5px; margin: 0 0 10px; display: flex; gap: 8px; align-items: baseline; }
+  .cinema-block .cname .avg { font-family: "PT Mono", "Outfit", monospace; font-size: 11.5px; color: var(--text-3); font-weight: 400; }
+  .ticket-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .ticket {
+    width: 128px;
+    border: 1px solid var(--border-subtle);
+    border-radius: var(--radius-md);
+    padding: 8px 10px 9px;
+    background: var(--bg-base);
+    position: relative;
+  }
+  .ticket::before, .ticket::after {
+    content: "";
+    position: absolute;
+    width: 8px; height: 8px;
+    border-radius: 999px;
+    background: var(--bg-surface-2);
+    border: 1px solid var(--border-subtle);
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .ticket::before { left: -5px; }
+  .ticket::after { right: -5px; }
+  .ticket .time { font-family: "PT Mono", "Outfit", monospace; font-weight: 600; font-size: 13px; }
+  .ticket .tag { font-size: 9.5px; color: var(--text-3); text-transform: uppercase; letter-spacing: 0.03em; height: 12px; overflow: hidden; }
+  .ticket .bar-track { margin-top: 6px; height: 5px; border-radius: 3px; background: var(--bg-surface-2); overflow: hidden; }
+  .ticket .bar-fill { height: 100%; border-radius: 3px; }
+  .ticket .pct { margin-top: 5px; font-family: "PT Mono", "Outfit", monospace; font-size: 11.5px; display: flex; justify-content: space-between; }
+  .status-good { color: var(--good); } .status-warn { color: var(--warn); } .status-crit { color: var(--crit); } .status-sold { color: var(--sold); }
+  .bar-good { background: var(--good); } .bar-warn { background: var(--warn); } .bar-crit { background: var(--crit); } .bar-sold { background: var(--sold); }
+
+  /* insights */
+  .insights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .insight-card {
+    background: var(--bg-base);
+    border: 1px solid var(--border-subtle);
+    border-left: 3px solid var(--accent);
+    border-radius: var(--radius-md);
+    padding: 14px 16px;
+    font-size: 13.5px;
+    line-height: 1.55;
+    color: var(--text-2);
+  }
+  .insight-card b { color: var(--text-1); font-weight: 600; }
+  .insight-card .tag {
+    display: block;
+    font-family: "Outfit", sans-serif;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: var(--caps-tracking);
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 6px;
+  }
+
+  footer.note {
+    margin-top: 28px;
+    font-size: 11.5px;
+    color: var(--text-3);
+    line-height: 1.7;
+    border-top: 1px solid var(--border-subtle);
+    padding-top: 16px;
+  }
+
+  .empty-state { padding: 60px 10px; text-align: center; color: var(--text-3); font-size: 14px; }
+
+  ::-webkit-scrollbar { height: 7px; }
+  ::-webkit-scrollbar-thumb { background: var(--border-default); border-radius: 4px; }
+
+  @media (max-width: 860px) {
+    .kpi-row { grid-template-columns: repeat(2, 1fr); }
+    .insights { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <p class="eyebrow">Box office &middot; Kolkata</p>
+  <header class="top">
+    <h1 class="title">Pujo Movies 2026</h1>
+    <div class="updated" id="updatedLine">Loading&hellip;</div>
+  </header>
+  <div class="brand-rule"></div>
+
+  <nav class="tab-bar" id="tabBar"></nav>
+
+  <div id="content">
+    <div class="empty-state">Loading box-office data&hellip;</div>
+  </div>
+
+  <footer class="note" id="footnote"></footer>
+</div>
+
+<script>
+  const FILM_COLORS = { "230309": "var(--film-1)", "213662": "var(--film-2)", "230211": "var(--film-3)", "220611": "var(--film-4)" };
+  const FILM_COLOR_HEX = { "230309": "#d20820", "213662": "#404040", "230211": "#770d11", "220611": "#6d0550" };
+  // Below this many shows on a date, a film's fill rate for that date is too thin a
+  // sample to compare against other films — a single late matinee can show 100% while
+  // telling you nothing about demand. Such cells still display, just excluded from
+  // "who's leading today" logic and visually muted.
+  const MIN_SHOWS_FOR_COMPARISON = 5;
+
+  // Cinema names on district.in carry the chain as a prefix for multiplexes
+  // ("INOX Quest Mall, …", "Miraj Cinemas : Downtown Mall, …") but standalone
+  // single-screen halls don't belong to any of these — they fall back to
+  // "Independent / Other" rather than being mis-labelled by their own name.
+  const KNOWN_CHAINS = ["Cinepolis", "INOX", "PVR", "Miraj Cinemas", "SVF Cinemas", "Nazrultirtha Cinema"];
+  function chainOf(cinemaName) {
+    for (const c of KNOWN_CHAINS) if (cinemaName.startsWith(c)) return c;
+    return "Independent / Other";
+  }
+
+  const STATUS_THRESH = [
+    { max: 40, cls: "good", label: "Available" },
+    { max: 75, cls: "warn", label: "Filling fast" },
+    { max: 95, cls: "crit", label: "Almost full" },
+    { max: 101, cls: "sold", label: "Housefull" },
+  ];
+  function statusFor(pct) {
+    for (const t of STATUS_THRESH) if (pct < t.max) return t;
+    return STATUS_THRESH[STATUS_THRESH.length - 1];
+  }
+  function fmtTime(t) {
+    if (!t) return "--:--";
+    let [h, m] = t.split(":").map(Number);
+    const ap = h >= 12 ? "PM" : "AM";
+    h = h % 12; if (h === 0) h = 12;
+    return `${h}:${String(m).padStart(2, "0")} ${ap}`;
+  }
+
+  function todayIST() {
+    return new Intl.DateTimeFormat("en-CA", { timeZone: "Asia/Kolkata", year: "numeric", month: "2-digit", day: "2-digit" }).format(new Date());
+  }
+  function fmtDate(d) {
+    const dt = new Date(d + "T00:00:00");
+    return dt.toLocaleDateString("en-IN", { day: "numeric", month: "short" });
+  }
+  function fmtDow(d) {
+    const dt = new Date(d + "T00:00:00");
+    return dt.toLocaleDateString("en-IN", { weekday: "short" });
+  }
+  function fmtRevenue(n) {
+    if (n >= 1e7) return "₹" + (n / 1e7).toFixed(2) + "Cr";
+    if (n >= 1e5) return "₹" + (n / 1e5).toFixed(2) + "L";
+    if (n >= 1e3) return "₹" + (n / 1e3).toFixed(1) + "k";
+    return "₹" + Math.round(n);
+  }
+  function timeAgo(iso) {
+    if (!iso) return "unknown";
+    const mins = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
+    if (mins < 1) return "just now";
+    if (mins < 60) return mins + " min ago";
+    const hrs = Math.round(mins / 60);
+    if (hrs < 24) return hrs + " hr ago";
+    return Math.round(hrs / 24) + " day(s) ago";
+  }
+
+  let MOVIES = [];
+  let ACTIVE = new Set();
+  let VIEW = "fill";
+  let ACTIVE_TAB = "h2h"; // "h2h" or a movie id
+  const SHOW_TAB_STATE = {}; // movieId -> { date, sort }
+
+  // ---- aggregation --------------------------------------------------
+  function aggregate(movie) {
+    // date -> { shows, totalSeats, totalFilled, revenue }
+    const byDate = {};
+    movie.cinemas.forEach(c => c.shows.forEach(s => {
+      const d = byDate[s.date] || (byDate[s.date] = { shows: 0, totalSeats: 0, totalFilled: 0, revenue: 0 });
+      d.shows += 1;
+      d.totalSeats += s.total || 0;
+      d.totalFilled += s.filled || 0;
+      d.revenue += s.revenue || 0;
+    }));
+    return byDate;
+  }
+
+  function allDates() {
+    const set = new Set();
+    MOVIES.forEach(m => (m.showDates || []).forEach(d => set.add(d)));
+    return Array.from(set).sort();
+  }
+
+  // ---- render: page tab bar ---------------------------------------------
+  function renderTabBar() {
+    const el = document.getElementById("tabBar");
+    const tabs = [{ id: "h2h", label: "Head-to-Head" }, ...MOVIES.map(m => ({ id: m.id, label: m.name }))];
+    el.innerHTML = tabs.map(t => `<button class="tab-item ${ACTIVE_TAB === t.id ? "active" : ""}" data-tab="${t.id}">${t.label}</button>`).join("");
+    el.querySelectorAll(".tab-item").forEach(btn => {
+      btn.addEventListener("click", () => { ACTIVE_TAB = btn.dataset.tab; renderAll(); });
+    });
+  }
+
+  // ---- render: film legend / series toggle (head-to-head tab only) ------
+  function filmLegendHtml() {
+    const chips = MOVIES.map(m => {
+      const agg = aggregate(m);
+      const totalShows = Object.values(agg).reduce((a, d) => a + d.shows, 0);
+      const off = !ACTIVE.has(m.id);
+      return `<div class="film-chip${off ? " off" : ""}" data-id="${m.id}" tabindex="0" role="button">
+        <span class="sw" style="background:${FILM_COLORS[m.id]}"></span>${m.name}<span class="n">${totalShows}</span>
+      </div>`;
+    }).join("");
+    return `<div class="legend">${chips}</div>`;
+  }
+  function wireFilmLegend(root) {
+    root.querySelectorAll(".film-chip").forEach(chip => {
+      chip.addEventListener("click", () => {
+        const id = chip.dataset.id;
+        if (ACTIVE.has(id)) ACTIVE.delete(id); else ACTIVE.add(id);
+        renderAll();
+      });
+    });
+  }
+
+  // ---- render: KPI row (latest trackable day) --------------------------
+  function renderKpis(dates) {
+    const today = todayIST();
+    let focusDate = dates.includes(today) ? today : dates[0];
+    const focusIdx = dates.indexOf(focusDate);
+    const prevDate = focusIdx > 0 ? dates[focusIdx - 1] : null;
+
+    const cards = MOVIES.map(m => {
+      const agg = aggregate(m);
+      const d = agg[focusDate];
+      const fillPct = d && d.totalSeats ? Math.round((d.totalFilled / d.totalSeats) * 100) : null;
+      let deltaHtml = '<span class="delta flat">no prior day tracked</span>';
+      if (prevDate && agg[prevDate] && agg[prevDate].totalSeats && d && d.totalSeats) {
+        const prevPct = (agg[prevDate].totalFilled / agg[prevDate].totalSeats) * 100;
+        const diff = Math.round(((d.totalFilled / d.totalSeats) * 100) - prevPct);
+        const cls = diff > 0 ? "up" : diff < 0 ? "down" : "flat";
+        const arrow = diff > 0 ? "↑" : diff < 0 ? "↓" : "→";
+        deltaHtml = `<span class="delta ${cls}">${arrow} ${Math.abs(diff)} pt vs ${fmtDate(prevDate)}</span>`;
+      }
+      if (d && d.shows > 0 && d.shows < MIN_SHOWS_FOR_COMPARISON) {
+        deltaHtml = `<span class="delta flat">just ${d.shows} show${d.shows > 1 ? "s" : ""} &mdash; too thin to compare</span>`;
+      }
+      return `<div class="kpi-card">
+        <div class="stripe" style="background:${FILM_COLORS[m.id]}"></div>
+        <p class="film-name">${m.name}</p>
+        <div class="big">${fillPct == null ? "&ndash;" : fillPct}<span class="unit">% filled</span></div>
+        ${deltaHtml}
+        <div class="meta">
+          <span><b>${d ? d.shows : 0}</b> shows</span>
+          <span><b>${d ? fmtRevenue(d.revenue) : "₹0"}</b> est. revenue</span>
+        </div>
+      </div>`;
+    }).join("");
+
+    return { html: cards, focusDate };
+  }
+
+  // ---- chart: fill-rate trend (line) -----------------------------------
+  function buildLineChart(dates) {
+    const W = 1040, H = 300, padL = 40, padR = 20, padT = 16, padB = 34;
+    const innerW = W - padL - padR, innerH = H - padT - padB;
+    const x = i => padL + (dates.length <= 1 ? innerW / 2 : (i / (dates.length - 1)) * innerW);
+    const y = v => padT + innerH - (v / 100) * innerH;
+
+    let gridlines = "";
+    [0, 25, 50, 75, 100].forEach(v => {
+      gridlines += `<line class="grid-line" x1="${padL}" x2="${W - padR}" y1="${y(v)}" y2="${y(v)}" />`;
+      gridlines += `<text x="${padL - 8}" y="${y(v) + 4}" text-anchor="end" font-size="10.5">${v}%</text>`;
+    });
+    let xlabels = "";
+    dates.forEach((d, i) => { xlabels += `<text x="${x(i)}" y="${H - 10}" text-anchor="middle" font-size="10.5">${fmtDate(d)}</text>`; });
+
+    const today = todayIST();
+    let todayLine = "";
+    const ti = dates.indexOf(today);
+    if (ti >= 0) todayLine = `<line class="today-line" x1="${x(ti)}" x2="${x(ti)}" y1="${padT}" y2="${H - padB}" />`;
+
+    let series = "";
+    MOVIES.forEach(m => {
+      const dim = ACTIVE.size && !ACTIVE.has(m.id) ? "dim" : "";
+      const agg = aggregate(m);
+      const pts = dates.map((d, i) => {
+        const a = agg[d];
+        if (!a || !a.totalSeats) return null;
+        return [x(i), y((a.totalFilled / a.totalSeats) * 100), Math.round((a.totalFilled / a.totalSeats) * 100), d];
+      });
+      const validPts = pts.filter(Boolean);
+      if (!validPts.length) return;
+      const path = "M" + pts.map(p => p ? `${p[0]},${p[1]}` : null).filter(Boolean).join(" L");
+      series += `<path class="series-line ${dim}" d="${path}" stroke="${FILM_COLOR_HEX[m.id]}" />`;
+      validPts.forEach(p => {
+        series += `<circle class="series-dot ${dim}" cx="${p[0]}" cy="${p[1]}" r="4" fill="${FILM_COLOR_HEX[m.id]}"><title>${m.name} — ${fmtDate(p[3])}: ${p[2]}% filled</title></circle>`;
+      });
+    });
+
+    return `<svg class="chart" viewBox="0 0 ${W} ${H}">
+      <line class="axis-line" x1="${padL}" x2="${W - padR}" y1="${H - padB}" y2="${H - padB}" />
+      ${gridlines}${todayLine}${series}${xlabels}
+    </svg>`;
+  }
+
+  // ---- chart: revenue trend (grouped bars) -----------------------------
+  function buildBarChart(dates) {
+    const W = 1040, H = 300, padL = 56, padR = 20, padT = 16, padB = 34;
+    const innerW = W - padL - padR, innerH = H - padT - padB;
+    const groupW = dates.length ? innerW / dates.length : innerW;
+    const barW = Math.min(16, groupW / 6);
+    const aggs = MOVIES.map(m => aggregate(m));
+    let maxRev = 1;
+    dates.forEach(d => aggs.forEach(a => { if (a[d]) maxRev = Math.max(maxRev, a[d].revenue); }));
+    const y = v => padT + innerH - (v / maxRev) * innerH;
+
+    let gridlines = "";
+    [0, 0.25, 0.5, 0.75, 1].forEach(f => {
+      const v = maxRev * f;
+      gridlines += `<line class="grid-line" x1="${padL}" x2="${W - padR}" y1="${y(v)}" y2="${y(v)}" />`;
+      gridlines += `<text x="${padL - 8}" y="${y(v) + 4}" text-anchor="end" font-size="10">${fmtRevenue(v)}</text>`;
+    });
+
+    let bars = "", xlabels = "";
+    dates.forEach((d, gi) => {
+      const groupX = padL + gi * groupW + groupW / 2 - (barW * MOVIES.length) / 2;
+      MOVIES.forEach((m, mi) => {
+        const a = aggs[mi][d];
+        const rev = a ? a.revenue : 0;
+        const dim = ACTIVE.size && !ACTIVE.has(m.id) ? "dim" : "";
+        const bx = groupX + mi * barW;
+        const by = y(rev);
+        bars += `<rect class="bar ${dim}" x="${bx}" y="${by}" width="${barW - 2}" height="${(H - padB) - by}" fill="${FILM_COLOR_HEX[m.id]}" rx="2"><title>${m.name} — ${fmtDate(d)}: ${fmtRevenue(rev)}</title></rect>`;
+      });
+      xlabels += `<text x="${padL + gi * groupW + groupW / 2}" y="${H - 10}" text-anchor="middle" font-size="10.5">${fmtDate(d)}</text>`;
+    });
+
+    return `<svg class="chart" viewBox="0 0 ${W} ${H}">
+      <line class="axis-line" x1="${padL}" x2="${W - padR}" y1="${H - padB}" y2="${H - padB}" />
+      ${gridlines}${bars}${xlabels}
+    </svg>`;
+  }
+
+  // ---- head-to-head table ----------------------------------------------
+  function statusBand(pct) {
+    if (pct == null) return { cls: "", bg: "transparent" };
+    if (pct < 40) return { cls: "good", bg: "var(--good-bg)", color: "var(--good)" };
+    if (pct < 75) return { cls: "warn", bg: "var(--warn-bg)", color: "var(--warn)" };
+    if (pct < 95) return { cls: "crit", bg: "var(--crit-bg)", color: "var(--crit)" };
+    return { cls: "sold", bg: "var(--sold-bg)", color: "var(--sold)" };
+  }
+
+  function renderTable(dates) {
+    const today = todayIST();
+    const aggs = MOVIES.map(m => aggregate(m));
+    const rows = dates.map(d => {
+      const cells = MOVIES.map((m, mi) => {
+        const a = aggs[mi][d];
+        const pct = a && a.totalSeats ? Math.round((a.totalFilled / a.totalSeats) * 100) : null;
+        return { id: m.id, pct, rev: a ? a.revenue : 0, shows: a ? a.shows : 0 };
+      });
+      // Only cells with a comparable show count compete for the day's "leader" dot —
+      // a lone show at 100% isn't ahead of a wide release still filling up.
+      const eligible = cells.filter(c => c.shows >= MIN_SHOWS_FOR_COMPARISON && c.pct != null);
+      const maxPct = eligible.length >= 2 ? Math.max(...eligible.map(c => c.pct)) : -1;
+      const tds = cells.map(c => {
+        const band = statusBand(c.pct);
+        const isLeader = c.pct != null && c.pct === maxPct && maxPct >= 0 && c.shows >= MIN_SHOWS_FOR_COMPARISON;
+        const thin = c.pct != null && c.shows > 0 && c.shows < MIN_SHOWS_FOR_COMPARISON;
+        return `<td>
+          ${c.pct == null ? '<span class="cell-fill" style="color:var(--text-3)">&ndash;</span>' :
+            `<span class="cell-fill" style="color:${thin ? "var(--text-3)" : band.color}">${isLeader ? '<span class="leader-badge"></span>' : ""}${c.pct}%</span>`}
+          <div class="cell-rev">${c.shows ? fmtRevenue(c.rev) + " &middot; " + c.shows + " show" + (c.shows > 1 ? "s" : "") + (thin ? '<span class="thin-note"> &middot; thin sample</span>' : "") : "no shows"}</div>
+        </td>`;
+      }).join("");
+      return `<tr class="${d === today ? "is-today" : ""}">
+        <td class="date-cell">${fmtDate(d)}<span class="dow">${fmtDow(d)}${d === today ? " &middot; today" : ""}</span></td>
+        ${tds}
+      </tr>`;
+    }).join("");
+
+    return `<div class="table-scroll"><table class="h2h">
+      <thead><tr><th>Date</th>${MOVIES.map(m => `<th>${m.name}</th>`).join("")}</tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>`;
+  }
+
+  // ---- revenue so far (cumulative, highest first) -----------------------
+  function renderRevenueStrip(dates) {
+    const totals = MOVIES.map(m => {
+      const agg = aggregate(m);
+      let rev = 0, filled = 0, shows = 0;
+      dates.forEach(d => { const a = agg[d]; if (a) { rev += a.revenue; filled += a.totalFilled; shows += a.shows; } });
+      return { m, rev, filled, shows };
+    }).sort((a, b) => b.rev - a.rev);
+
+    const cards = totals.map((t, i) => `
+      <div class="kpi-card">
+        <div class="stripe" style="background:${FILM_COLORS[t.m.id]}"></div>
+        <p class="film-name">${t.m.name}${i === 0 && t.rev > 0 ? '<span class="leading-tag">Leading</span>' : ""}</p>
+        <div class="big">${fmtRevenue(t.rev)}</div>
+        <div class="meta">
+          <span><b>${t.filled.toLocaleString("en-IN")}</b> seats booked</span>
+          <span><b>${t.shows}</b> shows</span>
+        </div>
+      </div>`).join("");
+
+    return `<div class="kpi-row">${cards}</div>`;
+  }
+
+  // ---- by cinema chain (cumulative across all tracked dates) -------------
+  function renderChainTable() {
+    // chain -> movieId -> { seats, filled, shows }
+    const chains = {};
+    MOVIES.forEach(m => {
+      m.cinemas.forEach(c => {
+        const chain = chainOf(c.name);
+        const bucket = (chains[chain] || (chains[chain] = {}));
+        const cell = (bucket[m.id] || (bucket[m.id] = { seats: 0, filled: 0, shows: 0 }));
+        c.shows.forEach(s => { cell.seats += s.total || 0; cell.filled += s.filled || 0; cell.shows += 1; });
+      });
+    });
+    const chainNames = Object.keys(chains).sort((a, b) => {
+      const totalShows = ch => Object.values(chains[ch]).reduce((n, c) => n + c.shows, 0);
+      return totalShows(b) - totalShows(a);
+    });
+    if (!chainNames.length) return '<div class="empty-state">No chain data yet.</div>';
+
+    const rows = chainNames.map(chain => {
+      const cells = MOVIES.map(m => {
+        const c = chains[chain][m.id];
+        const pct = c && c.seats ? Math.round((c.filled / c.seats) * 100) : null;
+        return { pct, shows: c ? c.shows : 0 };
+      });
+      const eligible = cells.filter(c => c.shows >= MIN_SHOWS_FOR_COMPARISON && c.pct != null);
+      const maxPct = eligible.length >= 2 ? Math.max(...eligible.map(c => c.pct)) : -1;
+      const tds = cells.map(c => {
+        const band = statusBand(c.pct);
+        const isLeader = c.pct != null && c.pct === maxPct && maxPct >= 0 && c.shows >= MIN_SHOWS_FOR_COMPARISON;
+        const thin = c.pct != null && c.shows > 0 && c.shows < MIN_SHOWS_FOR_COMPARISON;
+        return `<td>
+          ${c.pct == null ? '<span class="cell-fill" style="color:var(--text-3)">&ndash;</span>' :
+            `<span class="cell-fill" style="color:${thin ? "var(--text-3)" : band.color}">${isLeader ? '<span class="leader-badge"></span>' : ""}${c.pct}%</span>`}
+          <div class="cell-rev">${c.shows ? c.shows + " show" + (c.shows > 1 ? "s" : "") + (thin ? '<span class="thin-note"> &middot; thin</span>' : "") : "no shows"}</div>
+        </td>`;
+      }).join("");
+      return `<tr><td class="date-cell">${chain}</td>${tds}</tr>`;
+    }).join("");
+
+    return `<div class="table-scroll"><table class="h2h">
+      <thead><tr><th>Chain</th>${MOVIES.map(m => `<th>${m.name}</th>`).join("")}</tr></thead>
+      <tbody>${rows}</tbody>
+    </table></div>`;
+  }
+
+  // ---- insights engine ---------------------------------------------------
+  function renderInsights(dates) {
+    const aggs = {};
+    MOVIES.forEach(m => aggs[m.id] = aggregate(m));
+    const insights = [];
+
+    // 1. overall leader by average fill rate across tracked days
+    const overall = MOVIES.map(m => {
+      let seats = 0, filled = 0, rev = 0;
+      dates.forEach(d => { const a = aggs[m.id][d]; if (a) { seats += a.totalSeats; filled += a.totalFilled; rev += a.revenue; } });
+      return { m, pct: seats ? (filled / seats) * 100 : 0, rev, seats, filled };
+    }).sort((a, b) => b.pct - a.pct);
+    if (overall.length && overall[0].seats) {
+      insights.push(`<span class="tag">Overall leader</span><b>${overall[0].m.name}</b> is running the highest average fill rate across every tracked date so far, at <b>${overall[0].pct.toFixed(1)}%</b> of seats sold. ${overall[1] ? `<b>${overall[1].m.name}</b> follows at ${overall[1].pct.toFixed(1)}%.` : ""}`);
+    }
+
+    // 2. who leads on how many days — only days where at least two films have a
+    // comparable number of shows count, so a single lone show can't "win" a day.
+    const leaderCount = {};
+    let comparableDays = 0;
+    const thinCells = [];
+    dates.forEach(d => {
+      const eligible = [];
+      MOVIES.forEach(m => {
+        const a = aggs[m.id][d];
+        if (a && a.totalSeats) {
+          const pct = (a.totalFilled / a.totalSeats) * 100;
+          if (a.shows >= MIN_SHOWS_FOR_COMPARISON) eligible.push({ m, pct });
+          else thinCells.push({ m, d, pct: Math.round(pct), shows: a.shows });
+        }
+      });
+      if (eligible.length >= 2) {
+        comparableDays++;
+        const best = eligible.reduce((a, b) => (b.pct > a.pct ? b : a));
+        leaderCount[best.m.id] = (leaderCount[best.m.id] || 0) + 1;
+      }
+    });
+    const leaderEntries = Object.entries(leaderCount).sort((a, b) => b[1] - a[1]);
+    if (leaderEntries.length) {
+      const byId = id => MOVIES.find(m => m.id === id);
+      const parts = leaderEntries.map(([id, n]) => `<b>${byId(id).name}</b> leads on ${n} day${n > 1 ? "s" : ""}`);
+      insights.push(`<span class="tag">Day-by-day split</span>${parts.join("; ")} of ${comparableDays} date${comparableDays === 1 ? "" : "s"} where at least two films had ${MIN_SHOWS_FOR_COMPARISON}+ shows to compare like-for-like.`);
+    }
+
+    // 2b. call out thin-sample cells explicitly, so a lone show never reads as a lead
+    if (thinCells.length) {
+      const parts = thinCells.slice(0, 3).map(t => `<b>${t.m.name}</b>'s ${t.pct}% on ${fmtDate(t.d)} (just ${t.shows} show${t.shows > 1 ? "s" : ""})`);
+      insights.push(`<span class="tag">Thin-sample caution</span>${parts.join("; ")} ${thinCells.length > 1 ? "aren't" : "isn't"} compared against the other films above — too few shows that day to mean anything next to a wide release still filling up its screens.`);
+    }
+
+    // 3. trend direction (first tracked day vs most recent) per film — thin-sample
+    // dates are excluded here too, so a single lone show can't anchor a "trend".
+    MOVIES.forEach(m => {
+      const tracked = dates.filter(d => aggs[m.id][d] && aggs[m.id][d].totalSeats && aggs[m.id][d].shows >= MIN_SHOWS_FOR_COMPARISON);
+      if (tracked.length < 2) return;
+      const first = aggs[m.id][tracked[0]], last = aggs[m.id][tracked[tracked.length - 1]];
+      const firstPct = (first.totalFilled / first.totalSeats) * 100;
+      const lastPct = (last.totalFilled / last.totalSeats) * 100;
+      const diff = lastPct - firstPct;
+      if (Math.abs(diff) >= 8) {
+        insights.push(`<span class="tag">Trend</span><b>${m.name}</b>'s fill rate moves from ${firstPct.toFixed(0)}% on ${fmtDate(tracked[0])} to ${lastPct.toFixed(0)}% on ${fmtDate(tracked[tracked.length - 1])} &mdash; later dates naturally show lower fill simply because advance booking has been open for less time, so read this as booking pace, not a verdict on demand.`);
+      }
+    });
+
+    // 4. housefull call-outs
+    MOVIES.forEach(m => {
+      let hfShows = 0, hfCinemas = new Set();
+      m.cinemas.forEach(c => c.shows.forEach(s => { if (s.fillRate >= 95) { hfShows++; hfCinemas.add(c.name); } }));
+      if (hfShows > 0) {
+        insights.push(`<span class="tag">Housefull</span><b>${m.name}</b> already shows <b>${hfShows}</b> housefull show${hfShows > 1 ? "s" : ""} (95%+ filled) across <b>${hfCinemas.size}</b> cinema${hfCinemas.size > 1 ? "s" : ""} as of the last scrape.`);
+      }
+    });
+
+    // 5. revenue leader
+    const revSorted = [...overall].sort((a, b) => b.rev - a.rev);
+    if (revSorted.length && revSorted[0].rev > 0) {
+      insights.push(`<span class="tag">Revenue so far</span><b>${revSorted[0].m.name}</b> leads on estimated gross booked to date at <b>${fmtRevenue(revSorted[0].rev)}</b> (seats booked &times; listed ticket price, across all tracked dates).`);
+    }
+
+    // 6. distribution footprint
+    const footprint = MOVIES.map(m => ({ m, cinemas: m.cinemas.filter(c => c.shows.length).length })).sort((a, b) => b.cinemas - a.cinemas);
+    if (footprint.length) {
+      insights.push(`<span class="tag">Screen count</span><b>${footprint[0].m.name}</b> has the widest footprint at <b>${footprint[0].cinemas}</b> screening cinemas in Kolkata; <b>${footprint[footprint.length - 1].m.name}</b> the narrowest at <b>${footprint[footprint.length - 1].cinemas}</b> &mdash; a wider release naturally dilutes average fill rate per show, so weigh the two numbers together.`);
+    }
+
+    // 7. best-fit chain per film — only counting chains with enough shows for that
+    // film to mean something, same threshold as everywhere else.
+    const chainAgg = {}; // movieId -> chain -> {seats, filled, shows}
+    MOVIES.forEach(m => {
+      chainAgg[m.id] = {};
+      m.cinemas.forEach(c => {
+        const chain = chainOf(c.name);
+        const cell = (chainAgg[m.id][chain] || (chainAgg[m.id][chain] = { seats: 0, filled: 0, shows: 0 }));
+        c.shows.forEach(s => { cell.seats += s.total || 0; cell.filled += s.filled || 0; cell.shows += 1; });
+      });
+    });
+    const chainFits = [];
+    MOVIES.forEach(m => {
+      let best = null, bestPct = -1;
+      Object.entries(chainAgg[m.id]).forEach(([chain, c]) => {
+        if (c.shows >= MIN_SHOWS_FOR_COMPARISON && c.seats) {
+          const pct = (c.filled / c.seats) * 100;
+          if (pct > bestPct) { bestPct = pct; best = chain; }
+        }
+      });
+      if (best) chainFits.push(`<b>${m.name}</b> performs best at <b>${best}</b> (${bestPct.toFixed(0)}%)`);
+    });
+    if (chainFits.length) {
+      insights.push(`<span class="tag">Chain fit</span>${chainFits.join("; ")} &mdash; cumulative fill rate, chains with fewer than ${MIN_SHOWS_FOR_COMPARISON} shows for that film excluded.`);
+    }
+
+    if (!insights.length) return '<div class="empty-state">Not enough data yet for insights.</div>';
+    return `<div class="insights">${insights.map(t => `<div class="insight-card">${t}</div>`).join("")}</div>`;
+  }
+
+  // ---- show-wise tab (per movie, ported from the ticket-tile dashboard) ----
+  function showsForDate(movie, date) {
+    const rows = [];
+    movie.cinemas.forEach(c => c.shows.filter(s => s.date === date).forEach(s => rows.push({ cinema: c.name, ...s })));
+    return rows;
+  }
+
+  function renderShowTab(movie) {
+    const content = document.getElementById("content");
+    const state = SHOW_TAB_STATE[movie.id] || (SHOW_TAB_STATE[movie.id] = { date: (movie.showDates || [])[0], sort: "fill-desc" });
+    if (!state.date || !(movie.showDates || []).includes(state.date)) state.date = (movie.showDates || [])[0];
+
+    const dates = movie.showDates || [];
+    const todayRows = showsForDate(movie, state.date);
+    const totalShows = todayRows.length;
+    const avgFill = totalShows ? Math.round(todayRows.reduce((a, r) => a + (r.fillRate || 0), 0) / totalShows) : 0;
+    const housefull = todayRows.filter(r => r.fillRate >= 95).length;
+    const cinemaCount = new Set(todayRows.map(r => r.cinema)).size;
+
+    const datePills = dates.map(d => `<div class="date-pill ${d === state.date ? "active" : ""}" data-date="${d}">${fmtDate(d)}</div>`).join("");
+
+    const groups = {};
+    movie.cinemas.forEach(c => {
+      const shows = c.shows.filter(s => s.date === state.date).sort((a, b) => a.time.localeCompare(b.time));
+      if (shows.length) groups[c.name] = shows;
+    });
+    let names = Object.keys(groups);
+    const avgOf = n => groups[n].reduce((a, s) => a + (s.fillRate || 0), 0) / groups[n].length;
+    if (state.sort === "fill-desc") names.sort((a, b) => avgOf(b) - avgOf(a));
+    else if (state.sort === "fill-asc") names.sort((a, b) => avgOf(a) - avgOf(b));
+    else names.sort((a, b) => a.localeCompare(b));
+
+    const cinemaHtml = names.length ? names.map(name => {
+      const shows = groups[name];
+      const avg = Math.round(avgOf(name));
+      const tickets = shows.map(s => {
+        const pct = s.fillRate == null ? 0 : s.fillRate;
+        const st = statusFor(pct);
+        const tagline = s.tag || s.fmt || "";
+        return `<div class="ticket">
+          <div class="time">${fmtTime(s.time)}</div>
+          <div class="tag">${tagline}</div>
+          <div class="bar-track"><div class="bar-fill bar-${st.cls}" style="width:${Math.min(pct, 100)}%"></div></div>
+          <div class="pct"><span class="status-${st.cls}">${pct}%</span><span>${s.filled}/${s.total}</span></div>
+        </div>`;
+      }).join("");
+      return `<div class="cinema-block">
+        <p class="cname">${name}<span class="avg">avg ${avg}% fill &middot; ${shows.length} show${shows.length > 1 ? "s" : ""}</span></p>
+        <div class="ticket-row">${tickets}</div>
+      </div>`;
+    }).join("") : '<div class="empty-state">No shows found for this date.</div>';
+
+    content.innerHTML = `
+      <div class="date-pills">${datePills}</div>
+      <div class="kpi-row">
+        <div class="kpi-card stat-tile"><p class="label">Shows this date</p><div class="big">${totalShows}</div></div>
+        <div class="kpi-card stat-tile"><p class="label">Avg fill rate</p><div class="big" style="color:var(--accent)">${avgFill}%</div></div>
+        <div class="kpi-card stat-tile"><p class="label">Housefull shows</p><div class="big">${housefull}</div></div>
+        <div class="kpi-card stat-tile"><p class="label">Cinemas screening</p><div class="big">${cinemaCount}</div></div>
+      </div>
+      <div class="status-legend">
+        <span><i class="dot" style="background:var(--good)"></i>Available &lt;40%</span>
+        <span><i class="dot" style="background:var(--warn)"></i>Filling fast 40&ndash;74%</span>
+        <span><i class="dot" style="background:var(--crit)"></i>Almost full 75&ndash;94%</span>
+        <span><i class="dot" style="background:var(--sold)"></i>Housefull 95%+</span>
+      </div>
+      <div class="sort-row">
+        <span>Sort cinemas by</span>
+        <select id="sortSelect">
+          <option value="fill-desc" ${state.sort === "fill-desc" ? "selected" : ""}>Highest fill rate</option>
+          <option value="fill-asc" ${state.sort === "fill-asc" ? "selected" : ""}>Lowest fill rate</option>
+          <option value="name" ${state.sort === "name" ? "selected" : ""}>Name (A&ndash;Z)</option>
+        </select>
+      </div>
+      ${cinemaHtml}
+    `;
+
+    content.querySelectorAll(".date-pill").forEach(p => {
+      p.addEventListener("click", () => { state.date = p.dataset.date; renderShowTab(movie); });
+    });
+    const sortSelect = content.querySelector("#sortSelect");
+    if (sortSelect) sortSelect.addEventListener("change", e => { state.sort = e.target.value; renderShowTab(movie); });
+  }
+
+  // ---- master render -----------------------------------------------------
+  function renderAll() {
+    renderTabBar();
+    const content = document.getElementById("content");
+    if (!MOVIES.length) { content.innerHTML = '<div class="empty-state">No data yet.</div>'; return; }
+
+    if (ACTIVE_TAB !== "h2h") {
+      const movie = MOVIES.find(m => m.id === ACTIVE_TAB);
+      if (!movie) { ACTIVE_TAB = "h2h"; } else { renderShowTab(movie); return; }
+    }
+
+    const dates = allDates();
+    const kpi = renderKpis(dates);
+
+    content.innerHTML = `
+      ${filmLegendHtml()}
+
+      <div class="kpi-head">
+        <div><p class="section-title">Today&rsquo;s snapshot</p><p class="section-sub">${fmtDate(kpi.focusDate)} &middot; ${fmtDow(kpi.focusDate)}</p></div>
+      </div>
+      <div class="kpi-row">${kpi.html}</div>
+
+      <div class="kpi-head">
+        <div><p class="section-title">Revenue so far</p><p class="section-sub">Cumulative estimated gross across every tracked date, highest first</p></div>
+      </div>
+      ${renderRevenueStrip(dates)}
+
+      <div class="kpi-head">
+        <div><p class="section-title">Trends so far</p><p class="section-sub">Daily average fill rate and estimated revenue, by film</p></div>
+      </div>
+      <div class="panel">
+        <div class="panel-head">
+          <div class="toggle-group">
+            <button class="toggle-btn ${VIEW === "fill" ? "active" : ""}" data-view="fill">Fill rate %</button>
+            <button class="toggle-btn ${VIEW === "rev" ? "active" : ""}" data-view="rev">Est. revenue</button>
+          </div>
+        </div>
+        <div id="chartHost">${VIEW === "fill" ? buildLineChart(dates) : buildBarChart(dates)}</div>
+      </div>
+
+      <div class="kpi-head">
+        <div><p class="section-title">Head-to-head by day</p><p class="section-sub">Fill rate and estimated revenue per film, per date &middot; dot marks the day's leader (ties with &lt;${MIN_SHOWS_FOR_COMPARISON} shows never get the dot)</p></div>
+      </div>
+      <div class="panel" style="background:transparent; border:none; padding:0;">${renderTable(dates)}</div>
+
+      <div class="kpi-head">
+        <div><p class="section-title">By cinema chain</p><p class="section-sub">Cumulative fill rate per chain, per film &middot; standalone single-screen halls group under Independent / Other</p></div>
+      </div>
+      <div class="panel" style="background:transparent; border:none; padding:0;">${renderChainTable()}</div>
+
+      <div class="kpi-head">
+        <div><p class="section-title">Insights</p><p class="section-sub">Generated fresh from the latest scrape, not static commentary</p></div>
+      </div>
+      ${renderInsights(dates)}
+    `;
+
+    wireFilmLegend(content);
+    content.querySelectorAll(".toggle-btn").forEach(btn => {
+      btn.addEventListener("click", () => { VIEW = btn.dataset.view; renderAll(); });
+    });
+  }
+
+  // Static-site data loading: no account, no login, no live db — this page is
+  // regenerated hourly (see .github/workflows/update.yml) and simply fetches the
+  // JSON snapshot that run produced. Cache-bust so a visitor always gets the
+  // latest hourly snapshot, not a stale cached copy of data.json.
+  async function loadFromStatic() {
+    try {
+      const res = await fetch("data.json?t=" + Date.now(), { cache: "no-store" });
+      if (!res.ok) throw new Error("data.json: HTTP " + res.status);
+      const payload = await res.json();
+      MOVIES = (payload.movies || []).sort((a, b) => a.name.localeCompare(b.name));
+      MOVIES.forEach(m => ACTIVE.add(m.id));
+      const newest = MOVIES.reduce((acc, m) => !acc || (m.scrapedAt || "") > acc ? m.scrapedAt : acc, null);
+      document.getElementById("updatedLine").innerHTML = MOVIES.length
+        ? `Last scraped <b>${timeAgo(newest)}</b>`
+        : "No data yet.";
+      document.getElementById("footnote").innerHTML =
+        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Source: public showtime pages on district.in for Kolkata, refreshed hourly via GitHub Actions.";
+      renderAll();
+    } catch (e) {
+      document.getElementById("updatedLine").textContent = "Couldn't load data.json.";
+      document.getElementById("content").innerHTML = '<div class="empty-state">Data snapshot failed to load. It refreshes hourly — try again shortly.</div>';
+      console.error(e);
+    }
+  }
+
+  loadFromStatic();
+</script>
+</body>
+</html>
