@@ -1,6 +1,6 @@
 {
   "movieId": "230309",
-  "updatedAt": "2026-10-15T12:01:09+05:30",
+  "updatedAt": "2026-10-15T12:53:07+05:30",
   "shows": [
     {
       "audi": "SCREEN 1",
@@ -16,18 +16,32 @@
       "total": 201
     },
     {
+      "audi": "SCREEN 4",
+      "avail": 42,
       "cinema": "INOX Star Mall, Madhyamgram, Kolkata",
       "date": "2026-10-15",
+      "fillRate": 82.7,
+      "filled": 201,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-15T11:43:44+05:30",
+      "status": "Almost full",
+      "tag": null,
       "time": "11:00",
-      "audi": "SCREEN 4",
+      "total": 243
+    },
+    {
+      "cinema": "INOX Metro, Jawaharlal Nehru Road, Kolkata",
+      "date": "2026-10-15",
+      "time": "11:30",
+      "audi": "SCREEN 2",
       "fmt": "2D",
       "tag": null,
-      "total": 243,
-      "avail": 42,
-      "filled": 201,
-      "fillRate": 82.7,
+      "total": 176,
+      "avail": 24,
+      "filled": 152,
+      "fillRate": 86.4,
       "status": "Almost full",
-      "lastSeenAt": "2026-10-15T11:43:44+05:30"
+      "lastSeenAt": "2026-10-15T11:53:38+05:30"
     }
   ]
 }
