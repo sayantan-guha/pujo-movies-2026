@@ -1,19 +1,17 @@
 {
   "230309": {
-    "movieId": "230309",
-    "checkedAt": "2026-10-13T20:30:00+05:30",
-    "note": "Checked manually on BookMyShow; not part of the hourly District refresh.",
+    "checkedAt": "2026-10-16T18:30:00+05:30",
     "cinemas": [
       {
         "name": "Navina Cinema, Tollygunge",
         "shows": [
           {
-            "time": "16:30",
-            "status": "Available"
+            "status": "Available",
+            "time": "16:30"
           },
           {
-            "time": "21:50",
-            "status": "Available"
+            "status": "Available",
+            "time": "21:50"
           }
         ]
       },
@@ -21,12 +19,12 @@
         "name": "Asoka Cinema, Behala",
         "shows": [
           {
-            "time": "14:10",
-            "status": "Available"
+            "status": "Available",
+            "time": "14:10"
           },
           {
-            "time": "22:20",
-            "status": "Available"
+            "status": "Available",
+            "time": "22:20"
           }
         ]
       },
@@ -34,8 +32,8 @@
         "name": "Menoka Cinema, Kolkata",
         "shows": [
           {
-            "time": "17:50",
-            "status": "Available"
+            "status": "Available",
+            "time": "17:50"
           }
         ]
       },
@@ -43,12 +41,12 @@
         "name": "Elora Multiplex, Champahati",
         "shows": [
           {
-            "time": "14:00",
-            "status": "Available"
+            "status": "Available",
+            "time": "14:00"
           },
           {
-            "time": "19:00",
-            "status": "Available"
+            "status": "Available",
+            "time": "19:00"
           }
         ]
       },
@@ -56,19 +54,19 @@
         "name": "SVF Baruipur Show House, Baruipur",
         "shows": [
           {
-            "time": "14:15",
+            "status": "Available",
             "tag": "2K",
-            "status": "Available"
+            "time": "14:15"
           },
           {
-            "time": "16:35",
+            "status": "Available",
             "tag": "2K",
-            "status": "Available"
+            "time": "16:35"
           },
           {
-            "time": "19:45",
+            "status": "Available",
             "tag": "5.1 DSS",
-            "status": "Available"
+            "time": "19:45"
           }
         ]
       },
@@ -76,24 +74,24 @@
         "name": "SVF KPS Mall, Hooghly",
         "shows": [
           {
-            "time": "13:20",
+            "status": "Available",
             "tag": "2K Dolby 7.1.2",
-            "status": "Available"
+            "time": "13:20"
           },
           {
-            "time": "15:40",
+            "status": "Available",
             "tag": "2K Dolby 7.1.2",
-            "status": "Available"
+            "time": "15:40"
           },
           {
-            "time": "19:35",
+            "status": "Available",
             "tag": "Laser Dolby 5.1",
-            "status": "Available"
+            "time": "19:35"
           },
           {
-            "time": "21:00",
+            "status": "Available",
             "tag": "2K Dolby 7.1.2",
-            "status": "Available"
+            "time": "21:00"
           }
         ]
       },
@@ -101,19 +99,19 @@
         "name": "SVF City Centre Mall, Habra",
         "shows": [
           {
-            "time": "14:00",
+            "status": "Available",
             "tag": "2K Dolby 7.1",
-            "status": "Available"
+            "time": "14:00"
           },
           {
-            "time": "17:35",
+            "status": "Available",
             "tag": "Dolby 5.1",
-            "status": "Available"
+            "time": "17:35"
           },
           {
-            "time": "19:20",
+            "status": "Available",
             "tag": "2K Dolby 7.1",
-            "status": "Available"
+            "time": "19:20"
           }
         ]
       },
@@ -121,19 +119,19 @@
         "name": "SVF City Centre Mall, Haldia",
         "shows": [
           {
-            "time": "12:00",
+            "status": "Available",
             "tag": "5.1 DSS",
-            "status": "Available"
+            "time": "12:00"
           },
           {
-            "time": "14:15",
+            "status": "Available",
             "tag": "5.1 DSS",
-            "status": "Available"
+            "time": "14:15"
           },
           {
-            "time": "16:30",
+            "status": "Available",
             "tag": "5.1 DSS",
-            "status": "Available"
+            "time": "16:30"
           }
         ]
       },
@@ -141,9 +139,9 @@
         "name": "SVF Gitanjali, Bolpur",
         "shows": [
           {
-            "time": "15:00",
+            "status": "Available",
             "tag": "2K",
-            "status": "Available"
+            "time": "15:00"
           }
         ]
       },
@@ -151,24 +149,24 @@
         "name": "SVF City Centre Mall, Balurghat",
         "shows": [
           {
-            "time": "11:30",
+            "status": "Available",
             "tag": "2K Dolby 7.1",
-            "status": "Available"
+            "time": "11:30"
           },
           {
-            "time": "16:35",
+            "status": "Available",
             "tag": "2K Dolby 7.1",
-            "status": "Available"
+            "time": "16:35"
           },
           {
-            "time": "18:50",
+            "status": "Available",
             "tag": "2K Dolby 7.1",
-            "status": "Available"
+            "time": "18:50"
           },
           {
-            "time": "21:05",
+            "status": "Available",
             "tag": "2K Dolby 7.1",
-            "status": "Available"
+            "time": "21:05"
           }
         ]
       },
@@ -176,14 +174,14 @@
         "name": "SVF City Centre Mall, Purulia",
         "shows": [
           {
-            "time": "13:45",
+            "status": "Available",
             "tag": "5.1 DSS",
-            "status": "Available"
+            "time": "13:45"
           },
           {
-            "time": "16:00",
+            "status": "Available",
             "tag": "5.1 DSS",
-            "status": "Available"
+            "time": "16:00"
           }
         ]
       },
@@ -191,20 +189,20 @@
         "name": "Sangam Cinema, Kalyani",
         "shows": [
           {
-            "time": "13:40",
-            "status": "Available"
+            "status": "Available",
+            "time": "13:40"
           },
           {
-            "time": "16:00",
-            "status": "Available"
+            "status": "Available",
+            "time": "16:00"
           },
           {
-            "time": "18:15",
-            "status": "Available"
+            "status": "Available",
+            "time": "18:15"
           },
           {
-            "time": "20:30",
-            "status": "Available"
+            "status": "Available",
+            "time": "20:30"
           }
         ]
       },
@@ -212,19 +210,19 @@
         "name": "Udayan Cinema, Sheoraphuli",
         "shows": [
           {
-            "time": "11:45",
+            "status": "Available",
             "tag": "Royale Recliner 2K",
-            "status": "Available"
+            "time": "11:45"
           },
           {
-            "time": "17:15",
+            "status": "Available",
             "tag": "2K 3D Laser Dolby 5.1",
-            "status": "Available"
+            "time": "17:15"
           },
           {
-            "time": "19:30",
+            "status": "Available",
             "tag": "2K 3D Laser Dolby 5.1",
-            "status": "Available"
+            "time": "19:30"
           }
         ]
       },
@@ -232,19 +230,19 @@
         "name": "Udayan Cinema, Tarakeswar",
         "shows": [
           {
-            "time": "12:00",
+            "status": "Available",
             "tag": "2K Dolby 7.1",
-            "status": "Available"
+            "time": "12:00"
           },
           {
-            "time": "17:00",
+            "status": "Available",
             "tag": "2K Dolby 7.1",
-            "status": "Available"
+            "time": "17:00"
           },
           {
-            "time": "19:15",
+            "status": "Available",
             "tag": "2K Dolby 7.1",
-            "status": "Available"
+            "time": "19:15"
           }
         ]
       },
@@ -252,12 +250,70 @@
         "name": "Surendra Cinema, Ranaghat",
         "shows": [
           {
-            "time": "18:50",
+            "status": "Available",
+            "time": "18:50"
+          }
+        ]
+      },
+      {
+        "name": "Bioscope Axis Mall, Rajarhat",
+        "shows": [
+          {
+            "time": "14:00",
+            "status": "Available"
+          },
+          {
+            "time": "16:15",
+            "status": "Available"
+          },
+          {
+            "time": "19:20",
+            "status": "Available"
+          }
+        ]
+      },
+      {
+        "name": "SSR Globe Cinema, New Market",
+        "shows": [
+          {
+            "time": "12:15",
+            "status": "Available"
+          },
+          {
+            "time": "17:35",
+            "status": "Available"
+          }
+        ]
+      },
+      {
+        "name": "SSR Cinemas, Suncity Mall, Barasat",
+        "shows": [
+          {
+            "time": "13:15",
+            "status": "Available"
+          },
+          {
+            "time": "15:45",
+            "status": "Available"
+          },
+          {
+            "time": "18:00",
+            "status": "Available"
+          }
+        ]
+      },
+      {
+        "name": "Nandan, Kolkata",
+        "shows": [
+          {
+            "time": "17:25",
             "status": "Available"
           }
         ]
       }
-    ]
+    ],
+    "movieId": "230309",
+    "note": "Checked manually on BookMyShow; not part of the hourly District refresh."
   },
   "230211": {
     "movieId": "230211",
