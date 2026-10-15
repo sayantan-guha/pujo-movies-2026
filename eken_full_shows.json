@@ -1,6 +1,6 @@
 {
   "movieId": "230309",
-  "updatedAt": "2026-10-15T20:54:36+05:30",
+  "updatedAt": "2026-10-15T22:55:38+05:30",
   "shows": [
     {
       "audi": "SCREEN 1",
@@ -114,46 +114,74 @@
       "total": 136
     },
     {
-      "cinema": "INOX South City Mall, South City Mall, Kolkata",
-      "date": "2026-10-15",
-      "time": "19:05",
       "audi": "SCREEN 2",
-      "fmt": "2D",
-      "tag": null,
-      "total": 190,
       "avail": 7,
-      "filled": 183,
-      "fillRate": 96.3,
-      "status": "Housefull",
-      "lastSeenAt": "2026-10-15T19:47:05+05:30"
-    },
-    {
       "cinema": "INOX South City Mall, South City Mall, Kolkata",
       "date": "2026-10-15",
-      "time": "19:25",
-      "audi": "SCREEN 3",
+      "fillRate": 96.3,
+      "filled": 183,
       "fmt": "2D",
-      "tag": null,
-      "total": 364,
-      "avail": 0,
-      "filled": 364,
-      "fillRate": 100,
+      "lastSeenAt": "2026-10-15T19:47:05+05:30",
       "status": "Housefull",
-      "lastSeenAt": "2026-10-15T19:47:05+05:30"
+      "tag": null,
+      "time": "19:05",
+      "total": 190
     },
     {
+      "audi": "SCREEN 3",
+      "avail": 0,
+      "cinema": "INOX South City Mall, South City Mall, Kolkata",
+      "date": "2026-10-15",
+      "fillRate": 100,
+      "filled": 364,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-15T19:47:05+05:30",
+      "status": "Housefull",
+      "tag": null,
+      "time": "19:25",
+      "total": 364
+    },
+    {
+      "audi": "SCREEN 2",
+      "avail": 8,
       "cinema": "SVF Cinemas : Wood Square Mall, Narendrapur",
       "date": "2026-10-15",
-      "time": "19:45",
-      "audi": "SCREEN 2",
-      "fmt": "2D",
-      "tag": "2K",
-      "total": 136,
-      "avail": 8,
-      "filled": 128,
       "fillRate": 94.1,
+      "filled": 128,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-15T19:47:05+05:30",
       "status": "Almost full",
-      "lastSeenAt": "2026-10-15T19:47:05+05:30"
+      "tag": "2K",
+      "time": "19:45",
+      "total": 136
+    },
+    {
+      "cinema": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
+      "date": "2026-10-15",
+      "time": "21:45",
+      "audi": "AUDI02",
+      "fmt": "2D",
+      "tag": "DOLBY 7.1",
+      "total": 245,
+      "avail": 48,
+      "filled": 197,
+      "fillRate": 80.4,
+      "status": "Almost full",
+      "lastSeenAt": "2026-10-15T21:45:16+05:30"
+    },
+    {
+      "cinema": "Nazrultirtha Cinema : Kolkata",
+      "date": "2026-10-15",
+      "time": "21:55",
+      "audi": "SCREEN 3",
+      "fmt": "2D",
+      "tag": "SVF MUSE",
+      "total": 42,
+      "avail": 6,
+      "filled": 36,
+      "fillRate": 85.7,
+      "status": "Almost full",
+      "lastSeenAt": "2026-10-15T21:45:16+05:30"
     }
   ]
 }
