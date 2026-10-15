@@ -556,9 +556,14 @@
   }
 
   // ---- render: page tab bar ---------------------------------------------
+  const EKEN_ID = "230309";
   function renderTabBar() {
     const el = document.getElementById("tabBar");
     const tabs = [{ id: "h2h", label: "Head-to-Head" }, ...MOVIES.map(m => ({ id: m.id, label: m.name }))];
+    // Eken-only "full shows" page — inserted right after Eken's own tab, since
+    // the other three films don't get this treatment (per explicit request).
+    const ekenIdx = tabs.findIndex(t => t.id === EKEN_ID);
+    if (ekenIdx >= 0) tabs.splice(ekenIdx + 1, 0, { id: "eken-full", label: "Eken: Full Shows" });
     el.innerHTML = tabs.map(t => `<button class="tab-item ${ACTIVE_TAB === t.id ? "active" : ""}" data-tab="${t.id}">${t.label}</button>`).join("");
     el.querySelectorAll(".tab-item").forEach(btn => {
       btn.addEventListener("click", () => { ACTIVE_TAB = btn.dataset.tab; renderAll(); });
@@ -1265,11 +1270,96 @@
     if (sortSelect) sortSelect.addEventListener("change", e => { state.sort = e.target.value; renderShowTab(movie); });
   }
 
+  // ---- Eken-only: full / almost-full shows, including ones that already
+  // happened and dropped off district.in's live listing ---------------------
+  // District only ever lists shows that haven't started yet, so the moment a
+  // show's time passes it simply vanishes from the page — there was never any
+  // way to look back and ask "was that housefull?" The scraper now catches
+  // this at the one point it's observable: right before a show disappears
+  // between one hourly scrape and the next, if that show's last-known fill
+  // rate was Almost Full (75%+) or Housefull (95%+), it gets copied into a
+  // separate archive file ("eken_full_shows.json") that this page's own
+  // render never touches — only the scraper appends to it, and only for
+  // Eken, since that's the only film this was asked for. This panel reads
+  // that archive for "already happened" and the live Eken doc for "still to
+  // come".
+  let EKEN_FULL_ARCHIVE = { shows: [] };
+
+  function renderEkenFullShows() {
+    const eken = MOVIES.find(m => m.id === EKEN_ID);
+    if (!eken) return '<div class="empty-state">No Eken data yet.</div>';
+    const today = todayIST();
+
+    const liveShows = [];
+    eken.cinemas.forEach(c => c.shows.forEach(s => {
+      if (s.fillRate != null && s.fillRate >= 75) liveShows.push({ cinema: c.name, ...s });
+    }));
+    const upcoming = liveShows
+      .filter(s => s.date >= today)
+      .sort((a, b) => (a.date + a.time).localeCompare(b.date + b.time));
+
+    const archived = (EKEN_FULL_ARCHIVE.shows || [])
+      .slice()
+      .sort((a, b) => (b.date + b.time).localeCompare(a.date + a.time)); // most recently happened first
+
+    function row(s) {
+      const sold = s.fillRate >= 95;
+      const cls = sold ? "sold" : "crit";
+      const label = sold ? "Housefull" : "Almost full";
+      return `<tr>
+        <td class="date-cell">${s.cinema}</td>
+        <td>${fmtDate(s.date)}<span class="dow"> ${fmtDow(s.date)}</span></td>
+        <td class="cell-fill">${fmtTime(s.time)}</td>
+        <td>${s.fmt || s.tag || "&ndash;"}</td>
+        <td><span class="cell-fill" style="color:var(--${cls})">${s.fillRate}%</span></td>
+        <td><span class="source-badge bg-${cls} status-${cls}">${label}</span></td>
+      </tr>`;
+    }
+
+    function section(title, sub, rows, badgeText) {
+      const head = `<div class="source-head"><h3>${title}</h3><span class="source-badge bg-surface-2" style="color:var(--text-3)">${badgeText}</span></div>`;
+      if (!rows.length) return `<div class="source-section">${head}<p class="source-note">${sub}</p><div class="empty-state">None right now.</div></div>`;
+      return `<div class="source-section">
+        ${head}
+        <p class="source-note">${sub}</p>
+        <div class="table-scroll"><table class="h2h">
+          <thead><tr><th>Cinema</th><th>Date</th><th>Time</th><th>Format</th><th>Fill</th><th>Status</th></tr></thead>
+          <tbody>${rows.map(row).join("")}</tbody>
+        </table></div>
+      </div>`;
+    }
+
+    return `
+      ${section(
+        "Still to come",
+        "Tracked future shows already Almost Full or Housefull as of the latest scrape &mdash; these are still live on district.in.",
+        upcoming,
+        `${upcoming.length} show${upcoming.length === 1 ? "" : "s"}`
+      )}
+      ${section(
+        "Already happened",
+        "Shows that have passed and dropped off district.in's listing, kept here only because they were Almost Full or Housefull right before they disappeared. Builds up one hourly scrape at a time, so this fills in gradually.",
+        archived,
+        `${archived.length} show${archived.length === 1 ? "" : "s"}`
+      )}
+    `;
+  }
+
   // ---- master render -----------------------------------------------------
   function renderAll() {
     renderTabBar();
     const content = document.getElementById("content");
     if (!MOVIES.length) { content.innerHTML = '<div class="empty-state">No data yet.</div>'; return; }
+
+    if (ACTIVE_TAB === "eken-full") {
+      content.innerHTML = `
+        <div class="kpi-head">
+          <div><p class="section-title">Eken: Full &amp; Almost-Full Shows</p><p class="section-sub">75%+ filled shows for The Eken only &mdash; kept here so a show isn't lost the moment it drops off district.in's live listing</p></div>
+        </div>
+        ${renderEkenFullShows()}
+      `;
+      return;
+    }
 
     if (ACTIVE_TAB !== "h2h") {
       const movie = MOVIES.find(m => m.id === ACTIVE_TAB);
@@ -1359,6 +1449,17 @@
           attachBmsHalls();
         }
       } catch (e) { console.error("bms_halls.json failed to load", e); }
+
+      // Eken-only archive of shows that were Almost Full/Housefull right before
+      // they dropped off district.in's live listing. A static sibling file,
+      // written by the scraper alongside data.json; missing is fine pre-launch.
+      try {
+        const ekenFullRes = await fetch("eken_full_shows.json?t=" + Date.now(), { cache: "no-store" });
+        if (ekenFullRes.ok) {
+          const v = await ekenFullRes.json();
+          if (v) EKEN_FULL_ARCHIVE = v;
+        }
+      } catch (e) { console.error("eken_full_shows.json failed to load", e); }
 
       const newest = MOVIES.reduce((acc, m) => !acc || (m.scrapedAt || "") > acc ? m.scrapedAt : acc, null);
       document.getElementById("updatedLine").innerHTML = MOVIES.length
