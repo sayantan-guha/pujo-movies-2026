@@ -534,11 +534,24 @@
   let VIEW = "fill";
   let ACTIVE_TAB = "h2h"; // "h2h" or a movie id
   const SHOW_TAB_STATE = {}; // movieId -> { date, sort }
+  let DAILY_STATS = {}; // movieId -> { byDate: { date -> {shows,totalSeats,totalFilled,revenue} } } — shows that have
+                        // already expired off district.in's live listing, locked in permanently so a date's totals
+                        // only ever grow as the day goes on, and a fully-past date never vanishes from the trend chart.
 
   // ---- aggregation --------------------------------------------------
   function aggregate(movie) {
     // date -> { shows, totalSeats, totalFilled, revenue }
+    // Seed from the permanent daily_stats history (already-expired shows) first, then add
+    // whatever's still currently listed on top — the two sets never overlap, since a show
+    // is live in `cinemas` right up until the run where it disappears and gets archived.
     const byDate = {};
+    const hist = DAILY_STATS[movie.id] && DAILY_STATS[movie.id].byDate;
+    if (hist) {
+      Object.keys(hist).forEach(d => {
+        const h = hist[d];
+        byDate[d] = { shows: h.shows || 0, totalSeats: h.totalSeats || 0, totalFilled: h.totalFilled || 0, revenue: h.revenue || 0 };
+      });
+    }
     movie.cinemas.forEach(c => c.shows.forEach(s => {
       const d = byDate[s.date] || (byDate[s.date] = { shows: 0, totalSeats: 0, totalFilled: 0, revenue: 0 });
       d.shows += 1;
@@ -552,6 +565,9 @@
   function allDates() {
     const set = new Set();
     MOVIES.forEach(m => (m.showDates || []).forEach(d => set.add(d)));
+    // A date fully in the past drops out of every movie's showDates (district.in stops
+    // listing it) — but its archived daily_stats total should still show up in the trend.
+    Object.values(DAILY_STATS).forEach(doc => { if (doc && doc.byDate) Object.keys(doc.byDate).forEach(d => set.add(d)); });
     return Array.from(set).sort();
   }
 
@@ -1461,12 +1477,23 @@
         }
       } catch (e) { console.error("eken_full_shows.json failed to load", e); }
 
+      // Permanent daily revenue/fill totals for shows that have already expired off
+      // district.in's live listing, for all four films. A static sibling file, written
+      // by the scraper alongside data.json; missing is fine pre-launch.
+      try {
+        const dailyStatsRes = await fetch("daily_stats.json?t=" + Date.now(), { cache: "no-store" });
+        if (dailyStatsRes.ok) {
+          const v = await dailyStatsRes.json();
+          if (v) DAILY_STATS = v;
+        }
+      } catch (e) { console.error("daily_stats.json failed to load", e); }
+
       const newest = MOVIES.reduce((acc, m) => !acc || (m.scrapedAt || "") > acc ? m.scrapedAt : acc, null);
       document.getElementById("updatedLine").innerHTML = MOVIES.length
         ? `Last scraped <b>${timeAgo(newest)}</b>`
         : "No data yet.";
       document.getElementById("footnote").innerHTML =
-        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Head-to-head comparisons (trends, revenue, chain breakdown, insights) are West-Bengal-only for all four films, even for The Eken, which also plays a handful of single-screen shows outside West Bengal (see its own tab). Source: public showtime pages on district.in, refreshed roughly every 30 minutes via GitHub Actions; BookMyShow-only halls are checked by hand and refreshed on request, not automatically.";
+        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Head-to-head comparisons (trends, revenue, chain breakdown, insights) are West-Bengal-only for all four films, even for The Eken, which also plays a handful of single-screen shows outside West Bengal (see its own tab). District.in only ever lists shows that haven't started yet, so a show's contribution to revenue and fill totals is locked in permanently the moment it drops off that live listing — totals only grow from there, they never shrink as the day goes on or a date moves into the past. This safeguard started 2026-10-15; dates entirely before that weren't captured and can't be recovered. Source: public showtime pages on district.in, refreshed roughly every 30 minutes via GitHub Actions; BookMyShow-only halls are checked by hand and refreshed on request, not automatically.";
       renderAll();
     } catch (e) {
       document.getElementById("updatedLine").textContent = "Couldn't load data.json.";
