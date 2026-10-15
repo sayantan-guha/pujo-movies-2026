@@ -1,5 +1,19 @@
 {
-    "movieId": "230309",
-    "updatedAt": null,
-    "shows": []
+  "movieId": "230309",
+  "updatedAt": "2026-10-15T11:52:58+05:30",
+  "shows": [
+    {
+      "cinema": "SVF Cinemas : Triveni Mall, Serampore",
+      "date": "2026-10-15",
+      "time": "11:00",
+      "audi": "SCREEN 1",
+      "fmt": "2D",
+      "tag": "DOLBY 7.1.2",
+      "total": 201,
+      "avail": 1,
+      "filled": 200,
+      "fillRate": 99.5,
+      "status": "Housefull"
+    }
+  ]
 }

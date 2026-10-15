@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T10:54:34+05:30",
+  "generatedAt": "2026-10-15T11:52:58+05:30",
   "movies": [
     {
       "id": "230309",
@@ -13,24 +13,11 @@
         "2026-10-19",
         "2026-10-20"
       ],
-      "scrapedAt": "2026-10-15T10:45:49+05:30",
+      "scrapedAt": "2026-10-15T11:43:44+05:30",
       "cinemas": [
         {
           "name": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
           "shows": [
-            {
-              "date": "2026-10-15",
-              "time": "11:00",
-              "audi": "AUDI04",
-              "fmt": "2D",
-              "tag": "DOLBY 7.1",
-              "total": 252,
-              "avail": 133,
-              "filled": 119,
-              "fillRate": 47.2,
-              "status": "Available",
-              "revenue": 30480
-            },
             {
               "date": "2026-10-15",
               "time": "13:35",
@@ -38,11 +25,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 252,
-              "avail": 165,
-              "filled": 87,
-              "fillRate": 34.5,
+              "avail": 168,
+              "filled": 84,
+              "fillRate": 33.3,
               "status": "Available",
-              "revenue": 29160
+              "revenue": 28140
             },
             {
               "date": "2026-10-15",
@@ -51,11 +38,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 254,
-              "avail": 203,
-              "filled": 51,
-              "fillRate": 20.1,
+              "avail": 199,
+              "filled": 55,
+              "fillRate": 21.7,
               "status": "Available",
-              "revenue": 19320
+              "revenue": 20840
             },
             {
               "date": "2026-10-15",
@@ -64,11 +51,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 252,
-              "avail": 162,
-              "filled": 90,
-              "fillRate": 35.7,
+              "avail": 157,
+              "filled": 95,
+              "fillRate": 37.7,
               "status": "Available",
-              "revenue": 33960
+              "revenue": 35760
             },
             {
               "date": "2026-10-15",
@@ -77,11 +64,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 245,
-              "avail": 176,
-              "filled": 69,
-              "fillRate": 28.2,
+              "avail": 170,
+              "filled": 75,
+              "fillRate": 30.6,
               "status": "Available",
-              "revenue": 25740
+              "revenue": 28020
             },
             {
               "date": "2026-10-15",
@@ -90,11 +77,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 252,
-              "avail": 214,
-              "filled": 38,
-              "fillRate": 15.1,
+              "avail": 212,
+              "filled": 40,
+              "fillRate": 15.9,
               "status": "Available",
-              "revenue": 13560
+              "revenue": 14280
             },
             {
               "date": "2026-10-16",
@@ -103,11 +90,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 124,
-              "avail": 120,
-              "filled": 4,
-              "fillRate": 3.2,
+              "avail": 117,
+              "filled": 7,
+              "fillRate": 5.6,
               "status": "Available",
-              "revenue": 920
+              "revenue": 1570
             },
             {
               "date": "2026-10-16",
@@ -116,11 +103,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 252,
-              "avail": 201,
-              "filled": 51,
-              "fillRate": 20.2,
+              "avail": 194,
+              "filled": 58,
+              "fillRate": 23.0,
               "status": "Available",
-              "revenue": 11390
+              "revenue": 14080
             },
             {
               "date": "2026-10-16",
@@ -129,11 +116,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 252,
-              "avail": 224,
-              "filled": 28,
-              "fillRate": 11.1,
+              "avail": 220,
+              "filled": 32,
+              "fillRate": 12.7,
               "status": "Available",
-              "revenue": 8780
+              "revenue": 10060
             },
             {
               "date": "2026-10-16",
@@ -233,11 +220,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 252,
-              "avail": 175,
-              "filled": 77,
-              "fillRate": 30.6,
+              "avail": 169,
+              "filled": 83,
+              "fillRate": 32.9,
               "status": "Available",
-              "revenue": 28980
+              "revenue": 31200
             },
             {
               "date": "2026-10-17",
@@ -246,11 +233,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 252,
-              "avail": 187,
-              "filled": 65,
-              "fillRate": 25.8,
+              "avail": 185,
+              "filled": 67,
+              "fillRate": 26.6,
               "status": "Available",
-              "revenue": 24380
+              "revenue": 25100
             },
             {
               "date": "2026-10-17",
@@ -298,11 +285,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 252,
-              "avail": 217,
-              "filled": 35,
-              "fillRate": 13.9,
+              "avail": 215,
+              "filled": 37,
+              "fillRate": 14.7,
               "status": "Available",
-              "revenue": 7850
+              "revenue": 8270
             },
             {
               "date": "2026-10-18",
@@ -324,11 +311,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 252,
-              "avail": 204,
-              "filled": 48,
-              "fillRate": 19.0,
+              "avail": 199,
+              "filled": 53,
+              "fillRate": 21.0,
               "status": "Available",
-              "revenue": 17200
+              "revenue": 19000
             },
             {
               "date": "2026-10-18",
@@ -337,11 +324,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 252,
-              "avail": 189,
-              "filled": 63,
-              "fillRate": 25.0,
+              "avail": 182,
+              "filled": 70,
+              "fillRate": 27.8,
               "status": "Available",
-              "revenue": 23640
+              "revenue": 26260
             },
             {
               "date": "2026-10-18",
@@ -415,11 +402,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 252,
-              "avail": 192,
-              "filled": 60,
-              "fillRate": 23.8,
+              "avail": 174,
+              "filled": 78,
+              "fillRate": 31.0,
               "status": "Available",
-              "revenue": 22640
+              "revenue": 29240
             },
             {
               "date": "2026-10-19",
@@ -428,11 +415,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 252,
-              "avail": 235,
-              "filled": 17,
-              "fillRate": 6.7,
+              "avail": 232,
+              "filled": 20,
+              "fillRate": 7.9,
               "status": "Available",
-              "revenue": 6040
+              "revenue": 7120
             },
             {
               "date": "2026-10-20",
@@ -641,11 +628,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 248,
-              "avail": 242,
-              "filled": 6,
-              "fillRate": 2.4,
+              "avail": 239,
+              "filled": 9,
+              "fillRate": 3.6,
               "status": "Available",
-              "revenue": 1560
+              "revenue": 2940
             },
             {
               "date": "2026-10-18",
@@ -711,11 +698,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 169,
-              "avail": 165,
-              "filled": 4,
-              "fillRate": 2.4,
+              "avail": 162,
+              "filled": 7,
+              "fillRate": 4.1,
               "status": "Available",
-              "revenue": 1260
+              "revenue": 2250
             },
             {
               "date": "2026-10-17",
@@ -794,11 +781,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 199,
-              "avail": 164,
-              "filled": 35,
-              "fillRate": 17.6,
+              "avail": 154,
+              "filled": 45,
+              "fillRate": 22.6,
               "status": "Available",
-              "revenue": 10760
+              "revenue": 13560
             },
             {
               "date": "2026-10-15",
@@ -963,11 +950,11 @@
               "fmt": "2D",
               "tag": "LASER",
               "total": 191,
-              "avail": 147,
-              "filled": 44,
-              "fillRate": 23.0,
+              "avail": 141,
+              "filled": 50,
+              "fillRate": 26.2,
               "status": "Available",
-              "revenue": 17160
+              "revenue": 19500
             },
             {
               "date": "2026-10-17",
@@ -1028,11 +1015,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 364,
-              "avail": 228,
-              "filled": 136,
-              "fillRate": 37.4,
+              "avail": 226,
+              "filled": 138,
+              "fillRate": 37.9,
               "status": "Available",
-              "revenue": 57100
+              "revenue": 57880
             },
             {
               "date": "2026-10-17",
@@ -1132,11 +1119,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 199,
-              "avail": 132,
-              "filled": 67,
-              "fillRate": 33.7,
+              "avail": 124,
+              "filled": 75,
+              "fillRate": 37.7,
               "status": "Available",
-              "revenue": 30190
+              "revenue": 33310
             },
             {
               "date": "2026-10-18",
@@ -1158,29 +1145,16 @@
           "shows": [
             {
               "date": "2026-10-15",
-              "time": "10:45",
-              "audi": "AUDI 4",
-              "fmt": "2D",
-              "tag": "DOLBY 7.1",
-              "total": 262,
-              "avail": 131,
-              "filled": 131,
-              "fillRate": 50.0,
-              "status": "Available",
-              "revenue": 36140
-            },
-            {
-              "date": "2026-10-15",
               "time": "13:10",
               "audi": "AUDI 4",
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 192,
-              "filled": 70,
-              "fillRate": 26.7,
+              "avail": 177,
+              "filled": 85,
+              "fillRate": 32.4,
               "status": "Available",
-              "revenue": 28680
+              "revenue": 34680
             },
             {
               "date": "2026-10-15",
@@ -1189,11 +1163,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 142,
-              "filled": 120,
-              "fillRate": 45.8,
+              "avail": 136,
+              "filled": 126,
+              "fillRate": 48.1,
               "status": "Available",
-              "revenue": 49060
+              "revenue": 51500
             },
             {
               "date": "2026-10-15",
@@ -1215,11 +1189,24 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 174,
-              "filled": 88,
-              "fillRate": 33.6,
+              "avail": 162,
+              "filled": 100,
+              "fillRate": 38.2,
               "status": "Available",
-              "revenue": 36880
+              "revenue": 42400
+            },
+            {
+              "date": "2026-10-15",
+              "time": "23:15",
+              "audi": "AUDI 3",
+              "fmt": "2D",
+              "tag": "DOLBY 7.1",
+              "total": 108,
+              "avail": 103,
+              "filled": 5,
+              "fillRate": 4.6,
+              "status": "Available",
+              "revenue": 1900
             },
             {
               "date": "2026-10-15",
@@ -1228,11 +1215,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 235,
-              "filled": 27,
-              "fillRate": 10.3,
+              "avail": 239,
+              "filled": 23,
+              "fillRate": 8.8,
               "status": "Available",
-              "revenue": 10260
+              "revenue": 8740
             },
             {
               "date": "2026-10-16",
@@ -1254,11 +1241,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 245,
-              "filled": 17,
-              "fillRate": 6.5,
+              "avail": 242,
+              "filled": 20,
+              "fillRate": 7.6,
               "status": "Available",
-              "revenue": 3790
+              "revenue": 4470
             },
             {
               "date": "2026-10-16",
@@ -1267,11 +1254,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 210,
-              "filled": 52,
-              "fillRate": 19.8,
+              "avail": 206,
+              "filled": 56,
+              "fillRate": 21.4,
               "status": "Available",
-              "revenue": 19760
+              "revenue": 21280
             },
             {
               "date": "2026-10-16",
@@ -1293,11 +1280,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 183,
-              "filled": 79,
-              "fillRate": 30.2,
+              "avail": 178,
+              "filled": 84,
+              "fillRate": 32.1,
               "status": "Available",
-              "revenue": 31580
+              "revenue": 33460
             },
             {
               "date": "2026-10-16",
@@ -1306,11 +1293,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 253,
-              "filled": 9,
-              "fillRate": 3.4,
+              "avail": 251,
+              "filled": 11,
+              "fillRate": 4.2,
               "status": "Available",
-              "revenue": 4560
+              "revenue": 5280
             },
             {
               "date": "2026-10-16",
@@ -1371,11 +1358,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 207,
-              "filled": 55,
-              "fillRate": 21.0,
+              "avail": 200,
+              "filled": 62,
+              "fillRate": 23.7,
               "status": "Available",
-              "revenue": 22570
+              "revenue": 25820
             },
             {
               "date": "2026-10-17",
@@ -1410,11 +1397,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 254,
-              "filled": 8,
-              "fillRate": 3.1,
+              "avail": 250,
+              "filled": 12,
+              "fillRate": 4.6,
               "status": "Available",
-              "revenue": 2980
+              "revenue": 4500
             },
             {
               "date": "2026-10-18",
@@ -1462,11 +1449,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 196,
-              "filled": 66,
-              "fillRate": 25.2,
+              "avail": 191,
+              "filled": 71,
+              "fillRate": 27.1,
               "status": "Available",
-              "revenue": 26480
+              "revenue": 28480
             },
             {
               "date": "2026-10-18",
@@ -1553,11 +1540,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 237,
-              "filled": 25,
-              "fillRate": 9.5,
+              "avail": 241,
+              "filled": 21,
+              "fillRate": 8.0,
               "status": "Available",
-              "revenue": 9500
+              "revenue": 7980
             },
             {
               "date": "2026-10-19",
@@ -1644,11 +1631,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 262,
-              "avail": 229,
-              "filled": 33,
-              "fillRate": 12.6,
+              "avail": 227,
+              "filled": 35,
+              "fillRate": 13.4,
               "status": "Available",
-              "revenue": 12580
+              "revenue": 13340
             },
             {
               "date": "2026-10-20",
@@ -1753,11 +1740,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 325,
-              "avail": 325,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 323,
+              "filled": 2,
+              "fillRate": 0.6,
               "status": "Available",
-              "revenue": 0
+              "revenue": 440
             },
             {
               "date": "2026-10-18",
@@ -1797,11 +1784,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 270,
-              "avail": 195,
-              "filled": 75,
-              "fillRate": 27.8,
+              "avail": 175,
+              "filled": 95,
+              "fillRate": 35.2,
               "status": "Available",
-              "revenue": 18030
+              "revenue": 22590
             },
             {
               "date": "2026-10-15",
@@ -1810,11 +1797,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 270,
-              "avail": 209,
-              "filled": 61,
-              "fillRate": 22.6,
+              "avail": 205,
+              "filled": 65,
+              "fillRate": 24.1,
               "status": "Available",
-              "revenue": 17670
+              "revenue": 20110
             },
             {
               "date": "2026-10-15",
@@ -1836,11 +1823,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 270,
-              "avail": 157,
-              "filled": 113,
-              "fillRate": 41.9,
+              "avail": 154,
+              "filled": 116,
+              "fillRate": 43.0,
               "status": "Available",
-              "revenue": 41310
+              "revenue": 42360
             },
             {
               "date": "2026-10-15",
@@ -1849,11 +1836,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 270,
-              "avail": 192,
-              "filled": 78,
-              "fillRate": 28.9,
+              "avail": 189,
+              "filled": 81,
+              "fillRate": 30.0,
               "status": "Available",
-              "revenue": 26400
+              "revenue": 27390
             },
             {
               "date": "2026-10-15",
@@ -1875,11 +1862,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 193,
-              "avail": 177,
-              "filled": 16,
-              "fillRate": 8.3,
+              "avail": 174,
+              "filled": 19,
+              "fillRate": 9.8,
               "status": "Available",
-              "revenue": 3360
+              "revenue": 3990
             },
             {
               "date": "2026-10-16",
@@ -1888,11 +1875,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 270,
-              "avail": 224,
-              "filled": 46,
-              "fillRate": 17.0,
+              "avail": 217,
+              "filled": 53,
+              "fillRate": 19.6,
               "status": "Available",
-              "revenue": 10660
+              "revenue": 12130
             },
             {
               "date": "2026-10-16",
@@ -1901,11 +1888,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 270,
-              "avail": 214,
-              "filled": 56,
-              "fillRate": 20.7,
+              "avail": 211,
+              "filled": 59,
+              "fillRate": 21.9,
               "status": "Available",
-              "revenue": 16240
+              "revenue": 17110
             },
             {
               "date": "2026-10-16",
@@ -1927,11 +1914,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 270,
-              "avail": 207,
-              "filled": 63,
-              "fillRate": 23.3,
+              "avail": 205,
+              "filled": 65,
+              "fillRate": 24.1,
               "status": "Available",
-              "revenue": 20490
+              "revenue": 21110
             },
             {
               "date": "2026-10-16",
@@ -1979,11 +1966,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 270,
-              "avail": 221,
-              "filled": 49,
-              "fillRate": 18.1,
+              "avail": 219,
+              "filled": 51,
+              "fillRate": 18.9,
               "status": "Available",
-              "revenue": 10790
+              "revenue": 11210
             },
             {
               "date": "2026-10-17",
@@ -1992,11 +1979,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 270,
-              "avail": 248,
-              "filled": 22,
-              "fillRate": 8.1,
+              "avail": 245,
+              "filled": 25,
+              "fillRate": 9.3,
               "status": "Available",
-              "revenue": 8380
+              "revenue": 9250
             },
             {
               "date": "2026-10-17",
@@ -2018,11 +2005,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 270,
-              "avail": 230,
-              "filled": 40,
-              "fillRate": 14.8,
+              "avail": 226,
+              "filled": 44,
+              "fillRate": 16.3,
               "status": "Available",
-              "revenue": 13360
+              "revenue": 14560
             },
             {
               "date": "2026-10-17",
@@ -2096,11 +2083,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 270,
-              "avail": 226,
-              "filled": 44,
-              "fillRate": 16.3,
+              "avail": 223,
+              "filled": 47,
+              "fillRate": 17.4,
               "status": "Available",
-              "revenue": 13640
+              "revenue": 14570
             },
             {
               "date": "2026-10-18",
@@ -2157,7 +2144,7 @@
               "filled": 152,
               "fillRate": 86.4,
               "status": "Filling Fast",
-              "revenue": 36820
+              "revenue": 42850
             },
             {
               "date": "2026-10-15",
@@ -2166,11 +2153,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 176,
-              "avail": 127,
-              "filled": 49,
-              "fillRate": 27.8,
+              "avail": 125,
+              "filled": 51,
+              "fillRate": 29.0,
               "status": "Available",
-              "revenue": 13420
+              "revenue": 13900
             },
             {
               "date": "2026-10-16",
@@ -2205,11 +2192,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 176,
-              "avail": 174,
-              "filled": 2,
-              "fillRate": 1.1,
+              "avail": 169,
+              "filled": 7,
+              "fillRate": 4.0,
               "status": "Available",
-              "revenue": 400
+              "revenue": 1400
             },
             {
               "date": "2026-10-17",
@@ -2262,11 +2249,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 166,
-              "avail": 146,
-              "filled": 20,
-              "fillRate": 12.0,
+              "avail": 143,
+              "filled": 23,
+              "fillRate": 13.9,
               "status": "Available",
-              "revenue": 4520
+              "revenue": 5380
             },
             {
               "date": "2026-10-15",
@@ -2275,11 +2262,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 166,
-              "avail": 157,
-              "filled": 9,
-              "fillRate": 5.4,
+              "avail": 151,
+              "filled": 15,
+              "fillRate": 9.0,
               "status": "Available",
-              "revenue": 2430
+              "revenue": 4050
             },
             {
               "date": "2026-10-15",
@@ -2327,11 +2314,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 282,
-              "avail": 273,
-              "filled": 9,
-              "fillRate": 3.2,
+              "avail": 271,
+              "filled": 11,
+              "fillRate": 3.9,
               "status": "Available",
-              "revenue": 2160
+              "revenue": 2358
             },
             {
               "date": "2026-10-17",
@@ -2405,11 +2392,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 282,
-              "avail": 282,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 277,
+              "filled": 5,
+              "fillRate": 1.8,
               "status": "Available",
-              "revenue": 0
+              "revenue": 1200
             }
           ]
         },
@@ -2436,11 +2423,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 248,
-              "avail": 214,
-              "filled": 34,
-              "fillRate": 13.7,
+              "avail": 203,
+              "filled": 45,
+              "fillRate": 18.1,
               "status": "Available",
-              "revenue": 14800
+              "revenue": 18320
             },
             {
               "date": "2026-10-15",
@@ -2462,11 +2449,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 150,
-              "avail": 137,
-              "filled": 13,
-              "fillRate": 8.7,
+              "avail": 135,
+              "filled": 15,
+              "fillRate": 10.0,
               "status": "Available",
-              "revenue": 6620
+              "revenue": 7180
             },
             {
               "date": "2026-10-16",
@@ -2592,19 +2579,6 @@
           "shows": [
             {
               "date": "2026-10-15",
-              "time": "10:40",
-              "audi": "SCREEN 2",
-              "fmt": "2D",
-              "tag": null,
-              "total": 228,
-              "avail": 204,
-              "filled": 24,
-              "fillRate": 10.5,
-              "status": "Available",
-              "revenue": 3600
-            },
-            {
-              "date": "2026-10-15",
               "time": "12:10",
               "audi": "SCREEN 3",
               "fmt": "2D",
@@ -2649,11 +2623,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 166,
-              "avail": 117,
-              "filled": 49,
-              "fillRate": 29.5,
+              "avail": 121,
+              "filled": 45,
+              "fillRate": 27.1,
               "status": "Available",
-              "revenue": 12250
+              "revenue": 11250
             },
             {
               "date": "2026-10-16",
@@ -2662,11 +2636,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 190,
-              "avail": 188,
-              "filled": 2,
-              "fillRate": 1.1,
+              "avail": 186,
+              "filled": 4,
+              "fillRate": 2.1,
               "status": "Available",
-              "revenue": 300
+              "revenue": 600
             },
             {
               "date": "2026-10-16",
@@ -2779,11 +2753,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 166,
-              "avail": 166,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 164,
+              "filled": 2,
+              "fillRate": 1.2,
               "status": "Available",
-              "revenue": 0
+              "revenue": 500
             },
             {
               "date": "2026-10-18",
@@ -2857,59 +2831,7 @@
           "shows": [
             {
               "date": "2026-10-15",
-              "time": "10:00",
-              "audi": "AUDI 04",
-              "fmt": "2D",
-              "tag": null,
-              "total": 211,
-              "avail": 133,
-              "filled": 78,
-              "fillRate": 37.0,
-              "status": "Available",
-              "revenue": 18620
-            },
-            {
-              "date": "2026-10-15",
               "time": "13:05",
-              "audi": "AUDI 01",
-              "fmt": "2D",
-              "tag": null,
-              "total": 194,
-              "avail": 144,
-              "filled": 50,
-              "fillRate": 25.8,
-              "status": "Available",
-              "revenue": 18490
-            },
-            {
-              "date": "2026-10-15",
-              "time": "15:40",
-              "audi": "AUDI 01",
-              "fmt": "2D",
-              "tag": null,
-              "total": 211,
-              "avail": 119,
-              "filled": 92,
-              "fillRate": 43.6,
-              "status": "Available",
-              "revenue": 33350
-            },
-            {
-              "date": "2026-10-15",
-              "time": "18:15",
-              "audi": "AUDI 01",
-              "fmt": "2D",
-              "tag": null,
-              "total": 211,
-              "avail": 122,
-              "filled": 89,
-              "fillRate": 42.2,
-              "status": "Available",
-              "revenue": 32120
-            },
-            {
-              "date": "2026-10-15",
-              "time": "20:50",
               "audi": "AUDI 01",
               "fmt": "2D",
               "tag": null,
@@ -2918,7 +2840,46 @@
               "filled": 53,
               "fillRate": 27.3,
               "status": "Available",
-              "revenue": 19170
+              "revenue": 17630
+            },
+            {
+              "date": "2026-10-15",
+              "time": "15:40",
+              "audi": "AUDI 01",
+              "fmt": "2D",
+              "tag": null,
+              "total": 211,
+              "avail": 111,
+              "filled": 100,
+              "fillRate": 47.4,
+              "status": "Available",
+              "revenue": 33330
+            },
+            {
+              "date": "2026-10-15",
+              "time": "18:15",
+              "audi": "AUDI 01",
+              "fmt": "2D",
+              "tag": null,
+              "total": 211,
+              "avail": 119,
+              "filled": 92,
+              "fillRate": 43.6,
+              "status": "Available",
+              "revenue": 30460
+            },
+            {
+              "date": "2026-10-15",
+              "time": "20:50",
+              "audi": "AUDI 01",
+              "fmt": "2D",
+              "tag": null,
+              "total": 194,
+              "avail": 138,
+              "filled": 56,
+              "fillRate": 28.9,
+              "status": "Available",
+              "revenue": 18420
             },
             {
               "date": "2026-10-15",
@@ -2927,11 +2888,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 194,
-              "avail": 179,
-              "filled": 15,
-              "fillRate": 7.7,
+              "avail": 181,
+              "filled": 13,
+              "fillRate": 6.7,
               "status": "Available",
-              "revenue": 4740
+              "revenue": 3660
             },
             {
               "date": "2026-10-16",
@@ -3005,11 +2966,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 194,
-              "avail": 186,
-              "filled": 8,
-              "fillRate": 4.1,
+              "avail": 184,
+              "filled": 10,
+              "fillRate": 5.2,
               "status": "Available",
-              "revenue": 2320
+              "revenue": 2980
             },
             {
               "date": "2026-10-17",
@@ -3044,11 +3005,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 194,
-              "avail": 153,
-              "filled": 41,
-              "fillRate": 21.1,
+              "avail": 151,
+              "filled": 43,
+              "fillRate": 22.2,
               "status": "Available",
-              "revenue": 12340
+              "revenue": 13020
             },
             {
               "date": "2026-10-17",
@@ -3057,11 +3018,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 194,
-              "avail": 159,
-              "filled": 35,
-              "fillRate": 18.0,
+              "avail": 158,
+              "filled": 36,
+              "fillRate": 18.6,
               "status": "Available",
-              "revenue": 11330
+              "revenue": 11630
             },
             {
               "date": "2026-10-17",
@@ -3179,11 +3140,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 310,
-              "avail": 249,
-              "filled": 61,
-              "fillRate": 19.7,
+              "avail": 244,
+              "filled": 66,
+              "fillRate": 21.3,
               "status": "Available",
-              "revenue": 15230
+              "revenue": 16020
             },
             {
               "date": "2026-10-15",
@@ -3192,11 +3153,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 310,
-              "avail": 253,
-              "filled": 57,
-              "fillRate": 18.4,
+              "avail": 250,
+              "filled": 60,
+              "fillRate": 19.4,
               "status": "Available",
-              "revenue": 22270
+              "revenue": 23470
             },
             {
               "date": "2026-10-15",
@@ -3231,11 +3192,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 310,
-              "avail": 239,
-              "filled": 71,
-              "fillRate": 22.9,
+              "avail": 236,
+              "filled": 74,
+              "fillRate": 23.9,
               "status": "Available",
-              "revenue": 26980
+              "revenue": 28180
             },
             {
               "date": "2026-10-15",
@@ -3270,11 +3231,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 310,
-              "avail": 264,
-              "filled": 46,
-              "fillRate": 14.8,
+              "avail": 259,
+              "filled": 51,
+              "fillRate": 16.5,
               "status": "Available",
-              "revenue": 15140
+              "revenue": 16840
             },
             {
               "date": "2026-10-16",
@@ -3361,11 +3322,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 310,
-              "avail": 237,
-              "filled": 73,
-              "fillRate": 23.5,
+              "avail": 235,
+              "filled": 75,
+              "fillRate": 24.2,
               "status": "Available",
-              "revenue": 28210
+              "revenue": 29050
             },
             {
               "date": "2026-10-17",
@@ -3413,11 +3374,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 310,
-              "avail": 278,
-              "filled": 32,
-              "fillRate": 10.3,
+              "avail": 269,
+              "filled": 41,
+              "fillRate": 13.2,
               "status": "Available",
-              "revenue": 7990
+              "revenue": 11020
             },
             {
               "date": "2026-10-18",
@@ -3439,11 +3400,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 310,
-              "avail": 251,
-              "filled": 59,
-              "fillRate": 19.0,
+              "avail": 247,
+              "filled": 63,
+              "fillRate": 20.3,
               "status": "Available",
-              "revenue": 23000
+              "revenue": 24480
             },
             {
               "date": "2026-10-18",
@@ -3496,11 +3457,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 148,
-              "avail": 115,
-              "filled": 33,
-              "fillRate": 22.3,
+              "avail": 110,
+              "filled": 38,
+              "fillRate": 25.7,
               "status": "Available",
-              "revenue": 9680
+              "revenue": 11020
             },
             {
               "date": "2026-10-15",
@@ -3509,11 +3470,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 148,
-              "avail": 101,
-              "filled": 47,
-              "fillRate": 31.8,
+              "avail": 99,
+              "filled": 49,
+              "fillRate": 33.1,
               "status": "Available",
-              "revenue": 13700
+              "revenue": 14260
             },
             {
               "date": "2026-10-15",
@@ -3522,11 +3483,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 148,
-              "avail": 95,
-              "filled": 53,
-              "fillRate": 35.8,
+              "avail": 94,
+              "filled": 54,
+              "fillRate": 36.5,
               "status": "Available",
-              "revenue": 15080
+              "revenue": 15360
             },
             {
               "date": "2026-10-15",
@@ -3574,11 +3535,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 148,
-              "avail": 124,
-              "filled": 24,
-              "fillRate": 16.2,
+              "avail": 122,
+              "filled": 26,
+              "fillRate": 17.6,
               "status": "Available",
-              "revenue": 7100
+              "revenue": 7860
             },
             {
               "date": "2026-10-16",
@@ -3626,11 +3587,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 148,
-              "avail": 138,
-              "filled": 10,
-              "fillRate": 6.8,
+              "avail": 131,
+              "filled": 17,
+              "fillRate": 11.5,
               "status": "Available",
-              "revenue": 3300
+              "revenue": 5260
             },
             {
               "date": "2026-10-17",
@@ -3652,11 +3613,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 148,
-              "avail": 108,
-              "filled": 40,
-              "fillRate": 27.0,
+              "avail": 102,
+              "filled": 46,
+              "fillRate": 31.1,
               "status": "Available",
-              "revenue": 11900
+              "revenue": 13580
             },
             {
               "date": "2026-10-17",
@@ -3761,11 +3722,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 259,
-              "avail": 248,
-              "filled": 11,
-              "fillRate": 4.2,
+              "avail": 247,
+              "filled": 12,
+              "fillRate": 4.6,
               "status": "Available",
-              "revenue": 2640
+              "revenue": 2880
             },
             {
               "date": "2026-10-15",
@@ -3774,11 +3735,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 259,
-              "avail": 247,
-              "filled": 12,
-              "fillRate": 4.6,
+              "avail": 246,
+              "filled": 13,
+              "fillRate": 5.0,
               "status": "Available",
-              "revenue": 2880
+              "revenue": 3120
             },
             {
               "date": "2026-10-16",
@@ -3826,11 +3787,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 259,
-              "avail": 259,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 254,
+              "filled": 5,
+              "fillRate": 1.9,
               "status": "Available",
-              "revenue": 0
+              "revenue": 1200
             },
             {
               "date": "2026-10-18",
@@ -3865,19 +3826,6 @@
           "shows": [
             {
               "date": "2026-10-15",
-              "time": "11:00",
-              "audi": "SCREEN 1",
-              "fmt": "2D",
-              "tag": "2K LASER ATMOS",
-              "total": 453,
-              "avail": 270,
-              "filled": 183,
-              "fillRate": 40.4,
-              "status": "Available",
-              "revenue": 46550
-            },
-            {
-              "date": "2026-10-15",
               "time": "14:00",
               "audi": "SCREEN 1",
               "fmt": "2D",
@@ -3896,11 +3844,11 @@
               "fmt": "2D",
               "tag": "5.1 DSS",
               "total": 101,
-              "avail": 42,
-              "filled": 59,
-              "fillRate": 58.4,
-              "status": "Available",
-              "revenue": 11600
+              "avail": 36,
+              "filled": 65,
+              "fillRate": 64.4,
+              "status": "Filling Fast",
+              "revenue": 12800
             },
             {
               "date": "2026-10-15",
@@ -3909,11 +3857,11 @@
               "fmt": "2D",
               "tag": "2K LASER ATMOS",
               "total": 443,
-              "avail": 393,
-              "filled": 50,
-              "fillRate": 11.3,
+              "avail": 376,
+              "filled": 67,
+              "fillRate": 15.1,
               "status": "Available",
-              "revenue": 11950
+              "revenue": 15350
             },
             {
               "date": "2026-10-15",
@@ -3922,11 +3870,11 @@
               "fmt": "2D",
               "tag": "5.1 DSS",
               "total": 96,
-              "avail": 59,
-              "filled": 37,
-              "fillRate": 38.5,
+              "avail": 60,
+              "filled": 36,
+              "fillRate": 37.5,
               "status": "Available",
-              "revenue": 7300
+              "revenue": 6950
             },
             {
               "date": "2026-10-15",
@@ -4026,11 +3974,11 @@
               "fmt": "2D",
               "tag": "2K LASER ATMOS",
               "total": 443,
-              "avail": 409,
-              "filled": 34,
-              "fillRate": 7.7,
+              "avail": 402,
+              "filled": 41,
+              "fillRate": 9.3,
               "status": "Available",
-              "revenue": 7850
+              "revenue": 9600
             },
             {
               "date": "2026-10-17",
@@ -4161,11 +4109,11 @@
               "fmt": "2D",
               "tag": "2K",
               "total": 136,
-              "avail": 52,
-              "filled": 84,
-              "fillRate": 61.8,
+              "avail": 30,
+              "filled": 106,
+              "fillRate": 77.9,
               "status": "Filling Fast",
-              "revenue": 22550
+              "revenue": 28030
             },
             {
               "date": "2026-10-15",
@@ -4174,11 +4122,11 @@
               "fmt": "2D",
               "tag": "SVF MUSE",
               "total": 61,
-              "avail": 29,
-              "filled": 32,
-              "fillRate": 52.5,
+              "avail": 27,
+              "filled": 34,
+              "fillRate": 55.7,
               "status": "Available",
-              "revenue": 11950
+              "revenue": 12650
             },
             {
               "date": "2026-10-15",
@@ -4187,11 +4135,11 @@
               "fmt": "2D",
               "tag": "2K",
               "total": 136,
-              "avail": 46,
-              "filled": 90,
-              "fillRate": 66.2,
+              "avail": 39,
+              "filled": 97,
+              "fillRate": 71.3,
               "status": "Filling Fast",
-              "revenue": 25990
+              "revenue": 27880
             },
             {
               "date": "2026-10-15",
@@ -4200,11 +4148,11 @@
               "fmt": "2D",
               "tag": "2K",
               "total": 136,
-              "avail": 47,
-              "filled": 89,
-              "fillRate": 65.4,
+              "avail": 34,
+              "filled": 102,
+              "fillRate": 75.0,
               "status": "Filling Fast",
-              "revenue": 25850
+              "revenue": 29320
             },
             {
               "date": "2026-10-15",
@@ -4213,11 +4161,11 @@
               "fmt": "2D",
               "tag": "2K",
               "total": 136,
-              "avail": 106,
-              "filled": 30,
-              "fillRate": 22.1,
+              "avail": 79,
+              "filled": 57,
+              "fillRate": 41.9,
               "status": "Available",
-              "revenue": 9400
+              "revenue": 16630
             },
             {
               "date": "2026-10-16",
@@ -4426,11 +4374,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 318,
-              "avail": 193,
-              "filled": 125,
-              "fillRate": 39.3,
+              "avail": 208,
+              "filled": 110,
+              "fillRate": 34.6,
               "status": "Available",
-              "revenue": 35830
+              "revenue": 31470
             },
             {
               "date": "2026-10-15",
@@ -4478,11 +4426,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 318,
-              "avail": 120,
-              "filled": 198,
-              "fillRate": 62.3,
+              "avail": 111,
+              "filled": 207,
+              "fillRate": 65.1,
               "status": "Filling Fast",
-              "revenue": 71240
+              "revenue": 74300
             },
             {
               "date": "2026-10-15",
@@ -4569,11 +4517,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 318,
-              "avail": 149,
-              "filled": 169,
-              "fillRate": 53.1,
+              "avail": 142,
+              "filled": 176,
+              "fillRate": 55.3,
               "status": "Available",
-              "revenue": 59390
+              "revenue": 61720
             },
             {
               "date": "2026-10-16",
@@ -4620,12 +4568,12 @@
               "audi": "AUDI 01",
               "fmt": "2D",
               "tag": null,
-              "total": 273,
-              "avail": 210,
-              "filled": 63,
-              "fillRate": 23.1,
+              "total": 318,
+              "avail": 213,
+              "filled": 105,
+              "fillRate": 33.0,
               "status": "Available",
-              "revenue": 17810
+              "revenue": 28860
             },
             {
               "date": "2026-10-17",
@@ -4673,11 +4621,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 273,
-              "avail": 251,
-              "filled": 22,
-              "fillRate": 8.1,
+              "avail": 248,
+              "filled": 25,
+              "fillRate": 9.2,
               "status": "Available",
-              "revenue": 8450
+              "revenue": 9500
             },
             {
               "date": "2026-10-17",
@@ -4712,11 +4660,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 318,
-              "avail": 238,
-              "filled": 80,
-              "fillRate": 25.2,
+              "avail": 220,
+              "filled": 98,
+              "fillRate": 30.8,
               "status": "Available",
-              "revenue": 24410
+              "revenue": 29400
             },
             {
               "date": "2026-10-18",
@@ -4725,11 +4673,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 318,
-              "avail": 267,
-              "filled": 51,
-              "fillRate": 16.0,
+              "avail": 265,
+              "filled": 53,
+              "fillRate": 16.7,
               "status": "Available",
-              "revenue": 18950
+              "revenue": 19750
             },
             {
               "date": "2026-10-18",
@@ -4790,19 +4738,6 @@
           "shows": [
             {
               "date": "2026-10-15",
-              "time": "10:20",
-              "audi": "SCREEN 4",
-              "fmt": "2D",
-              "tag": "RECLINERS",
-              "total": 191,
-              "avail": 167,
-              "filled": 24,
-              "fillRate": 12.6,
-              "status": "Available",
-              "revenue": 6000
-            },
-            {
-              "date": "2026-10-15",
               "time": "12:55",
               "audi": "SCREEN 4",
               "fmt": "2D",
@@ -4821,11 +4756,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 191,
-              "avail": 169,
-              "filled": 22,
-              "fillRate": 11.5,
+              "avail": 168,
+              "filled": 23,
+              "fillRate": 12.0,
               "status": "Available",
-              "revenue": 7780
+              "revenue": 8060
             },
             {
               "date": "2026-10-15",
@@ -4834,11 +4769,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 191,
-              "avail": 170,
-              "filled": 21,
-              "fillRate": 11.0,
+              "avail": 169,
+              "filled": 22,
+              "fillRate": 11.5,
               "status": "Available",
-              "revenue": 6960
+              "revenue": 7240
             },
             {
               "date": "2026-10-15",
@@ -4847,11 +4782,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 191,
-              "avail": 164,
-              "filled": 27,
-              "fillRate": 14.1,
+              "avail": 162,
+              "filled": 29,
+              "fillRate": 15.2,
               "status": "Available",
-              "revenue": 12150
+              "revenue": 12710
             },
             {
               "date": "2026-10-15",
@@ -5138,11 +5073,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 225,
-              "avail": 211,
-              "filled": 14,
-              "fillRate": 6.2,
+              "avail": 206,
+              "filled": 19,
+              "fillRate": 8.4,
               "status": "Available",
-              "revenue": 4480
+              "revenue": 6040
             },
             {
               "date": "2026-10-15",
@@ -5255,11 +5190,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 338,
-              "avail": 319,
-              "filled": 19,
-              "fillRate": 5.6,
+              "avail": 313,
+              "filled": 25,
+              "fillRate": 7.4,
               "status": "Available",
-              "revenue": 6000
+              "revenue": 7800
             },
             {
               "date": "2026-10-17",
@@ -5320,11 +5255,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 338,
-              "avail": 309,
-              "filled": 29,
-              "fillRate": 8.6,
+              "avail": 306,
+              "filled": 32,
+              "fillRate": 9.5,
               "status": "Available",
-              "revenue": 9130
+              "revenue": 10060
             },
             {
               "date": "2026-10-18",
@@ -5333,11 +5268,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 225,
-              "avail": 225,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 220,
+              "filled": 5,
+              "fillRate": 2.2,
               "status": "Available",
-              "revenue": 0
+              "revenue": 1550
             },
             {
               "date": "2026-10-18",
@@ -5364,11 +5299,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 347,
-              "avail": 269,
-              "filled": 78,
-              "fillRate": 22.5,
+              "avail": 279,
+              "filled": 68,
+              "fillRate": 19.6,
               "status": "Available",
-              "revenue": 22150
+              "revenue": 19250
             },
             {
               "date": "2026-10-15",
@@ -5377,11 +5312,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 291,
-              "avail": 261,
-              "filled": 30,
-              "fillRate": 10.3,
+              "avail": 260,
+              "filled": 31,
+              "fillRate": 10.7,
               "status": "Available",
-              "revenue": 10020
+              "revenue": 10330
             },
             {
               "date": "2026-10-15",
@@ -5416,11 +5351,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 291,
-              "avail": 256,
-              "filled": 35,
-              "fillRate": 12.0,
+              "avail": 251,
+              "filled": 40,
+              "fillRate": 13.7,
               "status": "Available",
-              "revenue": 14180
+              "revenue": 15780
             },
             {
               "date": "2026-10-15",
@@ -5468,11 +5403,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 291,
-              "avail": 240,
-              "filled": 51,
-              "fillRate": 17.5,
+              "avail": 238,
+              "filled": 53,
+              "fillRate": 18.2,
               "status": "Available",
-              "revenue": 19100
+              "revenue": 20820
             },
             {
               "date": "2026-10-16",
@@ -5494,11 +5429,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 291,
-              "avail": 263,
-              "filled": 28,
-              "fillRate": 9.6,
+              "avail": 262,
+              "filled": 29,
+              "fillRate": 10.0,
               "status": "Available",
-              "revenue": 9900
+              "revenue": 10220
             },
             {
               "date": "2026-10-16",
@@ -5533,11 +5468,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 291,
-              "avail": 270,
-              "filled": 21,
-              "fillRate": 7.2,
+              "avail": 268,
+              "filled": 23,
+              "fillRate": 7.9,
               "status": "Available",
-              "revenue": 8020
+              "revenue": 8660
             },
             {
               "date": "2026-10-17",
@@ -5546,11 +5481,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 347,
-              "avail": 255,
-              "filled": 92,
-              "fillRate": 26.5,
+              "avail": 231,
+              "filled": 116,
+              "fillRate": 33.4,
               "status": "Available",
-              "revenue": 35820
+              "revenue": 44460
             },
             {
               "date": "2026-10-17",
@@ -5598,11 +5533,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 291,
-              "avail": 286,
-              "filled": 5,
-              "fillRate": 1.7,
+              "avail": 283,
+              "filled": 8,
+              "fillRate": 2.7,
               "status": "Available",
-              "revenue": 1530
+              "revenue": 2790
             },
             {
               "date": "2026-10-18",
@@ -5611,11 +5546,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 291,
-              "avail": 279,
-              "filled": 12,
-              "fillRate": 4.1,
+              "avail": 276,
+              "filled": 15,
+              "fillRate": 5.2,
               "status": "Available",
-              "revenue": 3840
+              "revenue": 4770
             },
             {
               "date": "2026-10-18",
@@ -5680,8 +5615,8 @@
               "audi": "SCREEN 1",
               "fmt": "2D",
               "tag": "DOLBY 5.1 ",
-              "total": 76,
-              "avail": 76,
+              "total": 69,
+              "avail": 69,
               "filled": 0,
               "fillRate": 0.0,
               "status": "Available",
@@ -5706,8 +5641,8 @@
               "audi": "SCREEN 1",
               "fmt": "2D",
               "tag": "DOLBY 5.1 ",
-              "total": 75,
-              "avail": 75,
+              "total": 73,
+              "avail": 73,
               "filled": 0,
               "fillRate": 0.0,
               "status": "Available",
@@ -5719,8 +5654,8 @@
               "audi": "SCREEN 1",
               "fmt": "2D",
               "tag": "DOLBY 5.1 ",
-              "total": 97,
-              "avail": 97,
+              "total": 94,
+              "avail": 94,
               "filled": 0,
               "fillRate": 0.0,
               "status": "Available",
@@ -5732,8 +5667,8 @@
               "audi": "SCREEN 3",
               "fmt": "2D",
               "tag": "DOLBY ATMOS",
-              "total": 105,
-              "avail": 105,
+              "total": 102,
+              "avail": 102,
               "filled": 0,
               "fillRate": 0.0,
               "status": "Available",
@@ -5745,8 +5680,8 @@
               "audi": "SCREEN 3",
               "fmt": "2D",
               "tag": "DOLBY ATMOS",
-              "total": 97,
-              "avail": 97,
+              "total": 90,
+              "avail": 90,
               "filled": 0,
               "fillRate": 0.0,
               "status": "Available",
@@ -5771,8 +5706,8 @@
               "audi": "SCREEN 1",
               "fmt": "2D",
               "tag": "DOLBY 5.1 ",
-              "total": 93,
-              "avail": 93,
+              "total": 90,
+              "avail": 90,
               "filled": 0,
               "fillRate": 0.0,
               "status": "Available",
@@ -5797,8 +5732,8 @@
               "audi": "SCREEN 3",
               "fmt": "2D",
               "tag": "DOLBY ATMOS",
-              "total": 98,
-              "avail": 98,
+              "total": 96,
+              "avail": 96,
               "filled": 0,
               "fillRate": 0.0,
               "status": "Available",
@@ -5810,8 +5745,8 @@
               "audi": "SCREEN 3",
               "fmt": "2D",
               "tag": "DOLBY ATMOS",
-              "total": 76,
-              "avail": 76,
+              "total": 72,
+              "avail": 72,
               "filled": 0,
               "fillRate": 0.0,
               "status": "Available",
@@ -5920,11 +5855,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 243,
-              "avail": 90,
-              "filled": 153,
-              "fillRate": 63.0,
+              "avail": 83,
+              "filled": 160,
+              "fillRate": 65.8,
               "status": "Filling Fast",
-              "revenue": 46440
+              "revenue": 49560
             },
             {
               "date": "2026-10-15",
@@ -5972,11 +5907,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 178,
-              "avail": 175,
-              "filled": 3,
-              "fillRate": 1.7,
+              "avail": 173,
+              "filled": 5,
+              "fillRate": 2.8,
               "status": "Available",
-              "revenue": 660
+              "revenue": 1100
             },
             {
               "date": "2026-10-16",
@@ -6037,11 +5972,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 204,
-              "avail": 197,
-              "filled": 7,
-              "fillRate": 3.4,
+              "avail": 194,
+              "filled": 10,
+              "fillRate": 4.9,
               "status": "Available",
-              "revenue": 1920
+              "revenue": 2760
             },
             {
               "date": "2026-10-16",
@@ -6076,11 +6011,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 204,
-              "avail": 179,
-              "filled": 25,
-              "fillRate": 12.3,
+              "avail": 176,
+              "filled": 28,
+              "fillRate": 13.7,
               "status": "Available",
-              "revenue": 5720
+              "revenue": 6380
             },
             {
               "date": "2026-10-17",
@@ -6089,11 +6024,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 204,
-              "avail": 180,
-              "filled": 24,
-              "fillRate": 11.8,
+              "avail": 177,
+              "filled": 27,
+              "fillRate": 13.2,
               "status": "Available",
-              "revenue": 6420
+              "revenue": 7260
             },
             {
               "date": "2026-10-17",
@@ -6180,11 +6115,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 204,
-              "avail": 190,
-              "filled": 14,
-              "fillRate": 6.9,
+              "avail": 187,
+              "filled": 17,
+              "fillRate": 8.3,
               "status": "Available",
-              "revenue": 3800
+              "revenue": 4640
             },
             {
               "date": "2026-10-18",
@@ -6193,11 +6128,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 204,
-              "avail": 164,
-              "filled": 40,
-              "fillRate": 19.6,
+              "avail": 162,
+              "filled": 42,
+              "fillRate": 20.6,
               "status": "Available",
-              "revenue": 11480
+              "revenue": 12080
             },
             {
               "date": "2026-10-18",
@@ -6206,11 +6141,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 204,
-              "avail": 171,
-              "filled": 33,
-              "fillRate": 16.2,
+              "avail": 168,
+              "filled": 36,
+              "fillRate": 17.6,
               "status": "Available",
-              "revenue": 9200
+              "revenue": 10040
             },
             {
               "date": "2026-10-18",
@@ -6245,29 +6180,16 @@
           "shows": [
             {
               "date": "2026-10-15",
-              "time": "11:00",
-              "audi": "SCREEN 1",
-              "fmt": "2D",
-              "tag": "DOLBY 7.1.2",
-              "total": 201,
-              "avail": 1,
-              "filled": 200,
-              "fillRate": 99.5,
-              "status": "Almost Full",
-              "revenue": 50000
-            },
-            {
-              "date": "2026-10-15",
               "time": "13:20",
               "audi": "SCREEN 1",
               "fmt": "2D",
               "tag": "DOLBY 7.1.2",
               "total": 201,
-              "avail": 154,
-              "filled": 47,
-              "fillRate": 23.4,
+              "avail": 150,
+              "filled": 51,
+              "fillRate": 25.4,
               "status": "Available",
-              "revenue": 14050
+              "revenue": 14850
             },
             {
               "date": "2026-10-15",
@@ -6367,11 +6289,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1.2",
               "total": 276,
-              "avail": 243,
-              "filled": 33,
-              "fillRate": 12.0,
+              "avail": 239,
+              "filled": 37,
+              "fillRate": 13.4,
               "status": "Available",
-              "revenue": 10400
+              "revenue": 11400
             },
             {
               "date": "2026-10-16",
@@ -6567,11 +6489,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 150,
-              "avail": 119,
-              "filled": 31,
-              "fillRate": 20.7,
+              "avail": 87,
+              "filled": 63,
+              "fillRate": 42.0,
               "status": "Available",
-              "revenue": 6060
+              "revenue": 12950
             },
             {
               "date": "2026-10-15",
@@ -6580,11 +6502,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 150,
-              "avail": 139,
-              "filled": 11,
-              "fillRate": 7.3,
+              "avail": 136,
+              "filled": 14,
+              "fillRate": 9.3,
               "status": "Available",
-              "revenue": 2460
+              "revenue": 3120
             },
             {
               "date": "2026-10-15",
@@ -6593,11 +6515,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 150,
-              "avail": 108,
-              "filled": 42,
-              "fillRate": 28.0,
+              "avail": 102,
+              "filled": 48,
+              "fillRate": 32.0,
               "status": "Available",
-              "revenue": 9780
+              "revenue": 11340
             },
             {
               "date": "2026-10-15",
@@ -7066,11 +6988,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 135,
-              "avail": 125,
-              "filled": 10,
-              "fillRate": 7.4,
+              "avail": 121,
+              "filled": 14,
+              "fillRate": 10.4,
               "status": "Available",
-              "revenue": 2900
+              "revenue": 3900
             }
           ]
         },
@@ -7084,11 +7006,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 180,
-              "avail": 170,
-              "filled": 10,
-              "fillRate": 5.6,
+              "avail": 167,
+              "filled": 13,
+              "fillRate": 7.2,
               "status": "Available",
-              "revenue": 3500
+              "revenue": 3710
             },
             {
               "date": "2026-10-15",
@@ -7097,11 +7019,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 180,
-              "avail": 158,
-              "filled": 22,
-              "fillRate": 12.2,
+              "avail": 149,
+              "filled": 31,
+              "fillRate": 17.2,
               "status": "Available",
-              "revenue": 6060
+              "revenue": 8620
             },
             {
               "date": "2026-10-15",
@@ -7270,12 +7192,12 @@
               "audi": "SCREEN 1",
               "fmt": "2D",
               "tag": null,
-              "total": 343,
-              "avail": 343,
-              "filled": 0,
-              "fillRate": 0.0,
+              "total": 370,
+              "avail": 337,
+              "filled": 33,
+              "fillRate": 8.9,
               "status": "Available",
-              "revenue": 0
+              "revenue": 8940
             },
             {
               "date": "2026-10-17",
@@ -7297,11 +7219,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 217,
-              "avail": 217,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 215,
+              "filled": 2,
+              "fillRate": 0.9,
               "status": "Available",
-              "revenue": 0
+              "revenue": 640
             },
             {
               "date": "2026-10-17",
@@ -7360,19 +7282,6 @@
         {
           "name": "INOX Vega Circle Mall, Sevoke Road, Siliguri",
           "shows": [
-            {
-              "date": "2026-10-15",
-              "time": "10:00",
-              "audi": "SCREEN 3",
-              "fmt": "2D",
-              "tag": null,
-              "total": 250,
-              "avail": 243,
-              "filled": 7,
-              "fillRate": 2.8,
-              "status": "Available",
-              "revenue": 1560
-            },
             {
               "date": "2026-10-15",
               "time": "15:25",
@@ -7528,11 +7437,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1.2 ",
               "total": 271,
-              "avail": 232,
-              "filled": 39,
-              "fillRate": 14.4,
+              "avail": 240,
+              "filled": 31,
+              "fillRate": 11.4,
               "status": "Available",
-              "revenue": 12900
+              "revenue": 9900
             },
             {
               "date": "2026-10-15",
@@ -7567,11 +7476,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1.2 ",
               "total": 271,
-              "avail": 230,
-              "filled": 41,
-              "fillRate": 15.1,
+              "avail": 226,
+              "filled": 45,
+              "fillRate": 16.6,
               "status": "Available",
-              "revenue": 13000
+              "revenue": 14200
             },
             {
               "date": "2026-10-16",
@@ -7723,30 +7632,17 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1.2 ",
               "total": 271,
-              "avail": 250,
-              "filled": 21,
-              "fillRate": 7.7,
+              "avail": 246,
+              "filled": 25,
+              "fillRate": 9.2,
               "status": "Available",
-              "revenue": 6500
+              "revenue": 7700
             }
           ]
         },
         {
           "name": "SVF Cinemas : Raj Sammilonee Mall, Durgapur",
           "shows": [
-            {
-              "date": "2026-10-15",
-              "time": "11:00",
-              "audi": "SCREEN 2",
-              "fmt": "2D",
-              "tag": "5.1 DSS",
-              "total": 137,
-              "avail": 118,
-              "filled": 19,
-              "fillRate": 13.9,
-              "status": "Available",
-              "revenue": 4700
-            },
             {
               "date": "2026-10-15",
               "time": "13:15",
@@ -7845,11 +7741,11 @@
               "fmt": "2D",
               "tag": "2K",
               "total": 163,
-              "avail": 147,
-              "filled": 16,
-              "fillRate": 9.8,
+              "avail": 144,
+              "filled": 19,
+              "fillRate": 11.7,
               "status": "Available",
-              "revenue": 4100
+              "revenue": 4700
             },
             {
               "date": "2026-10-17",
@@ -7928,11 +7824,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1 ",
               "total": 194,
-              "avail": 184,
-              "filled": 10,
-              "fillRate": 5.2,
+              "avail": 179,
+              "filled": 15,
+              "fillRate": 7.7,
               "status": "Available",
-              "revenue": 3000
+              "revenue": 4450
             },
             {
               "date": "2026-10-17",
@@ -7998,11 +7894,11 @@
               "fmt": "2D",
               "tag": "BARCO DOLBY 7.1.2",
               "total": 212,
-              "avail": 197,
-              "filled": 15,
-              "fillRate": 7.1,
+              "avail": 195,
+              "filled": 17,
+              "fillRate": 8.0,
               "status": "Available",
-              "revenue": 5200
+              "revenue": 6000
             },
             {
               "date": "2026-10-16",
@@ -8120,11 +8016,11 @@
               "fmt": "2D",
               "tag": "2K 7.1 DOLBY",
               "total": 211,
-              "avail": 168,
-              "filled": 43,
-              "fillRate": 20.4,
+              "avail": 166,
+              "filled": 45,
+              "fillRate": 21.3,
               "status": "Available",
-              "revenue": 10750
+              "revenue": 11250
             },
             {
               "date": "2026-10-15",
@@ -8146,11 +8042,24 @@
               "fmt": "2D",
               "tag": "2K 7.1 DOLBY",
               "total": 211,
-              "avail": 171,
-              "filled": 40,
-              "fillRate": 19.0,
+              "avail": 170,
+              "filled": 41,
+              "fillRate": 19.4,
               "status": "Available",
-              "revenue": 10900
+              "revenue": 11150
+            },
+            {
+              "date": "2026-10-15",
+              "time": "19:45",
+              "audi": "AUDI 1",
+              "fmt": "2D",
+              "tag": "2K 7.1 DOLBY",
+              "total": 223,
+              "avail": 202,
+              "filled": 21,
+              "fillRate": 9.4,
+              "status": "Available",
+              "revenue": 5400
             },
             {
               "date": "2026-10-16",
@@ -8185,11 +8094,11 @@
               "fmt": "2D",
               "tag": "5.1 DSS",
               "total": 168,
-              "avail": 156,
-              "filled": 12,
-              "fillRate": 7.1,
+              "avail": 153,
+              "filled": 15,
+              "fillRate": 8.9,
               "status": "Available",
-              "revenue": 3300
+              "revenue": 4350
             },
             {
               "date": "2026-10-17",
@@ -8281,11 +8190,11 @@
               "fmt": "2D",
               "tag": "5.1 DSS",
               "total": 146,
-              "avail": 125,
-              "filled": 21,
-              "fillRate": 14.4,
+              "avail": 127,
+              "filled": 19,
+              "fillRate": 13.0,
               "status": "Available",
-              "revenue": 4750
+              "revenue": 4350
             },
             {
               "date": "2026-10-15",
@@ -8307,11 +8216,11 @@
               "fmt": "2D",
               "tag": "2K",
               "total": 171,
-              "avail": 149,
-              "filled": 22,
-              "fillRate": 12.9,
+              "avail": 144,
+              "filled": 27,
+              "fillRate": 15.8,
               "status": "Available",
-              "revenue": 6050
+              "revenue": 7050
             },
             {
               "date": "2026-10-16",
@@ -8442,11 +8351,11 @@
               "fmt": "2D",
               "tag": "2K",
               "total": 149,
-              "avail": 128,
-              "filled": 21,
-              "fillRate": 14.1,
+              "avail": 126,
+              "filled": 23,
+              "fillRate": 15.4,
               "status": "Available",
-              "revenue": 6250
+              "revenue": 6850
             },
             {
               "date": "2026-10-15",
@@ -8520,11 +8429,11 @@
               "fmt": "2D",
               "tag": "2K",
               "total": 149,
-              "avail": 137,
-              "filled": 12,
-              "fillRate": 8.1,
+              "avail": 139,
+              "filled": 10,
+              "fillRate": 6.7,
               "status": "Available",
-              "revenue": 4000
+              "revenue": 3500
             },
             {
               "date": "2026-10-18",
@@ -8564,11 +8473,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 285,
-              "avail": 239,
-              "filled": 46,
-              "fillRate": 16.1,
+              "avail": 218,
+              "filled": 67,
+              "fillRate": 23.5,
               "status": "Available",
-              "revenue": 12900
+              "revenue": 18750
             },
             {
               "date": "2026-10-16",
@@ -8577,11 +8486,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 285,
-              "avail": 261,
-              "filled": 24,
-              "fillRate": 8.4,
+              "avail": 263,
+              "filled": 22,
+              "fillRate": 7.7,
               "status": "Available",
-              "revenue": 6700
+              "revenue": 6000
             },
             {
               "date": "2026-10-16",
@@ -8629,11 +8538,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 285,
-              "avail": 268,
-              "filled": 17,
-              "fillRate": 6.0,
+              "avail": 264,
+              "filled": 21,
+              "fillRate": 7.4,
               "status": "Available",
-              "revenue": 4850
+              "revenue": 5850
             },
             {
               "date": "2026-10-18",
@@ -8712,11 +8621,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 143,
-              "avail": 132,
-              "filled": 11,
-              "fillRate": 7.7,
+              "avail": 128,
+              "filled": 15,
+              "fillRate": 10.5,
               "status": "Available",
-              "revenue": 3150
+              "revenue": 4150
             },
             {
               "date": "2026-10-16",
@@ -9030,11 +8939,11 @@
               "fmt": "2D",
               "tag": "LASER",
               "total": 170,
-              "avail": 170,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 168,
+              "filled": 2,
+              "fillRate": 1.2,
               "status": "Available",
-              "revenue": 0
+              "revenue": 800
             }
           ]
         },
@@ -9274,11 +9183,11 @@
               "fmt": "2D",
               "tag": "QSC 7.1",
               "total": 171,
-              "avail": 158,
-              "filled": 13,
-              "fillRate": 7.6,
+              "avail": 155,
+              "filled": 16,
+              "fillRate": 9.4,
               "status": "Available",
-              "revenue": 4160
+              "revenue": 5120
             },
             {
               "date": "2026-10-17",
@@ -9351,11 +9260,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 177,
-              "avail": 162,
-              "filled": 15,
-              "fillRate": 8.5,
+              "avail": 159,
+              "filled": 18,
+              "fillRate": 10.2,
               "status": "Available",
-              "revenue": 5300
+              "revenue": 6440
             },
             {
               "date": "2026-10-17",
@@ -9486,11 +9395,11 @@
               "fmt": "2D",
               "tag": "ONYX DINER",
               "total": 167,
-              "avail": 164,
-              "filled": 3,
-              "fillRate": 1.8,
+              "avail": 162,
+              "filled": 5,
+              "fillRate": 3.0,
               "status": "Available",
-              "revenue": 1290
+              "revenue": 2150
             },
             {
               "date": "2026-10-17",
@@ -9531,11 +9440,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 198,
-              "avail": 195,
-              "filled": 3,
-              "fillRate": 1.5,
+              "avail": 193,
+              "filled": 5,
+              "fillRate": 2.5,
               "status": "Available",
-              "revenue": 1050
+              "revenue": 1850
             },
             {
               "date": "2026-10-17",
@@ -9602,11 +9511,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 206,
-              "avail": 200,
-              "filled": 6,
-              "fillRate": 2.9,
+              "avail": 198,
+              "filled": 8,
+              "fillRate": 3.9,
               "status": "Available",
-              "revenue": 1920
+              "revenue": 2560
             }
           ]
         }
@@ -9625,7 +9534,7 @@
         "2026-10-21",
         "2026-10-22"
       ],
-      "scrapedAt": "2026-10-15T10:49:10+05:30",
+      "scrapedAt": "2026-10-15T11:45:55+05:30",
       "cinemas": [
         {
           "name": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
@@ -9663,11 +9572,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 245,
-              "avail": 136,
-              "filled": 109,
-              "fillRate": 44.5,
+              "avail": 131,
+              "filled": 114,
+              "fillRate": 46.5,
               "status": "Available",
-              "revenue": 43400
+              "revenue": 45340
             },
             {
               "date": "2026-10-16",
@@ -9689,11 +9598,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 245,
-              "avail": 214,
-              "filled": 31,
-              "fillRate": 12.7,
+              "avail": 217,
+              "filled": 28,
+              "fillRate": 11.4,
               "status": "Available",
-              "revenue": 11120
+              "revenue": 10040
             },
             {
               "date": "2026-10-17",
@@ -9780,11 +9689,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 245,
-              "avail": 235,
-              "filled": 10,
-              "fillRate": 4.1,
+              "avail": 232,
+              "filled": 13,
+              "fillRate": 5.3,
               "status": "Available",
-              "revenue": 3080
+              "revenue": 4040
             },
             {
               "date": "2026-10-18",
@@ -10385,11 +10294,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 284,
-              "avail": 264,
-              "filled": 20,
-              "fillRate": 7.0,
+              "avail": 261,
+              "filled": 23,
+              "fillRate": 8.1,
               "status": "Available",
-              "revenue": 9880
+              "revenue": 11020
             },
             {
               "date": "2026-10-18",
@@ -10450,11 +10359,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 284,
-              "avail": 267,
-              "filled": 17,
-              "fillRate": 6.0,
+              "avail": 265,
+              "filled": 19,
+              "fillRate": 6.7,
               "status": "Available",
-              "revenue": 7640
+              "revenue": 8400
             },
             {
               "date": "2026-10-19",
@@ -10642,11 +10551,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 271,
-              "avail": 238,
-              "filled": 33,
-              "fillRate": 12.2,
+              "avail": 236,
+              "filled": 35,
+              "fillRate": 12.9,
               "status": "Available",
-              "revenue": 10470
+              "revenue": 11090
             },
             {
               "date": "2026-10-16",
@@ -11039,11 +10948,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 166,
-              "avail": 160,
-              "filled": 6,
-              "fillRate": 3.6,
+              "avail": 158,
+              "filled": 8,
+              "fillRate": 4.8,
               "status": "Available",
-              "revenue": 1500
+              "revenue": 2000
             },
             {
               "date": "2026-10-16",
@@ -11052,11 +10961,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 190,
-              "avail": 184,
-              "filled": 6,
-              "fillRate": 3.2,
+              "avail": 181,
+              "filled": 9,
+              "fillRate": 4.7,
               "status": "Available",
-              "revenue": 1500
+              "revenue": 2250
             },
             {
               "date": "2026-10-16",
@@ -11187,11 +11096,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 359,
-              "avail": 275,
-              "filled": 84,
-              "fillRate": 23.4,
+              "avail": 267,
+              "filled": 92,
+              "fillRate": 25.6,
               "status": "Available",
-              "revenue": 14210
+              "revenue": 15650
             },
             {
               "date": "2026-10-16",
@@ -11200,11 +11109,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 359,
-              "avail": 283,
-              "filled": 76,
-              "fillRate": 21.2,
+              "avail": 281,
+              "filled": 78,
+              "fillRate": 21.7,
               "status": "Available",
-              "revenue": 19800
+              "revenue": 21000
             },
             {
               "date": "2026-10-16",
@@ -11252,11 +11161,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 359,
-              "avail": 303,
-              "filled": 56,
-              "fillRate": 15.6,
+              "avail": 301,
+              "filled": 58,
+              "fillRate": 16.2,
               "status": "Available",
-              "revenue": 10820
+              "revenue": 11240
             },
             {
               "date": "2026-10-17",
@@ -11343,11 +11252,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 359,
-              "avail": 293,
-              "filled": 66,
-              "fillRate": 18.4,
+              "avail": 290,
+              "filled": 69,
+              "fillRate": 19.2,
               "status": "Available",
-              "revenue": 18840
+              "revenue": 19680
             },
             {
               "date": "2026-10-18",
@@ -11387,11 +11296,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 225,
-              "avail": 222,
-              "filled": 3,
-              "fillRate": 1.3,
+              "avail": 220,
+              "filled": 5,
+              "fillRate": 2.2,
               "status": "Available",
-              "revenue": 660
+              "revenue": 1100
             },
             {
               "date": "2026-10-16",
@@ -11478,11 +11387,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 225,
-              "avail": 221,
-              "filled": 4,
-              "fillRate": 1.8,
+              "avail": 214,
+              "filled": 11,
+              "fillRate": 4.9,
               "status": "Available",
-              "revenue": 1360
+              "revenue": 3740
             },
             {
               "date": "2026-10-18",
@@ -11587,11 +11496,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 149,
-              "avail": 125,
-              "filled": 24,
-              "fillRate": 16.1,
+              "avail": 123,
+              "filled": 26,
+              "fillRate": 17.4,
               "status": "Available",
-              "revenue": 7180
+              "revenue": 7740
             },
             {
               "date": "2026-10-17",
@@ -11665,11 +11574,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 149,
-              "avail": 115,
-              "filled": 34,
-              "fillRate": 22.8,
+              "avail": 117,
+              "filled": 32,
+              "fillRate": 21.5,
               "status": "Available",
-              "revenue": 9920
+              "revenue": 9360
             },
             {
               "date": "2026-10-18",
@@ -11792,11 +11701,11 @@
               "fmt": "2D",
               "tag": "2K LASER ATMOS",
               "total": 443,
-              "avail": 417,
-              "filled": 26,
-              "fillRate": 5.9,
+              "avail": 410,
+              "filled": 33,
+              "fillRate": 7.4,
               "status": "Available",
-              "revenue": 5950
+              "revenue": 7650
             },
             {
               "date": "2026-10-16",
@@ -11935,11 +11844,11 @@
               "fmt": "2D",
               "tag": "5.1 DSS",
               "total": 96,
-              "avail": 84,
-              "filled": 12,
-              "fillRate": 12.5,
+              "avail": 82,
+              "filled": 14,
+              "fillRate": 14.6,
               "status": "Available",
-              "revenue": 2400
+              "revenue": 2700
             }
           ]
         },
@@ -12205,11 +12114,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 233,
-              "avail": 170,
-              "filled": 63,
-              "fillRate": 27.0,
+              "avail": 161,
+              "filled": 72,
+              "fillRate": 30.9,
               "status": "Available",
-              "revenue": 20660
+              "revenue": 23730
             },
             {
               "date": "2026-10-17",
@@ -12327,11 +12236,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 156,
-              "avail": 152,
-              "filled": 4,
-              "fillRate": 2.6,
+              "avail": 144,
+              "filled": 12,
+              "fillRate": 7.7,
               "status": "Available",
-              "revenue": 1120
+              "revenue": 3360
             },
             {
               "date": "2026-10-16",
@@ -12340,11 +12249,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 156,
-              "avail": 148,
-              "filled": 8,
-              "fillRate": 5.1,
+              "avail": 144,
+              "filled": 12,
+              "fillRate": 7.7,
               "status": "Available",
-              "revenue": 2240
+              "revenue": 3360
             },
             {
               "date": "2026-10-16",
@@ -12475,11 +12384,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 225,
-              "avail": 212,
-              "filled": 13,
-              "fillRate": 5.8,
+              "avail": 211,
+              "filled": 14,
+              "fillRate": 6.2,
               "status": "Available",
-              "revenue": 2660
+              "revenue": 2870
             },
             {
               "date": "2026-10-16",
@@ -12540,11 +12449,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 227,
-              "avail": 215,
-              "filled": 12,
-              "fillRate": 5.3,
+              "avail": 213,
+              "filled": 14,
+              "fillRate": 6.2,
               "status": "Available",
-              "revenue": 3240
+              "revenue": 3800
             },
             {
               "date": "2026-10-17",
@@ -12553,11 +12462,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 225,
-              "avail": 216,
-              "filled": 9,
-              "fillRate": 4.0,
+              "avail": 214,
+              "filled": 11,
+              "fillRate": 4.9,
               "status": "Available",
-              "revenue": 2720
+              "revenue": 3320
             },
             {
               "date": "2026-10-17",
@@ -12714,11 +12623,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 273,
-              "avail": 253,
-              "filled": 20,
-              "fillRate": 7.3,
+              "avail": 251,
+              "filled": 22,
+              "fillRate": 8.1,
               "status": "Available",
-              "revenue": 6770
+              "revenue": 7390
             },
             {
               "date": "2026-10-17",
@@ -13148,6 +13057,19 @@
             },
             {
               "date": "2026-10-21",
+              "time": "14:00",
+              "audi": "RUP MANDIR CINEMA",
+              "fmt": "2D",
+              "tag": null,
+              "total": 150,
+              "avail": 150,
+              "filled": 0,
+              "fillRate": 0.0,
+              "status": "Available",
+              "revenue": 0
+            },
+            {
+              "date": "2026-10-21",
               "time": "19:50",
               "audi": "RUP MANDIR CINEMA",
               "fmt": "2D",
@@ -13171,11 +13093,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 182,
-              "avail": 138,
-              "filled": 44,
-              "fillRate": 24.2,
+              "avail": 134,
+              "filled": 48,
+              "fillRate": 26.4,
               "status": "Available",
-              "revenue": 9060
+              "revenue": 10520
             },
             {
               "date": "2026-10-16",
@@ -13340,11 +13262,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 182,
-              "avail": 168,
-              "filled": 14,
-              "fillRate": 7.7,
+              "avail": 162,
+              "filled": 20,
+              "fillRate": 11.0,
               "status": "Available",
-              "revenue": 3800
+              "revenue": 5360
             },
             {
               "date": "2026-10-18",
@@ -13662,11 +13584,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1.2",
               "total": 193,
-              "avail": 40,
-              "filled": 153,
-              "fillRate": 79.3,
+              "avail": 36,
+              "filled": 157,
+              "fillRate": 81.3,
               "status": "Filling Fast",
-              "revenue": 44200
+              "revenue": 45650
             },
             {
               "date": "2026-10-16",
@@ -13688,11 +13610,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1.2",
               "total": 276,
-              "avail": 235,
-              "filled": 41,
-              "fillRate": 14.9,
+              "avail": 233,
+              "filled": 43,
+              "fillRate": 15.6,
               "status": "Available",
-              "revenue": 12950
+              "revenue": 13450
             },
             {
               "date": "2026-10-16",
@@ -13844,11 +13766,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1.2",
               "total": 276,
-              "avail": 236,
-              "filled": 40,
-              "fillRate": 14.5,
+              "avail": 233,
+              "filled": 43,
+              "fillRate": 15.6,
               "status": "Available",
-              "revenue": 12650
+              "revenue": 13400
             },
             {
               "date": "2026-10-18",
@@ -13887,8 +13809,8 @@
               "audi": "CMCC127",
               "fmt": "2D",
               "tag": null,
-              "total": 116,
-              "avail": 116,
+              "total": 114,
+              "avail": 114,
               "filled": 0,
               "fillRate": 0.0,
               "status": "Available",
@@ -14179,11 +14101,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 248,
-              "avail": 228,
-              "filled": 20,
-              "fillRate": 8.1,
+              "avail": 225,
+              "filled": 23,
+              "fillRate": 9.3,
               "status": "Available",
-              "revenue": 4720
+              "revenue": 5440
             },
             {
               "date": "2026-10-16",
@@ -14257,11 +14179,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 248,
-              "avail": 240,
-              "filled": 8,
-              "fillRate": 3.2,
+              "avail": 238,
+              "filled": 10,
+              "fillRate": 4.0,
               "status": "Available",
-              "revenue": 1880
+              "revenue": 2360
             },
             {
               "date": "2026-10-17",
@@ -14548,11 +14470,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 135,
-              "avail": 125,
-              "filled": 10,
-              "fillRate": 7.4,
+              "avail": 117,
+              "filled": 18,
+              "fillRate": 13.3,
               "status": "Available",
-              "revenue": 2900
+              "revenue": 4100
             }
           ]
         },
@@ -14844,11 +14766,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 190,
-              "avail": 174,
-              "filled": 16,
-              "fillRate": 8.4,
+              "avail": 167,
+              "filled": 23,
+              "fillRate": 12.1,
               "status": "Available",
-              "revenue": 4340
+              "revenue": 5810
             },
             {
               "date": "2026-10-16",
@@ -14940,11 +14862,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 218,
-              "avail": 211,
-              "filled": 7,
-              "fillRate": 3.2,
+              "avail": 207,
+              "filled": 11,
+              "fillRate": 5.0,
               "status": "Available",
-              "revenue": 1540
+              "revenue": 2820
             },
             {
               "date": "2026-10-17",
@@ -15706,11 +15628,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1 ",
               "total": 194,
-              "avail": 176,
-              "filled": 18,
-              "fillRate": 9.3,
+              "avail": 173,
+              "filled": 21,
+              "fillRate": 10.8,
               "status": "Available",
-              "revenue": 5000
+              "revenue": 5450
             },
             {
               "date": "2026-10-16",
@@ -15815,11 +15737,11 @@
               "fmt": "2D",
               "tag": "LASER DOLBY 5.1",
               "total": 179,
-              "avail": 139,
-              "filled": 40,
-              "fillRate": 22.3,
+              "avail": 141,
+              "filled": 38,
+              "fillRate": 21.2,
               "status": "Available",
-              "revenue": 12000
+              "revenue": 11500
             },
             {
               "date": "2026-10-16",
@@ -16093,11 +16015,11 @@
               "fmt": "2D",
               "tag": "5.1 DSS",
               "total": 168,
-              "avail": 132,
-              "filled": 36,
-              "fillRate": 21.4,
+              "avail": 125,
+              "filled": 43,
+              "fillRate": 25.6,
               "status": "Available",
-              "revenue": 9000
+              "revenue": 10750
             },
             {
               "date": "2026-10-18",
@@ -16298,11 +16220,11 @@
               "fmt": "2D",
               "tag": "2K",
               "total": 171,
-              "avail": 163,
-              "filled": 8,
-              "fillRate": 4.7,
+              "avail": 161,
+              "filled": 10,
+              "fillRate": 5.8,
               "status": "Available",
-              "revenue": 2300
+              "revenue": 2800
             },
             {
               "date": "2026-10-17",
@@ -16433,11 +16355,11 @@
               "fmt": "2D",
               "tag": "2K",
               "total": 149,
-              "avail": 125,
-              "filled": 24,
-              "fillRate": 16.1,
+              "avail": 122,
+              "filled": 27,
+              "fillRate": 18.1,
               "status": "Available",
-              "revenue": 7700
+              "revenue": 8900
             },
             {
               "date": "2026-10-16",
@@ -16672,11 +16594,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 285,
-              "avail": 272,
-              "filled": 13,
-              "fillRate": 4.6,
+              "avail": 270,
+              "filled": 15,
+              "fillRate": 5.3,
               "status": "Available",
-              "revenue": 3650
+              "revenue": 4150
             },
             {
               "date": "2026-10-17",
@@ -17096,7 +17018,7 @@
         "2026-10-21",
         "2026-10-22"
       ],
-      "scrapedAt": "2026-10-15T10:51:17+05:30",
+      "scrapedAt": "2026-10-15T11:49:11+05:30",
       "cinemas": [
         {
           "name": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
@@ -17108,11 +17030,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 254,
-              "avail": 238,
-              "filled": 16,
-              "fillRate": 6.3,
+              "avail": 236,
+              "filled": 18,
+              "fillRate": 7.1,
               "status": "Available",
-              "revenue": 5080
+              "revenue": 5720
             },
             {
               "date": "2026-10-15",
@@ -17121,11 +17043,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 245,
-              "avail": 147,
-              "filled": 98,
-              "fillRate": 40.0,
+              "avail": 145,
+              "filled": 100,
+              "fillRate": 40.8,
               "status": "Available",
-              "revenue": 36480
+              "revenue": 37240
             },
             {
               "date": "2026-10-15",
@@ -17160,11 +17082,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 254,
-              "avail": 241,
-              "filled": 13,
-              "fillRate": 5.1,
+              "avail": 239,
+              "filled": 15,
+              "fillRate": 5.9,
               "status": "Available",
-              "revenue": 4160
+              "revenue": 4800
             },
             {
               "date": "2026-10-16",
@@ -17225,11 +17147,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 254,
-              "avail": 240,
-              "filled": 14,
-              "fillRate": 5.5,
+              "avail": 238,
+              "filled": 16,
+              "fillRate": 6.3,
               "status": "Available",
-              "revenue": 4480
+              "revenue": 5080
             },
             {
               "date": "2026-10-17",
@@ -17238,11 +17160,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 254,
-              "avail": 220,
-              "filled": 34,
-              "fillRate": 13.4,
+              "avail": 215,
+              "filled": 39,
+              "fillRate": 15.4,
               "status": "Available",
-              "revenue": 12180
+              "revenue": 13980
             },
             {
               "date": "2026-10-17",
@@ -17251,11 +17173,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 254,
-              "avail": 231,
-              "filled": 23,
-              "fillRate": 9.1,
+              "avail": 228,
+              "filled": 26,
+              "fillRate": 10.2,
               "status": "Available",
-              "revenue": 8220
+              "revenue": 9300
             },
             {
               "date": "2026-10-17",
@@ -17264,11 +17186,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 254,
-              "avail": 248,
-              "filled": 6,
-              "fillRate": 2.4,
+              "avail": 246,
+              "filled": 8,
+              "fillRate": 3.1,
               "status": "Available",
-              "revenue": 2160
+              "revenue": 2880
             },
             {
               "date": "2026-10-18",
@@ -17407,11 +17329,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 254,
-              "avail": 233,
-              "filled": 21,
-              "fillRate": 8.3,
+              "avail": 231,
+              "filled": 23,
+              "fillRate": 9.1,
               "status": "Available",
-              "revenue": 7520
+              "revenue": 8200
             }
           ]
         },
@@ -17477,11 +17399,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 166,
-              "avail": 158,
-              "filled": 8,
-              "fillRate": 4.8,
+              "avail": 151,
+              "filled": 15,
+              "fillRate": 9.0,
               "status": "Available",
-              "revenue": 2280
+              "revenue": 4100
             },
             {
               "date": "2026-10-17",
@@ -17547,11 +17469,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 153,
-              "avail": 149,
-              "filled": 4,
-              "fillRate": 2.6,
+              "avail": 147,
+              "filled": 6,
+              "fillRate": 3.9,
               "status": "Available",
-              "revenue": 1200
+              "revenue": 1800
             },
             {
               "date": "2026-10-17",
@@ -17573,30 +17495,17 @@
               "fmt": "2D",
               "tag": null,
               "total": 153,
-              "avail": 153,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 151,
+              "filled": 2,
+              "fillRate": 1.3,
               "status": "Available",
-              "revenue": 0
+              "revenue": 660
             }
           ]
         },
         {
           "name": "INOX South City Mall, South City Mall, Kolkata",
           "shows": [
-            {
-              "date": "2026-10-15",
-              "time": "10:15",
-              "audi": "SCREEN 5",
-              "fmt": "2D",
-              "tag": "LASER",
-              "total": 201,
-              "avail": 86,
-              "filled": 115,
-              "fillRate": 57.2,
-              "status": "Available",
-              "revenue": 21850
-            },
             {
               "date": "2026-10-15",
               "time": "13:40",
@@ -17630,11 +17539,11 @@
               "fmt": "2D",
               "tag": "LASER",
               "total": 191,
-              "avail": 117,
-              "filled": 74,
-              "fillRate": 38.7,
+              "avail": 112,
+              "filled": 79,
+              "fillRate": 41.4,
               "status": "Available",
-              "revenue": 28860
+              "revenue": 30810
             },
             {
               "date": "2026-10-15",
@@ -17799,11 +17708,11 @@
               "fmt": "2D",
               "tag": "LASER",
               "total": 191,
-              "avail": 133,
-              "filled": 58,
-              "fillRate": 30.4,
+              "avail": 131,
+              "filled": 60,
+              "fillRate": 31.4,
               "status": "Available",
-              "revenue": 22620
+              "revenue": 23400
             },
             {
               "date": "2026-10-18",
@@ -17825,11 +17734,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 364,
-              "avail": 333,
-              "filled": 31,
-              "fillRate": 8.5,
+              "avail": 331,
+              "filled": 33,
+              "fillRate": 9.1,
               "status": "Available",
-              "revenue": 13250
+              "revenue": 14030
             },
             {
               "date": "2026-10-18",
@@ -17856,11 +17765,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 284,
-              "avail": 242,
-              "filled": 42,
-              "fillRate": 14.8,
+              "avail": 240,
+              "filled": 44,
+              "fillRate": 15.5,
               "status": "Available",
-              "revenue": 15680
+              "revenue": 16480
             },
             {
               "date": "2026-10-15",
@@ -17869,11 +17778,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 284,
-              "avail": 229,
-              "filled": 55,
-              "fillRate": 19.4,
+              "avail": 220,
+              "filled": 64,
+              "fillRate": 22.5,
               "status": "Available",
-              "revenue": 20740
+              "revenue": 25440
             },
             {
               "date": "2026-10-15",
@@ -17903,16 +17812,29 @@
             },
             {
               "date": "2026-10-16",
+              "time": "07:40",
+              "audi": "AUDI 4",
+              "fmt": "2D",
+              "tag": "DOLBY 7.1",
+              "total": 262,
+              "avail": 257,
+              "filled": 5,
+              "fillRate": 1.9,
+              "status": "Available",
+              "revenue": 1100
+            },
+            {
+              "date": "2026-10-16",
               "time": "10:00",
               "audi": "AUDI 1",
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 284,
-              "avail": 245,
-              "filled": 39,
-              "fillRate": 13.7,
+              "avail": 242,
+              "filled": 42,
+              "fillRate": 14.8,
               "status": "Available",
-              "revenue": 8540
+              "revenue": 9140
             },
             {
               "date": "2026-10-16",
@@ -17921,11 +17843,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 284,
-              "avail": 256,
-              "filled": 28,
-              "fillRate": 9.9,
+              "avail": 254,
+              "filled": 30,
+              "fillRate": 10.6,
               "status": "Available",
-              "revenue": 10540
+              "revenue": 11340
             },
             {
               "date": "2026-10-16",
@@ -17934,11 +17856,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 284,
-              "avail": 244,
-              "filled": 40,
-              "fillRate": 14.1,
+              "avail": 242,
+              "filled": 42,
+              "fillRate": 14.8,
               "status": "Available",
-              "revenue": 16120
+              "revenue": 16840
             },
             {
               "date": "2026-10-16",
@@ -17947,11 +17869,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 284,
-              "avail": 271,
-              "filled": 13,
-              "fillRate": 4.6,
+              "avail": 268,
+              "filled": 16,
+              "fillRate": 5.6,
               "status": "Available",
-              "revenue": 4940
+              "revenue": 6140
             },
             {
               "date": "2026-10-16",
@@ -17960,11 +17882,24 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 284,
-              "avail": 270,
-              "filled": 14,
-              "fillRate": 4.9,
+              "avail": 268,
+              "filled": 16,
+              "fillRate": 5.6,
               "status": "Available",
-              "revenue": 5320
+              "revenue": 6080
+            },
+            {
+              "date": "2026-10-17",
+              "time": "07:40",
+              "audi": "AUDI 4",
+              "fmt": "2D",
+              "tag": "DOLBY 7.1",
+              "total": 262,
+              "avail": 257,
+              "filled": 5,
+              "fillRate": 1.9,
+              "status": "Available",
+              "revenue": 1100
             },
             {
               "date": "2026-10-17",
@@ -17973,11 +17908,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 284,
-              "avail": 258,
-              "filled": 26,
-              "fillRate": 9.2,
+              "avail": 256,
+              "filled": 28,
+              "fillRate": 9.9,
               "status": "Available",
-              "revenue": 6310
+              "revenue": 6750
             },
             {
               "date": "2026-10-17",
@@ -18030,6 +17965,19 @@
               "fillRate": 3.2,
               "status": "Available",
               "revenue": 3340
+            },
+            {
+              "date": "2026-10-18",
+              "time": "07:40",
+              "audi": "AUDI 4",
+              "fmt": "2D",
+              "tag": "DOLBY 7.1",
+              "total": 262,
+              "avail": 257,
+              "filled": 5,
+              "fillRate": 1.9,
+              "status": "Available",
+              "revenue": 1100
             },
             {
               "date": "2026-10-18",
@@ -18116,11 +18064,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 284,
-              "avail": 263,
-              "filled": 21,
-              "fillRate": 7.4,
+              "avail": 260,
+              "filled": 24,
+              "fillRate": 8.5,
               "status": "Available",
-              "revenue": 9120
+              "revenue": 10320
             },
             {
               "date": "2026-10-19",
@@ -18194,11 +18142,11 @@
               "fmt": "2D",
               "tag": "2K LASER DOLBY 7.1",
               "total": 284,
-              "avail": 259,
-              "filled": 25,
-              "fillRate": 8.8,
+              "avail": 254,
+              "filled": 30,
+              "fillRate": 10.6,
               "status": "Available",
-              "revenue": 9460
+              "revenue": 11360
             },
             {
               "date": "2026-10-20",
@@ -18295,11 +18243,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 271,
-              "avail": 159,
-              "filled": 112,
-              "fillRate": 41.3,
+              "avail": 158,
+              "filled": 113,
+              "fillRate": 41.7,
               "status": "Available",
-              "revenue": 35050
+              "revenue": 35570
             },
             {
               "date": "2026-10-15",
@@ -18308,11 +18256,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 271,
-              "avail": 156,
-              "filled": 115,
-              "fillRate": 42.4,
+              "avail": 154,
+              "filled": 117,
+              "fillRate": 43.2,
               "status": "Available",
-              "revenue": 40150
+              "revenue": 40850
             },
             {
               "date": "2026-10-15",
@@ -18321,11 +18269,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 271,
-              "avail": 190,
-              "filled": 81,
-              "fillRate": 29.9,
+              "avail": 186,
+              "filled": 85,
+              "fillRate": 31.4,
               "status": "Available",
-              "revenue": 27930
+              "revenue": 29250
             },
             {
               "date": "2026-10-15",
@@ -18334,11 +18282,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 271,
-              "avail": 240,
-              "filled": 31,
-              "fillRate": 11.4,
+              "avail": 238,
+              "filled": 33,
+              "fillRate": 12.2,
               "status": "Available",
-              "revenue": 9570
+              "revenue": 10190
             },
             {
               "date": "2026-10-16",
@@ -18360,11 +18308,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 271,
-              "avail": 195,
-              "filled": 76,
-              "fillRate": 28.0,
+              "avail": 193,
+              "filled": 78,
+              "fillRate": 28.8,
               "status": "Available",
-              "revenue": 23040
+              "revenue": 23660
             },
             {
               "date": "2026-10-16",
@@ -18373,11 +18321,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 195,
-              "avail": 105,
-              "filled": 90,
-              "fillRate": 46.2,
+              "avail": 103,
+              "filled": 92,
+              "fillRate": 47.2,
               "status": "Available",
-              "revenue": 31300
+              "revenue": 32000
             },
             {
               "date": "2026-10-16",
@@ -18516,11 +18464,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 271,
-              "avail": 255,
-              "filled": 16,
-              "fillRate": 5.9,
+              "avail": 253,
+              "filled": 18,
+              "fillRate": 6.6,
               "status": "Available",
-              "revenue": 4960
+              "revenue": 5580
             },
             {
               "date": "2026-10-18",
@@ -18560,11 +18508,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 228,
-              "avail": 209,
-              "filled": 19,
-              "fillRate": 8.3,
+              "avail": 205,
+              "filled": 23,
+              "fillRate": 10.1,
               "status": "Available",
-              "revenue": 4040
+              "revenue": 4960
             },
             {
               "date": "2026-10-17",
@@ -18713,11 +18661,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 163,
-              "avail": 62,
-              "filled": 101,
-              "fillRate": 62.0,
-              "status": "Filling Fast",
-              "revenue": 39300
+              "avail": 66,
+              "filled": 97,
+              "fillRate": 59.5,
+              "status": "Available",
+              "revenue": 37780
             },
             {
               "date": "2026-10-15",
@@ -18726,11 +18674,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 267,
-              "avail": 176,
-              "filled": 91,
-              "fillRate": 34.1,
+              "avail": 159,
+              "filled": 108,
+              "fillRate": 40.4,
               "status": "Available",
-              "revenue": 32840
+              "revenue": 41140
             },
             {
               "date": "2026-10-15",
@@ -18791,11 +18739,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 248,
-              "avail": 246,
-              "filled": 2,
-              "fillRate": 0.8,
+              "avail": 243,
+              "filled": 5,
+              "fillRate": 2.0,
               "status": "Available",
-              "revenue": 1180
+              "revenue": 2140
             },
             {
               "date": "2026-10-18",
@@ -18804,11 +18752,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 147,
-              "avail": 143,
-              "filled": 4,
-              "fillRate": 2.7,
+              "avail": 141,
+              "filled": 6,
+              "fillRate": 4.1,
               "status": "Available",
-              "revenue": 1780
+              "revenue": 2380
             },
             {
               "date": "2026-10-18",
@@ -19048,11 +18996,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 359,
-              "avail": 315,
-              "filled": 44,
-              "fillRate": 12.3,
+              "avail": 311,
+              "filled": 48,
+              "fillRate": 13.4,
               "status": "Available",
-              "revenue": 12700
+              "revenue": 13540
             },
             {
               "date": "2026-10-15",
@@ -19061,11 +19009,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 359,
-              "avail": 306,
-              "filled": 53,
-              "fillRate": 14.8,
+              "avail": 301,
+              "filled": 58,
+              "fillRate": 16.2,
               "status": "Available",
-              "revenue": 15340
+              "revenue": 16150
             },
             {
               "date": "2026-10-15",
@@ -19078,7 +19026,7 @@
               "filled": 34,
               "fillRate": 9.5,
               "status": "Available",
-              "revenue": 9810
+              "revenue": 9130
             },
             {
               "date": "2026-10-15",
@@ -19091,7 +19039,7 @@
               "filled": 18,
               "fillRate": 5.0,
               "status": "Available",
-              "revenue": 5100
+              "revenue": 4740
             },
             {
               "date": "2026-10-16",
@@ -19113,11 +19061,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 359,
-              "avail": 324,
-              "filled": 35,
-              "fillRate": 9.7,
+              "avail": 322,
+              "filled": 37,
+              "fillRate": 10.3,
               "status": "Available",
-              "revenue": 9170
+              "revenue": 9810
             },
             {
               "date": "2026-10-16",
@@ -19191,11 +19139,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 359,
-              "avail": 290,
-              "filled": 69,
-              "fillRate": 19.2,
+              "avail": 288,
+              "filled": 71,
+              "fillRate": 19.8,
               "status": "Available",
-              "revenue": 20910
+              "revenue": 21490
             },
             {
               "date": "2026-10-17",
@@ -19300,11 +19248,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 342,
-              "avail": 296,
-              "filled": 46,
-              "fillRate": 13.5,
+              "avail": 293,
+              "filled": 49,
+              "fillRate": 14.3,
               "status": "Available",
-              "revenue": 15030
+              "revenue": 16080
             },
             {
               "date": "2026-10-15",
@@ -19313,11 +19261,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 342,
-              "avail": 296,
-              "filled": 46,
-              "fillRate": 13.5,
+              "avail": 294,
+              "filled": 48,
+              "fillRate": 14.0,
               "status": "Available",
-              "revenue": 16600
+              "revenue": 17340
             },
             {
               "date": "2026-10-15",
@@ -19326,11 +19274,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 342,
-              "avail": 323,
-              "filled": 19,
-              "fillRate": 5.6,
+              "avail": 318,
+              "filled": 24,
+              "fillRate": 7.0,
               "status": "Available",
-              "revenue": 7030
+              "revenue": 8860
             },
             {
               "date": "2026-10-15",
@@ -19339,11 +19287,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 342,
-              "avail": 340,
-              "filled": 2,
-              "fillRate": 0.6,
+              "avail": 338,
+              "filled": 4,
+              "fillRate": 1.2,
               "status": "Available",
-              "revenue": 740
+              "revenue": 1460
             },
             {
               "date": "2026-10-16",
@@ -19378,11 +19326,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 342,
-              "avail": 300,
-              "filled": 42,
-              "fillRate": 12.3,
+              "avail": 297,
+              "filled": 45,
+              "fillRate": 13.2,
               "status": "Available",
-              "revenue": 15130
+              "revenue": 16210
             },
             {
               "date": "2026-10-16",
@@ -19547,19 +19495,6 @@
           "shows": [
             {
               "date": "2026-10-15",
-              "time": "11:00",
-              "audi": "SCREEN 3",
-              "fmt": "2D",
-              "tag": "DOLBY 5.1",
-              "total": 138,
-              "avail": 120,
-              "filled": 18,
-              "fillRate": 13.0,
-              "status": "Available",
-              "revenue": 5000
-            },
-            {
-              "date": "2026-10-15",
               "time": "16:35",
               "audi": "SCREEN 3",
               "fmt": "2D",
@@ -19578,11 +19513,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 138,
-              "avail": 108,
-              "filled": 30,
-              "fillRate": 21.7,
+              "avail": 106,
+              "filled": 32,
+              "fillRate": 23.2,
               "status": "Available",
-              "revenue": 8760
+              "revenue": 9320
             },
             {
               "date": "2026-10-16",
@@ -19783,11 +19718,11 @@
               "fmt": "2D",
               "tag": "2K LASER ATMOS",
               "total": 443,
-              "avail": 400,
-              "filled": 43,
-              "fillRate": 9.7,
+              "avail": 392,
+              "filled": 51,
+              "fillRate": 11.5,
               "status": "Available",
-              "revenue": 10250
+              "revenue": 11950
             },
             {
               "date": "2026-10-15",
@@ -19913,11 +19848,11 @@
               "fmt": "2D",
               "tag": "2K LASER ATMOS",
               "total": 443,
-              "avail": 427,
-              "filled": 16,
-              "fillRate": 3.6,
+              "avail": 422,
+              "filled": 21,
+              "fillRate": 4.7,
               "status": "Available",
-              "revenue": 3950
+              "revenue": 5200
             },
             {
               "date": "2026-10-18",
@@ -19965,19 +19900,6 @@
           "shows": [
             {
               "date": "2026-10-15",
-              "time": "11:30",
-              "audi": "SCREEN 1",
-              "fmt": "2D",
-              "tag": "5.1 DSS",
-              "total": 133,
-              "avail": 64,
-              "filled": 69,
-              "fillRate": 51.9,
-              "status": "Available",
-              "revenue": 13300
-            },
-            {
-              "date": "2026-10-15",
               "time": "14:30",
               "audi": "SCREEN 1",
               "fmt": "2D",
@@ -19996,11 +19918,11 @@
               "fmt": "2D",
               "tag": "5.1 DSS",
               "total": 133,
-              "avail": 97,
-              "filled": 36,
-              "fillRate": 27.1,
+              "avail": 77,
+              "filled": 56,
+              "fillRate": 42.1,
               "status": "Available",
-              "revenue": 10890
+              "revenue": 16250
             },
             {
               "date": "2026-10-15",
@@ -20009,11 +19931,11 @@
               "fmt": "2D",
               "tag": "SVF MUSE",
               "total": 61,
-              "avail": 44,
-              "filled": 17,
-              "fillRate": 27.9,
+              "avail": 39,
+              "filled": 22,
+              "fillRate": 36.1,
               "status": "Available",
-              "revenue": 6400
+              "revenue": 8300
             },
             {
               "date": "2026-10-16",
@@ -20035,11 +19957,11 @@
               "fmt": "2D",
               "tag": "SVF MUSE",
               "total": 62,
-              "avail": 37,
-              "filled": 25,
-              "fillRate": 40.3,
+              "avail": 35,
+              "filled": 27,
+              "fillRate": 43.5,
               "status": "Available",
-              "revenue": 9350
+              "revenue": 10150
             },
             {
               "date": "2026-10-16",
@@ -20170,11 +20092,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 318,
-              "avail": 205,
-              "filled": 113,
-              "fillRate": 35.5,
+              "avail": 191,
+              "filled": 127,
+              "fillRate": 39.9,
               "status": "Available",
-              "revenue": 38620
+              "revenue": 42820
             },
             {
               "date": "2026-10-15",
@@ -20183,11 +20105,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 273,
-              "avail": 238,
-              "filled": 35,
-              "fillRate": 12.8,
+              "avail": 235,
+              "filled": 38,
+              "fillRate": 13.9,
               "status": "Available",
-              "revenue": 12660
+              "revenue": 13560
             },
             {
               "date": "2026-10-16",
@@ -20196,11 +20118,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 273,
-              "avail": 258,
-              "filled": 15,
-              "fillRate": 5.5,
+              "avail": 257,
+              "filled": 16,
+              "fillRate": 5.9,
               "status": "Available",
-              "revenue": 4700
+              "revenue": 4930
             },
             {
               "date": "2026-10-16",
@@ -20222,11 +20144,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 273,
-              "avail": 203,
-              "filled": 70,
-              "fillRate": 25.6,
+              "avail": 201,
+              "filled": 72,
+              "fillRate": 26.4,
               "status": "Available",
-              "revenue": 24960
+              "revenue": 25600
             },
             {
               "date": "2026-10-16",
@@ -20235,11 +20157,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 318,
-              "avail": 231,
-              "filled": 87,
-              "fillRate": 27.4,
+              "avail": 222,
+              "filled": 96,
+              "fillRate": 30.2,
               "status": "Available",
-              "revenue": 28930
+              "revenue": 32670
             },
             {
               "date": "2026-10-16",
@@ -20248,11 +20170,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 273,
-              "avail": 267,
-              "filled": 6,
-              "fillRate": 2.2,
+              "avail": 263,
+              "filled": 10,
+              "fillRate": 3.7,
               "status": "Available",
-              "revenue": 2000
+              "revenue": 3560
             },
             {
               "date": "2026-10-17",
@@ -20287,11 +20209,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 318,
-              "avail": 175,
-              "filled": 143,
-              "fillRate": 45.0,
+              "avail": 173,
+              "filled": 145,
+              "fillRate": 45.6,
               "status": "Available",
-              "revenue": 51800
+              "revenue": 52670
             },
             {
               "date": "2026-10-17",
@@ -20300,11 +20222,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 318,
-              "avail": 239,
-              "filled": 79,
-              "fillRate": 24.8,
+              "avail": 223,
+              "filled": 95,
+              "fillRate": 29.9,
               "status": "Available",
-              "revenue": 27670
+              "revenue": 32830
             },
             {
               "date": "2026-10-17",
@@ -20352,11 +20274,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 318,
-              "avail": 180,
-              "filled": 138,
-              "fillRate": 43.4,
+              "avail": 171,
+              "filled": 147,
+              "fillRate": 46.2,
               "status": "Available",
-              "revenue": 47780
+              "revenue": 53360
             },
             {
               "date": "2026-10-18",
@@ -20422,11 +20344,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 290,
-              "avail": 269,
-              "filled": 21,
-              "fillRate": 7.2,
+              "avail": 272,
+              "filled": 18,
+              "fillRate": 6.2,
               "status": "Available",
-              "revenue": 6690
+              "revenue": 5850
             },
             {
               "date": "2026-10-15",
@@ -20643,19 +20565,6 @@
           "shows": [
             {
               "date": "2026-10-15",
-              "time": "10:30",
-              "audi": "SCREEN 1",
-              "fmt": "2D",
-              "tag": null,
-              "total": 227,
-              "avail": 198,
-              "filled": 29,
-              "fillRate": 12.8,
-              "status": "Available",
-              "revenue": 6120
-            },
-            {
-              "date": "2026-10-15",
               "time": "14:15",
               "audi": "SCREEN 2",
               "fmt": "2D",
@@ -20752,11 +20661,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 227,
-              "avail": 224,
-              "filled": 3,
-              "fillRate": 1.3,
+              "avail": 222,
+              "filled": 5,
+              "fillRate": 2.2,
               "status": "Available",
-              "revenue": 610
+              "revenue": 1030
             },
             {
               "date": "2026-10-17",
@@ -20874,11 +20783,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 291,
-              "avail": 241,
-              "filled": 50,
-              "fillRate": 17.2,
+              "avail": 235,
+              "filled": 56,
+              "fillRate": 19.2,
               "status": "Available",
-              "revenue": 16330
+              "revenue": 19850
             },
             {
               "date": "2026-10-15",
@@ -20887,11 +20796,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 291,
-              "avail": 253,
-              "filled": 38,
-              "fillRate": 13.1,
+              "avail": 250,
+              "filled": 41,
+              "fillRate": 14.1,
               "status": "Available",
-              "revenue": 13540
+              "revenue": 14500
             },
             {
               "date": "2026-10-15",
@@ -20991,11 +20900,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 291,
-              "avail": 284,
-              "filled": 7,
-              "fillRate": 2.4,
+              "avail": 279,
+              "filled": 12,
+              "fillRate": 4.1,
               "status": "Available",
-              "revenue": 3250
+              "revenue": 4850
             },
             {
               "date": "2026-10-17",
@@ -21106,19 +21015,6 @@
         {
           "name": "Rupmandir Cinema A/C Dolby, Belghoria",
           "shows": [
-            {
-              "date": "2026-10-15",
-              "time": "11:00",
-              "audi": "RUP MANDIR CINEMA",
-              "fmt": "2D",
-              "tag": null,
-              "total": 150,
-              "avail": 150,
-              "filled": 0,
-              "fillRate": 0.0,
-              "status": "Available",
-              "revenue": 0
-            },
             {
               "date": "2026-10-15",
               "time": "17:00",
@@ -21264,6 +21160,19 @@
             },
             {
               "date": "2026-10-21",
+              "time": "11:00",
+              "audi": "RUP MANDIR CINEMA",
+              "fmt": "2D",
+              "tag": null,
+              "total": 150,
+              "avail": 150,
+              "filled": 0,
+              "fillRate": 0.0,
+              "status": "Available",
+              "revenue": 0
+            },
+            {
+              "date": "2026-10-21",
               "time": "17:00",
               "audi": "RUP MANDIR CINEMA",
               "fmt": "2D",
@@ -21286,8 +21195,8 @@
               "audi": "SCREEN 2",
               "fmt": "2D",
               "tag": "DOLBY 2K 7.1 ",
-              "total": 104,
-              "avail": 104,
+              "total": 99,
+              "avail": 99,
               "filled": 0,
               "fillRate": 0.0,
               "status": "Available",
@@ -21299,8 +21208,8 @@
               "audi": "SCREEN 2",
               "fmt": "2D",
               "tag": "DOLBY 2K 7.1 ",
-              "total": 94,
-              "avail": 94,
+              "total": 88,
+              "avail": 88,
               "filled": 0,
               "fillRate": 0.0,
               "status": "Available",
@@ -21442,8 +21351,8 @@
               "audi": "SCREEN 2",
               "fmt": "2D",
               "tag": "DOLBY 2K 7.1 ",
-              "total": 110,
-              "avail": 110,
+              "total": 107,
+              "avail": 107,
               "filled": 0,
               "fillRate": 0.0,
               "status": "Available",
@@ -21526,11 +21435,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 183,
-              "avail": 152,
-              "filled": 31,
-              "fillRate": 16.9,
+              "avail": 143,
+              "filled": 40,
+              "fillRate": 21.9,
               "status": "Available",
-              "revenue": 8360
+              "revenue": 10700
             },
             {
               "date": "2026-10-15",
@@ -21539,11 +21448,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 183,
-              "avail": 168,
-              "filled": 15,
-              "fillRate": 8.2,
+              "avail": 164,
+              "filled": 19,
+              "fillRate": 10.4,
               "status": "Available",
-              "revenue": 3980
+              "revenue": 5020
             },
             {
               "date": "2026-10-16",
@@ -21765,11 +21674,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1.2",
               "total": 216,
-              "avail": 177,
-              "filled": 39,
-              "fillRate": 18.1,
+              "avail": 179,
+              "filled": 37,
+              "fillRate": 17.1,
               "status": "Available",
-              "revenue": 12000
+              "revenue": 11500
             },
             {
               "date": "2026-10-15",
@@ -21778,11 +21687,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1.2",
               "total": 216,
-              "avail": 192,
-              "filled": 24,
-              "fillRate": 11.1,
+              "avail": 190,
+              "filled": 26,
+              "fillRate": 12.0,
               "status": "Available",
-              "revenue": 7100
+              "revenue": 7500
             },
             {
               "date": "2026-10-15",
@@ -21804,11 +21713,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1.2",
               "total": 216,
-              "avail": 193,
-              "filled": 23,
-              "fillRate": 10.6,
+              "avail": 190,
+              "filled": 26,
+              "fillRate": 12.0,
               "status": "Available",
-              "revenue": 7500
+              "revenue": 8250
             },
             {
               "date": "2026-10-16",
@@ -21882,11 +21791,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1.2",
               "total": 201,
-              "avail": 177,
-              "filled": 24,
-              "fillRate": 11.9,
+              "avail": 179,
+              "filled": 22,
+              "fillRate": 10.9,
               "status": "Available",
-              "revenue": 7200
+              "revenue": 6600
             },
             {
               "date": "2026-10-17",
@@ -22113,11 +22022,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 247,
-              "avail": 243,
-              "filled": 4,
-              "fillRate": 1.6,
+              "avail": 241,
+              "filled": 6,
+              "fillRate": 2.4,
               "status": "Available",
-              "revenue": 920
+              "revenue": 1400
             },
             {
               "date": "2026-10-16",
@@ -22217,11 +22126,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 247,
-              "avail": 247,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 245,
+              "filled": 2,
+              "fillRate": 0.8,
               "status": "Available",
-              "revenue": 0
+              "revenue": 480
             },
             {
               "date": "2026-10-17",
@@ -22230,11 +22139,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 247,
-              "avail": 247,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 246,
+              "filled": 1,
+              "fillRate": 0.4,
               "status": "Available",
-              "revenue": 0
+              "revenue": 220
             },
             {
               "date": "2026-10-17",
@@ -22326,11 +22235,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 135,
-              "avail": 103,
-              "filled": 32,
-              "fillRate": 23.7,
+              "avail": 92,
+              "filled": 43,
+              "fillRate": 31.9,
               "status": "Available",
-              "revenue": 7560
+              "revenue": 10180
             },
             {
               "date": "2026-10-15",
@@ -22339,11 +22248,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 135,
-              "avail": 117,
-              "filled": 18,
-              "fillRate": 13.3,
+              "avail": 114,
+              "filled": 21,
+              "fillRate": 15.6,
               "status": "Available",
-              "revenue": 4870
+              "revenue": 5530
             },
             {
               "date": "2026-10-15",
@@ -22378,11 +22287,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 126,
-              "avail": 113,
-              "filled": 13,
-              "fillRate": 10.3,
+              "avail": 110,
+              "filled": 16,
+              "fillRate": 12.7,
               "status": "Available",
-              "revenue": 3650
+              "revenue": 4400
             },
             {
               "date": "2026-10-16",
@@ -22456,11 +22365,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 126,
-              "avail": 112,
-              "filled": 14,
-              "fillRate": 11.1,
+              "avail": 108,
+              "filled": 18,
+              "fillRate": 14.3,
               "status": "Available",
-              "revenue": 3900
+              "revenue": 5100
             },
             {
               "date": "2026-10-18",
@@ -22487,11 +22396,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 180,
-              "avail": 174,
-              "filled": 6,
-              "fillRate": 3.3,
+              "avail": 173,
+              "filled": 7,
+              "fillRate": 3.9,
               "status": "Available",
-              "revenue": 1960
+              "revenue": 2170
             },
             {
               "date": "2026-10-15",
@@ -22500,11 +22409,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 190,
-              "avail": 182,
-              "filled": 8,
-              "fillRate": 4.2,
+              "avail": 180,
+              "filled": 10,
+              "fillRate": 5.3,
               "status": "Available",
-              "revenue": 2800
+              "revenue": 3220
             },
             {
               "date": "2026-10-16",
@@ -22557,11 +22466,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 217,
-              "avail": 217,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 215,
+              "filled": 2,
+              "fillRate": 0.9,
               "status": "Available",
-              "revenue": 0
+              "revenue": 440
             },
             {
               "date": "2026-10-15",
@@ -22570,11 +22479,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 217,
-              "avail": 217,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 212,
+              "filled": 5,
+              "fillRate": 2.3,
               "status": "Available",
-              "revenue": 0
+              "revenue": 1100
             },
             {
               "date": "2026-10-16",
@@ -22768,19 +22677,6 @@
         {
           "name": "Durgapur Cinema, City Center, Durgapur",
           "shows": [
-            {
-              "date": "2026-10-15",
-              "time": "12:00",
-              "audi": "DURGAPUR",
-              "fmt": "2D",
-              "tag": null,
-              "total": 1244,
-              "avail": 15,
-              "filled": 1229,
-              "fillRate": 98.8,
-              "status": "Almost Full",
-              "revenue": 93010
-            },
             {
               "date": "2026-10-15",
               "time": "15:00",
@@ -23032,11 +22928,11 @@
               "fmt": "2D",
               "tag": "5.1 DSS",
               "total": 137,
-              "avail": 114,
-              "filled": 23,
-              "fillRate": 16.8,
+              "avail": 111,
+              "filled": 26,
+              "fillRate": 19.0,
               "status": "Available",
-              "revenue": 5500
+              "revenue": 6100
             },
             {
               "date": "2026-10-16",
@@ -23333,11 +23229,11 @@
               "fmt": "2D",
               "tag": "2K 7.1 DOLBY",
               "total": 211,
-              "avail": 201,
-              "filled": 10,
-              "fillRate": 4.7,
+              "avail": 202,
+              "filled": 9,
+              "fillRate": 4.3,
               "status": "Available",
-              "revenue": 2900
+              "revenue": 2650
             },
             {
               "date": "2026-10-17",
@@ -23577,11 +23473,11 @@
               "fmt": "2D",
               "tag": "5.1 DSS",
               "total": 146,
-              "avail": 118,
-              "filled": 28,
-              "fillRate": 19.2,
+              "avail": 114,
+              "filled": 32,
+              "fillRate": 21.9,
               "status": "Available",
-              "revenue": 6300
+              "revenue": 7300
             },
             {
               "date": "2026-10-16",
@@ -23673,11 +23569,11 @@
               "fmt": "2D",
               "tag": "2K",
               "total": 149,
-              "avail": 117,
-              "filled": 32,
-              "fillRate": 21.5,
+              "avail": 115,
+              "filled": 34,
+              "fillRate": 22.8,
               "status": "Available",
-              "revenue": 9850
+              "revenue": 10350
             },
             {
               "date": "2026-10-15",
@@ -23712,11 +23608,11 @@
               "fmt": "2D",
               "tag": "5.1 DSS",
               "total": 119,
-              "avail": 109,
-              "filled": 10,
-              "fillRate": 8.4,
+              "avail": 106,
+              "filled": 13,
+              "fillRate": 10.9,
               "status": "Available",
-              "revenue": 3500
+              "revenue": 4400
             },
             {
               "date": "2026-10-17",
@@ -23725,11 +23621,11 @@
               "fmt": "2D",
               "tag": "5.1 DSS",
               "total": 119,
-              "avail": 107,
-              "filled": 12,
-              "fillRate": 10.1,
+              "avail": 105,
+              "filled": 14,
+              "fillRate": 11.8,
               "status": "Available",
-              "revenue": 4000
+              "revenue": 4600
             },
             {
               "date": "2026-10-17",
@@ -23777,19 +23673,6 @@
           "shows": [
             {
               "date": "2026-10-15",
-              "time": "11:00",
-              "audi": "SCREEN 1",
-              "fmt": "2D",
-              "tag": "DOLBY 7.1",
-              "total": 285,
-              "avail": 255,
-              "filled": 30,
-              "fillRate": 10.5,
-              "status": "Available",
-              "revenue": 8300
-            },
-            {
-              "date": "2026-10-15",
               "time": "14:00",
               "audi": "SCREEN 1",
               "fmt": "2D",
@@ -23808,11 +23691,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 285,
-              "avail": 259,
-              "filled": 26,
-              "fillRate": 9.1,
+              "avail": 257,
+              "filled": 28,
+              "fillRate": 9.8,
               "status": "Available",
-              "revenue": 7000
+              "revenue": 7700
             },
             {
               "date": "2026-10-17",
@@ -24078,11 +23961,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 143,
-              "avail": 127,
-              "filled": 16,
-              "fillRate": 11.2,
+              "avail": 123,
+              "filled": 20,
+              "fillRate": 14.0,
               "status": "Available",
-              "revenue": 4300
+              "revenue": 5200
             },
             {
               "date": "2026-10-15",
@@ -24143,11 +24026,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 143,
-              "avail": 125,
-              "filled": 18,
-              "fillRate": 12.6,
+              "avail": 123,
+              "filled": 20,
+              "fillRate": 14.0,
               "status": "Available",
-              "revenue": 5300
+              "revenue": 5800
             },
             {
               "date": "2026-10-18",
@@ -24191,7 +24074,7 @@
         "2026-10-19",
         "2026-10-20"
       ],
-      "scrapedAt": "2026-10-15T10:52:57+05:30",
+      "scrapedAt": "2026-10-15T11:50:43+05:30",
       "cinemas": [
         {
           "name": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
@@ -24216,11 +24099,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 124,
-              "avail": 101,
-              "filled": 23,
-              "fillRate": 18.5,
+              "avail": 83,
+              "filled": 41,
+              "fillRate": 33.1,
               "status": "Available",
-              "revenue": 7360
+              "revenue": 13620
             },
             {
               "date": "2026-10-15",
@@ -24255,11 +24138,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 124,
-              "avail": 113,
-              "filled": 11,
-              "fillRate": 8.9,
+              "avail": 108,
+              "filled": 16,
+              "fillRate": 12.9,
               "status": "Available",
-              "revenue": 3520
+              "revenue": 5120
             },
             {
               "date": "2026-10-16",
@@ -24268,11 +24151,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 124,
-              "avail": 120,
-              "filled": 4,
-              "fillRate": 3.2,
+              "avail": 118,
+              "filled": 6,
+              "fillRate": 4.8,
               "status": "Available",
-              "revenue": 1280
+              "revenue": 1920
             },
             {
               "date": "2026-10-17",
@@ -24294,11 +24177,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 124,
-              "avail": 107,
-              "filled": 17,
-              "fillRate": 13.7,
+              "avail": 105,
+              "filled": 19,
+              "fillRate": 15.3,
               "status": "Available",
-              "revenue": 5400
+              "revenue": 6040
             },
             {
               "date": "2026-10-17",
@@ -24320,11 +24203,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 124,
-              "avail": 92,
-              "filled": 32,
-              "fillRate": 25.8,
+              "avail": 96,
+              "filled": 28,
+              "fillRate": 22.6,
               "status": "Available",
-              "revenue": 6340
+              "revenue": 5580
             },
             {
               "date": "2026-10-18",
@@ -24385,11 +24268,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 124,
-              "avail": 105,
-              "filled": 19,
-              "fillRate": 15.3,
+              "avail": 102,
+              "filled": 22,
+              "fillRate": 17.7,
               "status": "Available",
-              "revenue": 6080
+              "revenue": 7040
             },
             {
               "date": "2026-10-20",
@@ -24398,11 +24281,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 124,
-              "avail": 112,
-              "filled": 12,
-              "fillRate": 9.7,
+              "avail": 109,
+              "filled": 15,
+              "fillRate": 12.1,
               "status": "Available",
-              "revenue": 3740
+              "revenue": 4700
             }
           ]
         },
@@ -24416,11 +24299,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 286,
-              "avail": 269,
-              "filled": 17,
-              "fillRate": 5.9,
+              "avail": 270,
+              "filled": 16,
+              "fillRate": 5.6,
               "status": "Available",
-              "revenue": 4720
+              "revenue": 4460
             },
             {
               "date": "2026-10-16",
@@ -24525,29 +24408,16 @@
           "shows": [
             {
               "date": "2026-10-15",
-              "time": "10:35",
-              "audi": "SCREEN 3",
-              "fmt": "2D",
-              "tag": null,
-              "total": 383,
-              "avail": 280,
-              "filled": 103,
-              "fillRate": 26.9,
-              "status": "Available",
-              "revenue": 19980
-            },
-            {
-              "date": "2026-10-15",
               "time": "13:55",
               "audi": "SCREEN 2",
               "fmt": "2D",
               "tag": null,
               "total": 190,
-              "avail": 121,
-              "filled": 69,
-              "fillRate": 36.3,
+              "avail": 119,
+              "filled": 71,
+              "fillRate": 37.4,
               "status": "Available",
-              "revenue": 20500
+              "revenue": 21100
             },
             {
               "date": "2026-10-15",
@@ -24569,11 +24439,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 199,
-              "avail": 140,
-              "filled": 59,
-              "fillRate": 29.6,
+              "avail": 130,
+              "filled": 69,
+              "fillRate": 34.7,
               "status": "Available",
-              "revenue": 18250
+              "revenue": 21250
             },
             {
               "date": "2026-10-16",
@@ -24621,11 +24491,11 @@
               "fmt": "2D",
               "tag": "LASER",
               "total": 191,
-              "avail": 174,
-              "filled": 17,
-              "fillRate": 8.9,
+              "avail": 172,
+              "filled": 19,
+              "fillRate": 9.9,
               "status": "Available",
-              "revenue": 5100
+              "revenue": 5700
             },
             {
               "date": "2026-10-17",
@@ -24743,11 +24613,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 108,
-              "avail": 82,
-              "filled": 26,
-              "fillRate": 24.1,
+              "avail": 81,
+              "filled": 27,
+              "fillRate": 25.0,
               "status": "Available",
-              "revenue": 7860
+              "revenue": 8420
             },
             {
               "date": "2026-10-15",
@@ -24769,11 +24639,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 108,
-              "avail": 84,
-              "filled": 24,
-              "fillRate": 22.2,
+              "avail": 72,
+              "filled": 36,
+              "fillRate": 33.3,
               "status": "Available",
-              "revenue": 9500
+              "revenue": 14100
             },
             {
               "date": "2026-10-16",
@@ -25039,11 +24909,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 193,
-              "avail": 154,
-              "filled": 39,
-              "fillRate": 20.2,
+              "avail": 152,
+              "filled": 41,
+              "fillRate": 21.2,
               "status": "Available",
-              "revenue": 10430
+              "revenue": 10970
             },
             {
               "date": "2026-10-15",
@@ -25051,12 +24921,12 @@
               "audi": "SCREEN 1",
               "fmt": "2D",
               "tag": null,
-              "total": 193,
-              "avail": 95,
-              "filled": 98,
-              "fillRate": 50.8,
+              "total": 200,
+              "avail": 88,
+              "filled": 112,
+              "fillRate": 56.0,
               "status": "Available",
-              "revenue": 28120
+              "revenue": 32560
             },
             {
               "date": "2026-10-15",
@@ -25327,11 +25197,11 @@
               "fmt": "2D",
               "tag": "RECLINERS",
               "total": 150,
-              "avail": 146,
-              "filled": 4,
-              "fillRate": 2.7,
+              "avail": 143,
+              "filled": 7,
+              "fillRate": 4.7,
               "status": "Available",
-              "revenue": 1760
+              "revenue": 2660
             },
             {
               "date": "2026-10-17",
@@ -25384,11 +25254,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 215,
-              "avail": 215,
-              "filled": 0,
-              "fillRate": 0.0,
+              "avail": 213,
+              "filled": 2,
+              "fillRate": 0.9,
               "status": "Available",
-              "revenue": 0
+              "revenue": 500
             },
             {
               "date": "2026-10-16",
@@ -25589,11 +25459,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 227,
-              "avail": 203,
-              "filled": 24,
-              "fillRate": 10.6,
+              "avail": 200,
+              "filled": 27,
+              "fillRate": 11.9,
               "status": "Available",
-              "revenue": 7120
+              "revenue": 8010
             },
             {
               "date": "2026-10-15",
@@ -25615,11 +25485,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 227,
-              "avail": 221,
-              "filled": 6,
-              "fillRate": 2.6,
+              "avail": 218,
+              "filled": 9,
+              "fillRate": 4.0,
               "status": "Available",
-              "revenue": 1840
+              "revenue": 2860
             },
             {
               "date": "2026-10-16",
@@ -25750,11 +25620,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 138,
-              "avail": 123,
-              "filled": 15,
-              "fillRate": 10.9,
+              "avail": 121,
+              "filled": 17,
+              "fillRate": 12.3,
               "status": "Available",
-              "revenue": 4600
+              "revenue": 5160
             },
             {
               "date": "2026-10-16",
@@ -25776,11 +25646,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 138,
-              "avail": 127,
-              "filled": 11,
-              "fillRate": 8.0,
+              "avail": 125,
+              "filled": 13,
+              "fillRate": 9.4,
               "status": "Available",
-              "revenue": 3480
+              "revenue": 4040
             },
             {
               "date": "2026-10-18",
@@ -25973,11 +25843,11 @@
               "fmt": "2D",
               "tag": "SVF MUSE",
               "total": 62,
-              "avail": 24,
-              "filled": 38,
-              "fillRate": 61.3,
+              "avail": 21,
+              "filled": 41,
+              "fillRate": 66.1,
               "status": "Filling Fast",
-              "revenue": 12300
+              "revenue": 13300
             },
             {
               "date": "2026-10-16",
@@ -26051,11 +25921,11 @@
               "fmt": "2D",
               "tag": "SVF MUSE",
               "total": 61,
-              "avail": 52,
-              "filled": 9,
-              "fillRate": 14.8,
+              "avail": 50,
+              "filled": 11,
+              "fillRate": 18.0,
               "status": "Available",
-              "revenue": 3550
+              "revenue": 4250
             }
           ]
         },
@@ -26069,11 +25939,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 180,
-              "avail": 157,
-              "filled": 23,
-              "fillRate": 12.8,
+              "avail": 147,
+              "filled": 33,
+              "fillRate": 18.3,
               "status": "Available",
-              "revenue": 7030
+              "revenue": 10010
             },
             {
               "date": "2026-10-15",
@@ -26147,11 +26017,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 180,
-              "avail": 173,
-              "filled": 7,
-              "fillRate": 3.9,
+              "avail": 167,
+              "filled": 13,
+              "fillRate": 7.2,
               "status": "Available",
-              "revenue": 2190
+              "revenue": 3870
             },
             {
               "date": "2026-10-16",
@@ -26391,11 +26261,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 338,
-              "avail": 333,
-              "filled": 5,
-              "fillRate": 1.5,
+              "avail": 331,
+              "filled": 7,
+              "fillRate": 2.1,
               "status": "Available",
-              "revenue": 1290
+              "revenue": 1790
             },
             {
               "date": "2026-10-15",
@@ -26404,11 +26274,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 227,
-              "avail": 223,
-              "filled": 4,
-              "fillRate": 1.8,
+              "avail": 222,
+              "filled": 5,
+              "fillRate": 2.2,
               "status": "Available",
-              "revenue": 1120
+              "revenue": 1410
             },
             {
               "date": "2026-10-16",
@@ -26513,11 +26383,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 273,
-              "avail": 267,
-              "filled": 6,
-              "fillRate": 2.2,
+              "avail": 264,
+              "filled": 9,
+              "fillRate": 3.3,
               "status": "Available",
-              "revenue": 1580
+              "revenue": 2360
             },
             {
               "date": "2026-10-16",
@@ -26552,11 +26422,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 273,
-              "avail": 260,
-              "filled": 13,
-              "fillRate": 4.8,
+              "avail": 258,
+              "filled": 15,
+              "fillRate": 5.5,
               "status": "Available",
-              "revenue": 3420
+              "revenue": 3960
             },
             {
               "date": "2026-10-17",
@@ -26692,11 +26562,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 178,
-              "avail": 170,
-              "filled": 8,
-              "fillRate": 4.5,
+              "avail": 166,
+              "filled": 12,
+              "fillRate": 6.7,
               "status": "Available",
-              "revenue": 2000
+              "revenue": 3000
             },
             {
               "date": "2026-10-16",
@@ -26796,11 +26666,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 178,
-              "avail": 168,
-              "filled": 10,
-              "fillRate": 5.6,
+              "avail": 166,
+              "filled": 12,
+              "fillRate": 6.7,
               "status": "Available",
-              "revenue": 2340
+              "revenue": 2840
             },
             {
               "date": "2026-10-18",
@@ -26827,11 +26697,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1.2",
               "total": 193,
-              "avail": 172,
-              "filled": 21,
-              "fillRate": 10.9,
+              "avail": 170,
+              "filled": 23,
+              "fillRate": 11.9,
               "status": "Available",
-              "revenue": 6250
+              "revenue": 6750
             },
             {
               "date": "2026-10-15",
@@ -26840,11 +26710,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1.2",
               "total": 193,
-              "avail": 167,
-              "filled": 26,
-              "fillRate": 13.5,
+              "avail": 168,
+              "filled": 25,
+              "fillRate": 13.0,
               "status": "Available",
-              "revenue": 7350
+              "revenue": 7100
             },
             {
               "date": "2026-10-16",
@@ -27027,11 +26897,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 150,
-              "avail": 145,
-              "filled": 5,
-              "fillRate": 3.3,
+              "avail": 144,
+              "filled": 6,
+              "fillRate": 4.0,
               "status": "Available",
-              "revenue": 1100
+              "revenue": 1300
             }
           ]
         },
@@ -27071,11 +26941,11 @@
               "fmt": "2D",
               "tag": "DOLBY 7.1",
               "total": 126,
-              "avail": 114,
-              "filled": 12,
-              "fillRate": 9.5,
+              "avail": 111,
+              "filled": 15,
+              "fillRate": 11.9,
               "status": "Available",
-              "revenue": 3400
+              "revenue": 4150
             },
             {
               "date": "2026-10-17",
@@ -27115,11 +26985,11 @@
               "fmt": "2D",
               "tag": null,
               "total": 223,
-              "avail": 218,
-              "filled": 5,
-              "fillRate": 2.2,
+              "avail": 215,
+              "filled": 8,
+              "fillRate": 3.6,
               "status": "Available",
-              "revenue": 1750
+              "revenue": 2800
             },
             {
               "date": "2026-10-16",
@@ -27400,11 +27270,11 @@
               "fmt": "2D",
               "tag": "5.1 DSS",
               "total": 277,
-              "avail": 151,
-              "filled": 126,
-              "fillRate": 45.5,
+              "avail": 146,
+              "filled": 131,
+              "fillRate": 47.3,
               "status": "Available",
-              "revenue": 29750
+              "revenue": 31150
             },
             {
               "date": "2026-10-16",
@@ -27457,11 +27327,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 143,
-              "avail": 97,
-              "filled": 46,
-              "fillRate": 32.2,
-              "status": "Available",
-              "revenue": 12400
+              "avail": 24,
+              "filled": 119,
+              "fillRate": 83.2,
+              "status": "Filling Fast",
+              "revenue": 28850
             },
             {
               "date": "2026-10-15",
@@ -27470,11 +27340,11 @@
               "fmt": "2D",
               "tag": "DOLBY 5.1",
               "total": 143,
-              "avail": 91,
-              "filled": 52,
-              "fillRate": 36.4,
+              "avail": 69,
+              "filled": 74,
+              "fillRate": 51.7,
               "status": "Available",
-              "revenue": 13450
+              "revenue": 18750
             },
             {
               "date": "2026-10-16",
@@ -27509,11 +27379,11 @@
               "fmt": "2D",
               "tag": "2K DOLBY 7.1",
               "total": 138,
-              "avail": 129,
-              "filled": 9,
-              "fillRate": 6.5,
+              "avail": 126,
+              "filled": 12,
+              "fillRate": 8.7,
               "status": "Available",
-              "revenue": 2650
+              "revenue": 3400
             },
             {
               "date": "2026-10-17",
