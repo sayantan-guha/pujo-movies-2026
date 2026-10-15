@@ -1,43 +1,43 @@
 {
   "230309": {
     "movieId": "230309",
-    "updatedAt": "2026-10-15T23:30:43+05:30",
+    "updatedAt": "2026-10-15T23:38:10+05:30",
     "byDate": {
       "2026-10-15": {
-        "shows": 154,
-        "totalSeats": 33420,
-        "totalFilled": 11589,
-        "revenue": 3632100
+        "revenue": 3698570,
+        "shows": 158,
+        "totalFilled": 11777,
+        "totalSeats": 34171
       }
     }
   },
   "230211": {
     "movieId": "230211",
-    "updatedAt": "2026-10-15T23:30:43+05:30",
+    "updatedAt": "2026-10-15T23:38:10+05:30",
     "byDate": {
       "2026-10-15": {
-        "shows": 119,
-        "totalSeats": 25934,
-        "totalFilled": 6797,
-        "revenue": 1967840
+        "revenue": 1992060,
+        "shows": 122,
+        "totalFilled": 6877,
+        "totalSeats": 26504
       }
     }
   },
   "220611": {
     "movieId": "220611",
-    "updatedAt": "2026-10-15T23:30:43+05:30",
+    "updatedAt": "2026-10-15T23:30:25+05:30",
     "byDate": {
       "2026-10-14": {
+        "revenue": 91000,
         "shows": 1,
-        "totalSeats": 364,
         "totalFilled": 364,
-        "revenue": 91000
+        "totalSeats": 364
       },
       "2026-10-15": {
+        "revenue": 690360,
         "shows": 58,
-        "totalSeats": 10622,
         "totalFilled": 2371,
-        "revenue": 690360
+        "totalSeats": 10622
       }
     }
   }
