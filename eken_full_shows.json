@@ -1,19 +1,33 @@
 {
   "movieId": "230309",
-  "updatedAt": "2026-10-15T11:52:58+05:30",
+  "updatedAt": "2026-10-15T12:01:09+05:30",
   "shows": [
     {
+      "audi": "SCREEN 1",
+      "avail": 1,
       "cinema": "SVF Cinemas : Triveni Mall, Serampore",
       "date": "2026-10-15",
-      "time": "11:00",
-      "audi": "SCREEN 1",
-      "fmt": "2D",
-      "tag": "DOLBY 7.1.2",
-      "total": 201,
-      "avail": 1,
-      "filled": 200,
       "fillRate": 99.5,
-      "status": "Housefull"
+      "filled": 200,
+      "fmt": "2D",
+      "status": "Housefull",
+      "tag": "DOLBY 7.1.2",
+      "time": "11:00",
+      "total": 201
+    },
+    {
+      "cinema": "INOX Star Mall, Madhyamgram, Kolkata",
+      "date": "2026-10-15",
+      "time": "11:00",
+      "audi": "SCREEN 4",
+      "fmt": "2D",
+      "tag": null,
+      "total": 243,
+      "avail": 42,
+      "filled": 201,
+      "fillRate": 82.7,
+      "status": "Almost full",
+      "lastSeenAt": "2026-10-15T11:43:44+05:30"
     }
   ]
 }
