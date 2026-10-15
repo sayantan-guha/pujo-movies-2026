@@ -1173,16 +1173,24 @@
   // BookMyShow-only halls: no real seat count, just a status band (Available /
   // Filling Fast / Housefull) — rendered with dashed tickets and no bar/number
   // so it never reads as the same precision as the District-sourced data.
-  function buildBmsGroups(bmsData) {
+  function buildBmsGroups(bmsData, date) {
     if (!bmsData || !bmsData.cinemas || !bmsData.cinemas.length) return null;
     const bandCls = status => {
       const s = (status || "").toUpperCase();
-      if (s.includes("HOUSEFULL") || s.includes("SOLD")) return "sold";
+      if (s.includes("HOUSEFULL") || s.includes("SOLD") || s.includes("CLOSED")) return "sold";
       if (s.includes("FAST") || s.includes("FILLING")) return "warn";
       return "good";
     };
-    return bmsData.cinemas.map(c => {
-      const tickets = (c.shows || []).map(s => {
+    // Shows may carry a `date` field now that halls are checked across several days, not
+    // just "today" — filter to the tab's selected date, same as the District cinema list.
+    // Older entries with no `date` at all (pre-automation, single-evening manual checks)
+    // still show up on every date rather than disappearing.
+    const cinemas = bmsData.cinemas
+      .map(c => ({ ...c, shows: (c.shows || []).filter(s => !s.date || s.date === date) }))
+      .filter(c => c.shows.length);
+    if (!cinemas.length) return null;
+    return cinemas.map(c => {
+      const tickets = c.shows.map(s => {
         const cls = bandCls(s.status);
         return `<div class="ticket directional">
           <div class="time">${fmtTime(s.time)}</div>
@@ -1191,7 +1199,7 @@
         </div>`;
       }).join("");
       return `<div class="cinema-block">
-        <p class="cname">${c.name}<span class="avg">${(c.shows || []).length} show${(c.shows || []).length > 1 ? "s" : ""}</span></p>
+        <p class="cname">${c.name}<span class="avg">${c.shows.length} show${c.shows.length > 1 ? "s" : ""}</span></p>
         <div class="ticket-row">${tickets}</div>
       </div>`;
     }).join("");
@@ -1231,16 +1239,18 @@
       }
     }
 
-    // BookMyShow-only halls — manually checked, not part of the hourly refresh.
+    // BookMyShow-only halls — covers standalone venues District doesn't list.
     let bmsHtml = "";
     if (movie.bmsHalls && movie.bmsHalls.cinemas && movie.bmsHalls.cinemas.length) {
-      const bmsGroups = buildBmsGroups(movie.bmsHalls);
-      bmsHtml = `
-        <div class="source-section" id="bms-section">
-          <div class="source-head"><h3>BookMyShow &mdash; other halls</h3><span class="source-badge bg-warn status-warn">Directional &middot; checked ${fmtDate(movie.bmsHalls.checkedAt.slice(0,10))}</span></div>
-          <p class="source-note">Not listed on District. BookMyShow shows only a status band per show (Available / Filling Fast / Housefull), not an exact seat count — so these carry no fill % or revenue, and are refreshed by hand on request, not hourly.</p>
-          ${bmsGroups}
-        </div>`;
+      const bmsGroups = buildBmsGroups(movie.bmsHalls, state.date);
+      if (bmsGroups) {
+        bmsHtml = `
+          <div class="source-section" id="bms-section">
+            <div class="source-head"><h3>BookMyShow &mdash; other halls</h3><span class="source-badge bg-warn status-warn">Directional &middot; checked ${timeAgo(movie.bmsHalls.checkedAt)}</span></div>
+            <p class="source-note">Not listed on District. BookMyShow shows only a status band per show (Available / Fast Filling / Closed), not an exact seat count — so these carry no fill % or revenue.</p>
+            ${bmsGroups}
+          </div>`;
+      }
     }
 
     // This list can run long (20+ cinemas before you'd ever reach BookMyShow
