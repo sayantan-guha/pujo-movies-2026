@@ -1,6 +1,5 @@
 {
   "movieId": "230309",
-  "updatedAt": "2026-10-17T00:45:36+05:30",
   "shows": [
     {
       "audi": "SCREEN 1",
@@ -394,18 +393,18 @@
       "total": 136
     },
     {
+      "audi": "SCREEN 5",
+      "avail": 39,
       "cinema": "INOX South City Mall, South City Mall, Kolkata",
       "date": "2026-10-16",
-      "time": "23:05",
-      "audi": "SCREEN 5",
-      "fmt": "2D",
-      "tag": "LASER",
-      "total": 191,
-      "avail": 39,
-      "filled": 152,
       "fillRate": 79.6,
+      "filled": 152,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-16T23:47:12+05:30",
       "status": "Almost full",
-      "lastSeenAt": "2026-10-16T23:47:12+05:30"
+      "tag": "LASER",
+      "time": "23:05",
+      "total": 191
     },
     {
       "audi": "SCREEN 2",
@@ -421,5 +420,6 @@
       "time": "23:25",
       "total": 101
     }
-  ]
+  ],
+  "updatedAt": "2026-10-17T00:45:36+05:30"
 }
