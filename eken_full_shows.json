@@ -1,6 +1,6 @@
 {
   "movieId": "230309",
-  "updatedAt": "2026-10-16T22:57:10+05:30",
+  "updatedAt": "2026-10-16T23:55:15+05:30",
   "shows": [
     {
       "audi": "SCREEN 1",
@@ -380,18 +380,32 @@
       "total": 252
     },
     {
+      "audi": "SCREEN 2",
+      "avail": 10,
       "cinema": "SVF Cinemas : Wood Square Mall, Narendrapur",
       "date": "2026-10-16",
+      "fillRate": 92.6,
+      "filled": 126,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-16T21:45:48+05:30",
+      "status": "Almost full",
+      "tag": "2K",
       "time": "21:30",
+      "total": 136
+    },
+    {
+      "cinema": "Nazrultirtha Cinema : Kolkata",
+      "date": "2026-10-16",
+      "time": "23:25",
       "audi": "SCREEN 2",
       "fmt": "2D",
-      "tag": "2K",
-      "total": 136,
-      "avail": 10,
-      "filled": 126,
-      "fillRate": 92.6,
+      "tag": "5.1 DSS",
+      "total": 101,
+      "avail": 22,
+      "filled": 79,
+      "fillRate": 78.2,
       "status": "Almost full",
-      "lastSeenAt": "2026-10-16T21:45:48+05:30"
+      "lastSeenAt": "2026-10-16T22:47:00+05:30"
     }
   ]
 }
