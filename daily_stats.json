@@ -1,7 +1,7 @@
 {
   "230309": {
     "movieId": "230309",
-    "updatedAt": "2026-10-16T19:46:38+05:30",
+    "updatedAt": "2026-10-16T20:48:43+05:30",
     "byDate": {
       "2026-10-15": {
         "revenue": 3979260,
@@ -10,26 +10,28 @@
         "totalSeats": 37084
       },
       "2026-10-16": {
-        "revenue": 3324786,
-        "shows": 127,
-        "totalFilled": 10441,
-        "totalSeats": 28222
+        "revenue": 3391886,
+        "shows": 133,
+        "totalFilled": 10697,
+        "totalSeats": 29158
       }
     }
   },
   "213662": {
     "movieId": "213662",
-    "updatedAt": "2026-10-16T19:48:55+05:30",
+    "updatedAt": "2026-10-16T20:51:24+05:30",
     "byDate": {
       "2026-10-16": {
-        "revenue": 2102833,
-        "shows": 100,
-        "totalFilled": 7634,
-        "totalSeats": 21029
+        "revenue": 2581997,
+        "shows": 121,
+        "totalFilled": 9180,
+        "totalSeats": 25383
       }
     }
   },
   "230211": {
+    "movieId": "230211",
+    "updatedAt": "2026-10-16T20:54:35+05:30",
     "byDate": {
       "2026-10-15": {
         "revenue": 2235390,
@@ -38,16 +40,16 @@
         "totalSeats": 29326
       },
       "2026-10-16": {
-        "revenue": 1714238,
-        "shows": 82,
-        "totalFilled": 5611,
-        "totalSeats": 17449
+        "revenue": 2236636,
+        "shows": 99,
+        "totalFilled": 7240,
+        "totalSeats": 21481
       }
-    },
-    "movieId": "230211",
-    "updatedAt": "2026-10-16T18:58:28+05:30"
+    }
   },
   "220611": {
+    "movieId": "220611",
+    "updatedAt": "2026-10-16T20:56:48+05:30",
     "byDate": {
       "2026-10-14": {
         "revenue": 91000,
@@ -62,13 +64,11 @@
         "totalSeats": 10802
       },
       "2026-10-16": {
-        "revenue": 584194,
-        "shows": 47,
-        "totalFilled": 1952,
-        "totalSeats": 8534
+        "revenue": 654414,
+        "shows": 51,
+        "totalFilled": 2165,
+        "totalSeats": 9091
       }
-    },
-    "movieId": "220611",
-    "updatedAt": "2026-10-16T19:00:10+05:30"
+    }
   }
 }
