@@ -1,5 +1,6 @@
 {
   "movieId": "230309",
+  "updatedAt": "2026-10-16T15:47:02+05:30",
   "shows": [
     {
       "audi": "SCREEN 1",
@@ -181,7 +182,20 @@
       "tag": "SVF MUSE",
       "time": "21:55",
       "total": 42
+    },
+    {
+      "cinema": "SVF Cinemas : Wood Square Mall, Narendrapur",
+      "date": "2026-10-16",
+      "time": "14:45",
+      "audi": "SCREEN 2",
+      "fmt": "2D",
+      "tag": "2K",
+      "total": 136,
+      "avail": 13,
+      "filled": 123,
+      "fillRate": 90.4,
+      "status": "Almost full",
+      "lastSeenAt": "2026-10-16T14:57:08+05:30"
     }
-  ],
-  "updatedAt": "2026-10-15T22:55:38+05:30"
+  ]
 }
