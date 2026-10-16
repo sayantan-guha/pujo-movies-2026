@@ -1,6 +1,6 @@
 {
   "movieId": "230309",
-  "updatedAt": "2026-10-16T18:53:23+05:30",
+  "updatedAt": "2026-10-16T19:46:38+05:30",
   "shows": [
     {
       "audi": "SCREEN 1",
@@ -268,46 +268,88 @@
       "total": 136
     },
     {
+      "audi": "SCREEN 3",
+      "avail": 67,
       "cinema": "INOX South City Mall, South City Mall, Kolkata",
       "date": "2026-10-16",
+      "fillRate": 82.5,
+      "filled": 316,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-16T17:49:08+05:30",
+      "status": "Almost full",
+      "tag": null,
       "time": "17:20",
+      "total": 383
+    },
+    {
+      "audi": "SCREEN 2",
+      "avail": 7,
+      "cinema": "Nazrultirtha Cinema : Kolkata",
+      "date": "2026-10-16",
+      "fillRate": 93.1,
+      "filled": 94,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-16T17:49:08+05:30",
+      "status": "Almost full",
+      "tag": "5.1 DSS",
+      "time": "18:00",
+      "total": 101
+    },
+    {
+      "audi": "AUDI04",
+      "avail": 37,
+      "cinema": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
+      "date": "2026-10-16",
+      "fillRate": 85.3,
+      "filled": 215,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-16T17:49:08+05:30",
+      "status": "Almost full",
+      "tag": "DOLBY 7.1",
+      "time": "18:30",
+      "total": 252
+    },
+    {
+      "cinema": "INOX Metropolis Mall, Hiland Park, Kolkata",
+      "date": "2026-10-16",
+      "time": "18:45",
       "audi": "SCREEN 3",
       "fmt": "2D",
       "tag": null,
-      "total": 383,
-      "avail": 67,
-      "filled": 316,
-      "fillRate": 82.5,
+      "total": 287,
+      "avail": 55,
+      "filled": 232,
+      "fillRate": 80.8,
       "status": "Almost full",
-      "lastSeenAt": "2026-10-16T17:49:08+05:30"
+      "lastSeenAt": "2026-10-16T18:53:23+05:30"
     },
     {
-      "cinema": "Nazrultirtha Cinema : Kolkata",
+      "cinema": "PVR Diamond Plaza, Jassore Road, Kolkata",
       "date": "2026-10-16",
-      "time": "18:00",
+      "time": "18:45",
+      "audi": "AUDI 01",
+      "fmt": "2D",
+      "tag": null,
+      "total": 318,
+      "avail": 55,
+      "filled": 263,
+      "fillRate": 82.7,
+      "status": "Almost full",
+      "lastSeenAt": "2026-10-16T18:53:23+05:30"
+    },
+    {
+      "cinema": "SVF Cinemas : Wood Square Mall, Narendrapur",
+      "date": "2026-10-16",
+      "time": "19:15",
       "audi": "SCREEN 2",
       "fmt": "2D",
-      "tag": "5.1 DSS",
-      "total": 101,
-      "avail": 7,
-      "filled": 94,
-      "fillRate": 93.1,
-      "status": "Almost full",
-      "lastSeenAt": "2026-10-16T17:49:08+05:30"
-    },
-    {
-      "cinema": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
-      "date": "2026-10-16",
-      "time": "18:30",
-      "audi": "AUDI04",
-      "fmt": "2D",
-      "tag": "DOLBY 7.1",
-      "total": 252,
-      "avail": 37,
-      "filled": 215,
-      "fillRate": 85.3,
-      "status": "Almost full",
-      "lastSeenAt": "2026-10-16T17:49:08+05:30"
+      "tag": "2K",
+      "total": 136,
+      "avail": 5,
+      "filled": 131,
+      "fillRate": 96.3,
+      "status": "Housefull",
+      "lastSeenAt": "2026-10-16T18:53:23+05:30"
     }
   ]
 }
