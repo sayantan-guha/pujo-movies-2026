@@ -1,6 +1,6 @@
 {
   "movieId": "230309",
-  "updatedAt": "2026-10-16T17:00:03+05:30",
+  "updatedAt": "2026-10-16T17:49:08+05:30",
   "shows": [
     {
       "audi": "SCREEN 1",
@@ -198,32 +198,74 @@
       "total": 136
     },
     {
+      "audi": "SCREEN 1",
+      "avail": 19,
       "cinema": "INOX South City Mall, South City Mall, Kolkata",
       "date": "2026-10-16",
-      "time": "15:30",
-      "audi": "SCREEN 1",
-      "fmt": "2D",
-      "tag": null,
-      "total": 213,
-      "avail": 19,
-      "filled": 194,
       "fillRate": 91.1,
+      "filled": 194,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-16T15:47:02+05:30",
       "status": "Almost full",
-      "lastSeenAt": "2026-10-16T15:47:02+05:30"
+      "tag": null,
+      "time": "15:30",
+      "total": 213
     },
     {
+      "audi": "AUDI04",
+      "avail": 60,
       "cinema": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
       "date": "2026-10-16",
-      "time": "15:55",
-      "audi": "AUDI04",
-      "fmt": "2D",
-      "tag": "DOLBY 7.1",
-      "total": 252,
-      "avail": 60,
-      "filled": 192,
       "fillRate": 76.2,
+      "filled": 192,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-16T15:47:02+05:30",
       "status": "Almost full",
-      "lastSeenAt": "2026-10-16T15:47:02+05:30"
+      "tag": "DOLBY 7.1",
+      "time": "15:55",
+      "total": 252
+    },
+    {
+      "cinema": "INOX Star Mall, Madhyamgram, Kolkata",
+      "date": "2026-10-16",
+      "time": "16:10",
+      "audi": "SCREEN 4",
+      "fmt": "2D",
+      "tag": null,
+      "total": 243,
+      "avail": 39,
+      "filled": 204,
+      "fillRate": 84,
+      "status": "Almost full",
+      "lastSeenAt": "2026-10-16T16:47:36+05:30"
+    },
+    {
+      "cinema": "PVR Diamond Plaza, Jassore Road, Kolkata",
+      "date": "2026-10-16",
+      "time": "16:10",
+      "audi": "AUDI 01",
+      "fmt": "2D",
+      "tag": null,
+      "total": 318,
+      "avail": 47,
+      "filled": 271,
+      "fillRate": 85.2,
+      "status": "Almost full",
+      "lastSeenAt": "2026-10-16T16:47:36+05:30"
+    },
+    {
+      "cinema": "SVF Cinemas : Wood Square Mall, Narendrapur",
+      "date": "2026-10-16",
+      "time": "17:00",
+      "audi": "SCREEN 2",
+      "fmt": "2D",
+      "tag": "2K",
+      "total": 136,
+      "avail": 9,
+      "filled": 127,
+      "fillRate": 93.4,
+      "status": "Almost full",
+      "lastSeenAt": "2026-10-16T16:47:36+05:30"
     }
   ]
 }
