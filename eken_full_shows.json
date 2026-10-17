@@ -1,6 +1,6 @@
 {
   "movieId": "230309",
-  "updatedAt": "2026-10-17T20:49:22+05:30",
+  "updatedAt": "2026-10-17T21:55:38+05:30",
   "shows": [
     {
       "audi": "SCREEN 1",
@@ -828,18 +828,46 @@
       "total": 136
     },
     {
+      "audi": "SCREEN 1",
+      "avail": 23,
       "cinema": "INOX Quest Mall, Ballygunge, Kolkata",
       "date": "2026-10-17",
+      "fillRate": 87.4,
+      "filled": 159,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-17T19:49:26+05:30",
+      "status": "Almost full",
+      "tag": "RECLINERS",
       "time": "19:55",
+      "total": 182
+    },
+    {
+      "cinema": "INOX South City Mall, South City Mall, Kolkata",
+      "date": "2026-10-17",
+      "time": "20:55",
       "audi": "SCREEN 1",
       "fmt": "2D",
-      "tag": "RECLINERS",
-      "total": 182,
-      "avail": 23,
-      "filled": 159,
-      "fillRate": 87.4,
+      "tag": null,
+      "total": 213,
+      "avail": 27,
+      "filled": 186,
+      "fillRate": 87.3,
       "status": "Almost full",
-      "lastSeenAt": "2026-10-17T19:49:26+05:30"
+      "lastSeenAt": "2026-10-17T20:49:22+05:30"
+    },
+    {
+      "cinema": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
+      "date": "2026-10-17",
+      "time": "21:05",
+      "audi": "AUDI04",
+      "fmt": "2D",
+      "tag": "DOLBY 7.1",
+      "total": 252,
+      "avail": 59,
+      "filled": 193,
+      "fillRate": 76.6,
+      "status": "Almost full",
+      "lastSeenAt": "2026-10-17T20:49:22+05:30"
     }
   ]
 }
