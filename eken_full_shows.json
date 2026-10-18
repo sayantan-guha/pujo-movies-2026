@@ -1,6 +1,5 @@
 {
   "movieId": "230309",
-  "updatedAt": "2026-10-18T00:45:54+05:30",
   "shows": [
     {
       "audi": "SCREEN 1",
@@ -926,74 +925,75 @@
       "total": 103
     },
     {
+      "audi": "SCREEN 5",
+      "avail": 50,
       "cinema": "INOX South City Mall, South City Mall, Kolkata",
       "date": "2026-10-17",
-      "time": "23:05",
-      "audi": "SCREEN 5",
-      "fmt": "2D",
-      "tag": "LASER",
-      "total": 201,
-      "avail": 50,
-      "filled": 151,
       "fillRate": 75.1,
+      "filled": 151,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-17T23:56:47+05:30",
       "status": "Almost full",
-      "lastSeenAt": "2026-10-17T23:56:47+05:30"
+      "tag": "LASER",
+      "time": "23:05",
+      "total": 201
     },
     {
+      "audi": "AUDI04",
+      "avail": 58,
       "cinema": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
       "date": "2026-10-17",
-      "time": "23:40",
-      "audi": "AUDI04",
-      "fmt": "2D",
-      "tag": "DOLBY 7.1",
-      "total": 252,
-      "avail": 58,
-      "filled": 194,
       "fillRate": 77,
+      "filled": 194,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-17T23:56:47+05:30",
       "status": "Almost full",
-      "lastSeenAt": "2026-10-17T23:56:47+05:30"
+      "tag": "DOLBY 7.1",
+      "time": "23:40",
+      "total": 252
     },
     {
+      "audi": "SCREEN 1",
+      "avail": 47,
       "cinema": "INOX South City Mall, South City Mall, Kolkata",
       "date": "2026-10-17",
-      "time": "23:40",
-      "audi": "SCREEN 1",
-      "fmt": "2D",
-      "tag": null,
-      "total": 213,
-      "avail": 47,
-      "filled": 166,
       "fillRate": 77.9,
+      "filled": 166,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-17T23:56:47+05:30",
       "status": "Almost full",
-      "lastSeenAt": "2026-10-17T23:56:47+05:30"
+      "tag": null,
+      "time": "23:40",
+      "total": 213
     },
     {
+      "audi": "SCREEN 2",
+      "avail": 32,
       "cinema": "SVF Cinemas : Wood Square Mall, Narendrapur",
       "date": "2026-10-17",
-      "time": "23:50",
-      "audi": "SCREEN 2",
-      "fmt": "2D",
-      "tag": "2K",
-      "total": 136,
-      "avail": 32,
-      "filled": 104,
       "fillRate": 76.5,
+      "filled": 104,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-17T23:56:47+05:30",
       "status": "Almost full",
-      "lastSeenAt": "2026-10-17T23:56:47+05:30"
+      "tag": "2K",
+      "time": "23:50",
+      "total": 136
     },
     {
+      "audi": "AUDI 01",
+      "avail": 68,
       "cinema": "PVR Diamond Plaza, Jassore Road, Kolkata",
       "date": "2026-10-17",
-      "time": "23:55",
-      "audi": "AUDI 01",
-      "fmt": "2D",
-      "tag": null,
-      "total": 318,
-      "avail": 68,
-      "filled": 250,
       "fillRate": 78.6,
+      "filled": 250,
+      "fmt": "2D",
+      "lastSeenAt": "2026-10-17T23:56:47+05:30",
       "status": "Almost full",
-      "lastSeenAt": "2026-10-17T23:56:47+05:30"
+      "tag": null,
+      "time": "23:55",
+      "total": 318
     }
-  ]
+  ],
+  "updatedAt": "2026-10-18T00:45:54+05:30"
 }

@@ -24,6 +24,8 @@
     "updatedAt": "2026-10-18T00:45:54+05:30"
   },
   "213662": {
+    "movieId": "213662",
+    "updatedAt": "2026-10-18T08:55:02+05:30",
     "byDate": {
       "2026-10-16": {
         "revenue": 3349577,
@@ -36,10 +38,14 @@
         "shows": 150,
         "totalFilled": 10394,
         "totalSeats": 31102
+      },
+      "2026-10-18": {
+        "shows": 1,
+        "totalSeats": 201,
+        "totalFilled": 20,
+        "revenue": 6400
       }
-    },
-    "movieId": "213662",
-    "updatedAt": "2026-10-18T00:49:19+05:30"
+    }
   },
   "230211": {
     "byDate": {
