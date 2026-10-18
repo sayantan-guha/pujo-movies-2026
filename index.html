@@ -9,6 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
 <style>
   :root {
     /* hoichoi design system — light theme tokens, read from project/tokens.json */
@@ -294,6 +295,21 @@
     color: var(--text-1);
   }
 
+  /* Eken-only export row */
+  .export-row { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--text-3); margin: -6px 0 16px; }
+  .export-btn {
+    font-family: "Outfit", sans-serif;
+    font-size: 12.5px;
+    font-weight: 600;
+    padding: 5px 13px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-default);
+    background: var(--bg-base);
+    color: var(--text-1);
+    cursor: pointer;
+  }
+  .export-btn:hover { border-color: var(--accent); color: var(--accent); }
+
   .cinema-block { padding: 16px 0; border-top: 1px solid var(--border-subtle); }
   .cinema-block:first-child { border-top: none; }
   .cinema-block .cname { font-weight: 600; font-size: 14.5px; margin: 0 0 10px; display: flex; gap: 8px; align-items: baseline; }
@@ -339,6 +355,20 @@
     padding: 2px 6px;
     border-radius: var(--radius-xs);
     display: inline-block;
+  }
+
+  /* Eken-only: a show that already happened, kept visible at its last-known percentage
+     instead of vanishing — muted so it reads as history, not a live number. */
+  .ticket.ticket-expired { opacity: 0.62; }
+  .ticket.ticket-expired .tag {
+    color: var(--text-2);
+    font-weight: 600;
+    text-transform: none;
+    letter-spacing: normal;
+    overflow: visible;
+    white-space: normal;
+    height: auto;
+    line-height: 1.3;
   }
 
   .jump-nav { display: flex; gap: 8px; flex-wrap: wrap; margin: -6px 0 16px; }
@@ -519,6 +549,10 @@
     if (n >= 1e3) return "₹" + (n / 1e3).toFixed(1) + "k";
     return "₹" + Math.round(n);
   }
+  function fmtClockTime(iso) {
+    if (!iso) return "";
+    return new Date(iso).toLocaleTimeString("en-IN", { timeZone: "Asia/Kolkata", hour: "numeric", minute: "2-digit", hour12: true });
+  }
   function timeAgo(iso) {
     if (!iso) return "unknown";
     const mins = Math.round((Date.now() - new Date(iso).getTime()) / 60000);
@@ -537,6 +571,38 @@
   let DAILY_STATS = {}; // movieId -> { byDate: { date -> {shows,totalSeats,totalFilled,revenue} } } — shows that have
                         // already expired off district.in's live listing, locked in permanently so a date's totals
                         // only ever grow as the day goes on, and a fully-past date never vanishes from the trend chart.
+  let EKEN_SHOW_HISTORY = {}; // date -> { shows: [{cinema,time,audi,fmt,tag,total,avail,filled,fillRate,status,lastSeenAt}] }
+                              // Eken-only, every expired show (any fill level) so the show-wise tab can keep showing
+                              // a show's last-known percentage after it drops off district.in, instead of it vanishing.
+
+  // Merge Eken's permanent per-show history into the live cinemas list for one date, so an
+  // already-happened show keeps showing its last-known percentage instead of disappearing.
+  // Marks each merged-in show `expired: true` so the renderer can style it distinctly.
+  function mergeEkenHistory(cinemas, date) {
+    const histDoc = EKEN_SHOW_HISTORY[date];
+    const histShows = histDoc && histDoc.shows;
+    if (!histShows || !histShows.length) return cinemas;
+    const byName = {};
+    const merged = cinemas.map(c => {
+      const copy = { name: c.name, shows: c.shows.slice() };
+      byName[c.name] = copy;
+      return copy;
+    });
+    histShows.forEach(h => {
+      let bucket = byName[h.cinema];
+      if (!bucket) {
+        bucket = { name: h.cinema, shows: [] };
+        byName[h.cinema] = bucket;
+        merged.push(bucket);
+      }
+      bucket.shows.push({
+        date, time: h.time, audi: h.audi, fmt: h.fmt, tag: h.tag,
+        total: h.total, avail: h.avail, filled: h.filled, fillRate: h.fillRate,
+        status: h.status, expired: true, lastSeenAt: h.lastSeenAt,
+      });
+    });
+    return merged;
+  }
 
   // ---- aggregation --------------------------------------------------
   function aggregate(movie) {
@@ -1126,9 +1192,9 @@
   }
 
   // ---- show-wise tab (per movie, ported from the ticket-tile dashboard) ----
-  function showsForDate(movie, date) {
+  function showsForDate(cinemas, date) {
     const rows = [];
-    movie.cinemas.forEach(c => c.shows.filter(s => s.date === date).forEach(s => rows.push({ cinema: c.name, ...s })));
+    cinemas.forEach(c => c.shows.filter(s => s.date === date).forEach(s => rows.push({ cinema: c.name, ...s })));
     return rows;
   }
 
@@ -1155,8 +1221,12 @@
       const tickets = shows.map(s => {
         const pct = s.fillRate == null ? 0 : s.fillRate;
         const st = statusFor(pct);
-        const tagline = s.tag || s.fmt || "";
-        return `<div class="ticket">
+        // Eken-only: a show already screened (its time has passed and district.in no longer
+        // lists it) keeps showing its last-known percentage instead of disappearing — tagged
+        // "Ended" with the time it was last seen, and visually muted so it reads as history,
+        // not a live number.
+        const tagline = s.expired ? `Ended &middot; as of ${fmtClockTime(s.lastSeenAt)}` : (s.tag || s.fmt || "");
+        return `<div class="ticket${s.expired ? " ticket-expired" : ""}">
           <div class="time">${fmtTime(s.time)}</div>
           <div class="tag">${tagline}</div>
           <div class="bar-track"><div class="bar-fill bar-${st.cls}" style="width:${Math.min(pct, 100)}%"></div></div>
@@ -1211,7 +1281,11 @@
     if (!state.date || !(movie.showDates || []).includes(state.date)) state.date = (movie.showDates || [])[0];
 
     const dates = movie.showDates || [];
-    const todayRows = showsForDate(movie, state.date);
+    // Eken-only: merge in every expired show's last-known percentage for this date, so the
+    // show-wise listing (KPI tiles included) reflects the full day, not just what's still live.
+    const isEken = movie.id === EKEN_ID;
+    const cinemasForDisplay = isEken ? mergeEkenHistory(movie.cinemas, state.date) : movie.cinemas;
+    const todayRows = showsForDate(cinemasForDisplay, state.date);
     const totalShows = todayRows.length;
     const avgFill = totalShows ? Math.round(todayRows.reduce((a, r) => a + (r.fillRate || 0), 0) / totalShows) : 0;
     const housefull = todayRows.filter(r => r.fillRate >= 95).length;
@@ -1219,7 +1293,16 @@
 
     const datePills = dates.map(d => `<div class="date-pill ${d === state.date ? "active" : ""}" data-date="${d}">${fmtDate(d)}</div>`).join("");
 
-    const cinemaHtml = buildCinemaGroups(movie.cinemas, state.date, state.sort) || '<div class="empty-state">No shows found for this date.</div>';
+    const cinemaHtml = buildCinemaGroups(cinemasForDisplay, state.date, state.sort) || '<div class="empty-state">No shows found for this date.</div>';
+
+    // Export (Eken only) — CSV/Excel of exactly what's on screen for this date: one row
+    // per cinema+showtime, with the fill % and when that number was last captured.
+    const exportHtml = isEken ? `
+      <div class="export-row">
+        <span>Export this date</span>
+        <button class="export-btn" id="exportCsvBtn">CSV</button>
+        <button class="export-btn" id="exportXlsxBtn">Excel</button>
+      </div>` : "";
 
     // Pan-India section (Eken only, for now) — District-sourced, real numbers,
     // but kept out of every West-Bengal-vs-West-Bengal comparison elsewhere.
@@ -1284,6 +1367,7 @@
           <option value="name" ${state.sort === "name" ? "selected" : ""}>Name (A&ndash;Z)</option>
         </select>
       </div>
+      ${exportHtml}
       ${cinemaHtml}
       ${bmsHtml}
       ${panIndiaHtml}
@@ -1294,6 +1378,59 @@
     });
     const sortSelect = content.querySelector("#sortSelect");
     if (sortSelect) sortSelect.addEventListener("change", e => { state.sort = e.target.value; renderShowTab(movie); });
+
+    if (isEken) {
+      const csvBtn = content.querySelector("#exportCsvBtn");
+      const xlsxBtn = content.querySelector("#exportXlsxBtn");
+      if (csvBtn) csvBtn.addEventListener("click", () => exportEkenRows(movie, todayRows, state.date, "csv"));
+      if (xlsxBtn) xlsxBtn.addEventListener("click", () => exportEkenRows(movie, todayRows, state.date, "xlsx"));
+    }
+  }
+
+  // ---- Eken-only: export the show-wise listing for one date as CSV or Excel -----------
+  // One row per cinema+showtime, exactly what's on screen: Hall, Timing, Fill %, As Of
+  // (the time that percentage was last captured — the live scrape time for a still-upcoming
+  // show, or the show's own last-seen time for one that's already ended), plus Date/Status
+  // as extra context.
+  function exportEkenRows(movie, rows, date, format) {
+    const liveAsOf = fmtClockTime(movie.scrapedAt);
+    const data = rows
+      .slice()
+      .sort((a, b) => a.cinema.localeCompare(b.cinema) || a.time.localeCompare(b.time))
+      .map(r => ({
+        "Hall": r.cinema,
+        "Timing": fmtTime(r.time),
+        "Fill %": r.fillRate == null ? "" : r.fillRate,
+        "As Of": r.expired ? fmtClockTime(r.lastSeenAt) : liveAsOf,
+        "Date": r.date,
+        "Status": r.expired ? "Ended" : (r.status || ""),
+      }));
+    const filename = `eken-fill-rates-${date}`;
+    if (format === "csv") {
+      const headers = Object.keys(data[0] || { "Hall": "", "Timing": "", "Fill %": "", "As Of": "", "Date": "", "Status": "" });
+      const esc = v => { const s = String(v ?? ""); return /[",\n]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+      const lines = [headers.join(",")].concat(data.map(r => headers.map(h => esc(r[h])).join(",")));
+      saveFile(filename + ".csv", new Blob(["﻿" + lines.join("\n")], { type: "text/csv;charset=utf-8" }));
+    } else {
+      if (!window.XLSX) { alert("Excel export isn't available right now — try CSV instead."); return; }
+      const ws = XLSX.utils.json_to_sheet(data);
+      const wb = XLSX.utils.book_new();
+      XLSX.utils.book_append_sheet(wb, ws, "Eken fill rates");
+      const buf = XLSX.write(wb, { type: "array", bookType: "xlsx" });
+      saveFile(filename + ".xlsx", new Blob([buf], { type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" }));
+    }
+  }
+
+  // Triggers a real browser download of a Blob — works as a plain static page (no artifact
+  // sandbox here), so a native <a download> click is all that's needed.
+  function saveFile(filename, blob) {
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url; a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
   }
 
   // ---- Eken-only: full / almost-full shows, including ones that already
@@ -1498,12 +1635,23 @@
         }
       } catch (e) { console.error("daily_stats.json failed to load", e); }
 
+      // Eken-only history of every expired show's last-known percentage (any fill level),
+      // keyed by date. A static sibling file, written by the scraper alongside data.json;
+      // missing is fine pre-launch.
+      try {
+        const ekenHistoryRes = await fetch("eken_show_history.json?t=" + Date.now(), { cache: "no-store" });
+        if (ekenHistoryRes.ok) {
+          const v = await ekenHistoryRes.json();
+          if (v) EKEN_SHOW_HISTORY = v;
+        }
+      } catch (e) { console.error("eken_show_history.json failed to load", e); }
+
       const newest = MOVIES.reduce((acc, m) => !acc || (m.scrapedAt || "") > acc ? m.scrapedAt : acc, null);
       document.getElementById("updatedLine").innerHTML = MOVIES.length
         ? `Last scraped <b>${timeAgo(newest)}</b>`
         : "No data yet.";
       document.getElementById("footnote").innerHTML =
-        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Head-to-head comparisons (trends, revenue, chain breakdown, insights) are West-Bengal-only for all four films, even for The Eken, which also plays a handful of single-screen shows outside West Bengal (see its own tab). District.in only ever lists shows that haven't started yet, so a show's contribution to revenue and fill totals is locked in permanently once its own showtime has passed — totals only grow from there, they never shrink as the day goes on or a date moves into the past. History from before this safeguard existed (release day through 2026-10-15) was reconstructed retroactively from this repository's own hourly commit history. Source: public showtime pages on district.in, refreshed roughly every 30 minutes via GitHub Actions; BookMyShow-only halls are checked by hand and refreshed on request, not automatically.";
+        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Head-to-head comparisons (trends, revenue, chain breakdown, insights) are West-Bengal-only for all four films, even for The Eken, which also plays a handful of single-screen shows outside West Bengal (see its own tab). District.in only ever lists shows that haven't started yet, so a show's contribution to revenue and fill totals is locked in permanently once its own showtime has passed — totals only grow from there, they never shrink as the day goes on or a date moves into the past. History from before this safeguard existed (release day through 2026-10-15) was reconstructed retroactively from this repository's own hourly commit history. On The Eken's own show-wise tab specifically, an individual show that has already screened stays visible at its last-known percentage (muted, tagged &ldquo;Ended&rdquo;) instead of disappearing the moment district.in drops it — that same tab also offers a CSV/Excel export of whatever's on screen. Source: public showtime pages on district.in, refreshed roughly every 30 minutes via GitHub Actions; BookMyShow-only halls are checked by hand and refreshed on request, not automatically.";
       renderAll();
     } catch (e) {
       document.getElementById("updatedLine").textContent = "Couldn't load data.json.";
