@@ -1,1 +1,139 @@
-{}
+{
+  "2026-10-18": {
+    "date": "2026-10-18",
+    "movieId": "230309",
+    "shows": [
+      {
+        "audi": "SCREEN 1",
+        "avail": 229,
+        "cinema": "INOX City Centre II, Rajarhat, Kolkata",
+        "fillRate": 34,
+        "filled": 118,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-18T11:48:14+05:30",
+        "status": "Available",
+        "tag": null,
+        "time": "11:05",
+        "total": 347
+      },
+      {
+        "audi": "SCREEN 3",
+        "avail": 194,
+        "cinema": "INOX City Centre, Matigara, Siliguri",
+        "fillRate": 10.6,
+        "filled": 23,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-18T11:48:14+05:30",
+        "status": "Available",
+        "tag": null,
+        "time": "11:25",
+        "total": 217
+      },
+      {
+        "audi": "SCREEN 2",
+        "avail": 151,
+        "cinema": "INOX City Centre, Saltlake, kolkata",
+        "fillRate": 58.6,
+        "filled": 214,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-18T11:48:14+05:30",
+        "status": "Available",
+        "tag": null,
+        "time": "11:05",
+        "total": 365
+      },
+      {
+        "audi": "SCREEN 3",
+        "avail": 153,
+        "cinema": "INOX South City Mall, South City Mall, Kolkata",
+        "fillRate": 60.1,
+        "filled": 230,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-18T11:48:14+05:30",
+        "status": "Filling Fast",
+        "tag": null,
+        "time": "11:30",
+        "total": 383
+      },
+      {
+        "audi": "SCREEN 4",
+        "avail": 95,
+        "cinema": "INOX Star Mall, Madhyamgram, Kolkata",
+        "fillRate": 60.9,
+        "filled": 148,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-18T11:48:14+05:30",
+        "status": "Filling Fast",
+        "tag": null,
+        "time": "11:05",
+        "total": 243
+      },
+      {
+        "audi": "SCREEN 4",
+        "avail": 155,
+        "cinema": "INOX Swabhumi, Maulana Azad Sarani, Kolkata",
+        "fillRate": 6.6,
+        "filled": 11,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-18T11:48:14+05:30",
+        "status": "Available",
+        "tag": null,
+        "time": "11:25",
+        "total": 166
+      },
+      {
+        "audi": "SCREEN 1",
+        "avail": 223,
+        "cinema": "SVF Cinemas : Junction Mall, Durgapur",
+        "fillRate": 17.7,
+        "filled": 48,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-18T11:48:14+05:30",
+        "status": "Available",
+        "tag": "DOLBY 7.1.2 ",
+        "time": "11:40",
+        "total": 271
+      },
+      {
+        "audi": "SCREEN 3",
+        "avail": 184,
+        "cinema": "SVF Cinemas : PRM Centre Point Mall, Malda",
+        "fillRate": 12.8,
+        "filled": 27,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-18T11:48:14+05:30",
+        "status": "Available",
+        "tag": "BARCO DOLBY 7.1.2",
+        "time": "12:05",
+        "total": 211
+      },
+      {
+        "audi": "SCREEN 2",
+        "avail": 84,
+        "cinema": "SVF Cinemas : Platina Mall, Howrah",
+        "fillRate": 43.2,
+        "filled": 64,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-18T11:48:14+05:30",
+        "status": "Available",
+        "tag": "DOLBY 5.1",
+        "time": "11:50",
+        "total": 148
+      },
+      {
+        "audi": "SCREEN 2",
+        "avail": 90,
+        "cinema": "SVF Cinemas : Regent Star Mall, Burdwan",
+        "fillRate": 28.6,
+        "filled": 36,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-18T11:48:14+05:30",
+        "status": "Available",
+        "tag": "DOLBY 7.1",
+        "time": "11:45",
+        "total": 126
+      }
+    ],
+    "updatedAt": "2026-10-18T12:35:06+05:30"
+  }
+}
