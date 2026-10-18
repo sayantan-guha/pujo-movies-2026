@@ -1,7 +1,8 @@
 {
   "2026-10-18": {
-    "date": "2026-10-18",
     "movieId": "230309",
+    "date": "2026-10-18",
+    "updatedAt": "2026-10-18T18:09:49+05:30",
     "shows": [
       {
         "audi": "AUDI04",
@@ -80,6 +81,19 @@
         "tag": null,
         "time": "14:15",
         "total": 156
+      },
+      {
+        "cinema": "INOX Burdwan Arcade, B B Ghosh Road, Burdwan",
+        "time": "16:50",
+        "audi": "SCREEN 3",
+        "fmt": "2D",
+        "tag": null,
+        "total": 156,
+        "avail": 23,
+        "filled": 133,
+        "fillRate": 85.3,
+        "status": "Filling Fast",
+        "lastSeenAt": "2026-10-18T17:07:16+05:30"
       },
       {
         "audi": "SCREEN 1",
@@ -706,6 +720,19 @@
         "total": 149
       },
       {
+        "cinema": "SVF Cinemas : Kalyani's Multiplex, Raiganj",
+        "time": "17:30",
+        "audi": "SCREEN 1",
+        "fmt": "2D",
+        "tag": "2K",
+        "total": 149,
+        "avail": 106,
+        "filled": 43,
+        "fillRate": 28.9,
+        "status": "Available",
+        "lastSeenAt": "2026-10-18T17:07:16+05:30"
+      },
+      {
         "audi": "SCREEN 3",
         "avail": 184,
         "cinema": "SVF Cinemas : PRM Centre Point Mall, Malda",
@@ -940,6 +967,19 @@
         "total": 136
       },
       {
+        "cinema": "SVF Cinemas : Wood Square Mall, Narendrapur",
+        "time": "17:00",
+        "audi": "SCREEN 2",
+        "fmt": "2D",
+        "tag": "2K",
+        "total": 136,
+        "avail": 5,
+        "filled": 131,
+        "fillRate": 96.3,
+        "status": "Almost Full",
+        "lastSeenAt": "2026-10-18T17:07:16+05:30"
+      },
+      {
         "audi": "SCREEN 1",
         "avail": 46,
         "cinema": "Vidyasagar Mancha : SVF Cinemas, Kalyani",
@@ -952,7 +992,6 @@
         "time": "16:20",
         "total": 285
       }
-    ],
-    "updatedAt": "2026-10-18T17:14:35+05:30"
+    ]
   }
 }
