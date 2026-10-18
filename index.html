@@ -1403,7 +1403,7 @@
         "Fill %": r.fillRate == null ? "" : r.fillRate,
         "As Of": r.expired ? fmtClockTime(r.lastSeenAt) : liveAsOf,
         "Date": r.date,
-        "Status": r.expired ? "Ended" : (r.status || ""),
+        "Status": r.fillRate == null ? "" : statusFor(r.fillRate).label + (r.expired ? " (Ended)" : ""),
       }));
     const filename = `eken-fill-rates-${date}`;
     if (format === "csv") {
