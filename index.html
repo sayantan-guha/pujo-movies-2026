@@ -860,16 +860,26 @@
       return { m, rev, filled, shows };
     }).sort((a, b) => b.rev - a.rev);
 
-    const cards = totals.map((t, i) => `
+    const cards = totals.map((t, i) => {
+      const cal = REVENUE_CALIBRATION[t.m.id];
+      const trackedTheatres = t.m.cinemas.filter(c => c.shows.length).length;
+      const bigOrRevenueRows = cal
+        ? `<div class="meta">
+             <span class="revenue-row"><b>${fmtRevenue(t.rev)}</b> tracked <span class="cal-note">(${trackedTheatres}/${cal.totalRealTheatres} known WB theatres)</span></span>
+             <span class="revenue-row real-est"><b>${fmtRevenue(t.rev * cal.multiplier)}</b> est. real <span class="cal-note">&times;${cal.multiplier.toFixed(3)}, calibrated ${fmtDate(cal.asOfDate)}</span></span>
+           </div>`
+        : `<div class="big">${fmtRevenue(t.rev)}</div>`;
+      return `
       <div class="kpi-card">
         <div class="stripe" style="background:${FILM_COLORS[t.m.id]}"></div>
         <p class="film-name">${t.m.name}${i === 0 && t.rev > 0 ? '<span class="leading-tag">Leading</span>' : ""}</p>
-        <div class="big">${fmtRevenue(t.rev)}</div>
+        ${bigOrRevenueRows}
         <div class="meta">
-          <span><b>${t.filled.toLocaleString("en-IN")}</b> seats booked</span>
-          <span><b>${t.shows}</b> shows</span>
+          <span class="revenue-row"><b>${t.filled.toLocaleString("en-IN")}</b> seats booked</span>
+          <span class="revenue-row"><b>${t.shows}</b> shows</span>
         </div>
-      </div>`).join("");
+      </div>`;
+    }).join("");
 
     return `<div class="kpi-row">${cards}</div>`;
   }
