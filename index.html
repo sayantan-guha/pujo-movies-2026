@@ -203,6 +203,8 @@
   svg.chart .today-line { stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 3 3; }
   svg.chart .series-line { fill: none; stroke-width: 2.5; }
   svg.chart .series-dot { stroke: var(--bg-base); stroke-width: 1.5; }
+  svg.chart .est-rev-line { fill: none; stroke-width: 1.5; stroke-dasharray: 4 3; opacity: 0.85; }
+  svg.chart .est-rev-dot { opacity: 0.95; }
   svg.chart .bar { }
   svg.chart .dim { opacity: 0.15; }
 
@@ -225,6 +227,7 @@
   table.h2h td.date-cell .dow { font-weight: 400; color: var(--text-3); font-size: 11.5px; margin-left: 6px; }
   .cell-fill { font-family: "Outfit", monospace; font-weight: 600; font-size: 13px; }
   .cell-rev { font-family: "Outfit", monospace; font-size: 11px; color: var(--text-3); margin-top: 2px; }
+  .cell-actual { font-family: "Outfit", monospace; font-size: 10.5px; color: var(--good); margin-top: 2px; font-weight: 600; }
   .leader-badge {
     display: inline-block;
     width: 6px; height: 6px;
@@ -582,6 +585,18 @@
                                  // (real total revenue / our district.in-tracked revenue) for the most recent date
                                  // that sheet covers. Not touched by the hourly scraper — this is a separate,
                                  // deliberately-lagged calibration layer, not a live number.
+  let REAL_REVENUE_ACTUALS = {}; // movieId -> { date -> actual real revenue for that exact date } — confirmed
+                                  // distributor figures for specific past dates (not an estimate), manually entered
+                                  // whenever a collection sheet names a day's real number. Takes priority over the
+                                  // REVENUE_CALIBRATION multiplier for any date it covers, since it's ground truth
+                                  // rather than an extrapolation.
+  function realRevenueEstimate(movieId, date, trackedRevenue) {
+    const actuals = REAL_REVENUE_ACTUALS[movieId];
+    if (actuals && actuals[date] != null) return { value: actuals[date], isActual: true };
+    const cal = REVENUE_CALIBRATION[movieId];
+    if (cal) return { value: trackedRevenue * cal.multiplier, isActual: false };
+    return null;
+  }
 
   // Merge Eken's permanent per-show history into the live cinemas list for one date, so an
   // already-happened show keeps showing its last-known percentage instead of disappearing.
@@ -778,6 +793,13 @@
     const aggs = MOVIES.map(m => aggregate(m));
     let maxRev = 1;
     dates.forEach(d => aggs.forEach(a => { if (a[d]) maxRev = Math.max(maxRev, a[d].revenue); }));
+    // Also stretch the scale to fit any calibrated real-revenue estimate/actual, since those
+    // points can sit above the tracked bar they're drawn over.
+    dates.forEach(d => MOVIES.forEach((m, mi) => {
+      const a = aggs[mi][d];
+      const est = realRevenueEstimate(m.id, d, a ? a.revenue : 0);
+      if (est) maxRev = Math.max(maxRev, est.value);
+    }));
     const y = v => padT + innerH - (v / maxRev) * innerH;
 
     let gridlines = "";
@@ -787,23 +809,47 @@
       gridlines += `<text x="${padL - 8}" y="${y(v) + 4}" text-anchor="end" font-size="10">${fmtRevenue(v)}</text>`;
     });
 
-    let bars = "", xlabels = "";
-    dates.forEach((d, gi) => {
-      const groupX = padL + gi * groupW + groupW / 2 - (barW * MOVIES.length) / 2;
-      MOVIES.forEach((m, mi) => {
+    let bars = "", xlabels = "", estMarkers = "";
+    let hasAnyEstimate = false;
+    MOVIES.forEach((m, mi) => {
+      const pts = []; // for this movie's dashed est./actual line
+      dates.forEach((d, gi) => {
         const a = aggs[mi][d];
         const rev = a ? a.revenue : 0;
         const dim = ACTIVE.size && !ACTIVE.has(m.id) ? "dim" : "";
+        const groupX = padL + gi * groupW + groupW / 2 - (barW * MOVIES.length) / 2;
         const bx = groupX + mi * barW;
         const by = y(rev);
         bars += `<rect class="bar ${dim}" x="${bx}" y="${by}" width="${barW - 2}" height="${(H - padB) - by}" fill="${FILM_COLOR_HEX[m.id]}" rx="2"><title>${m.name} — ${fmtDate(d)}: ${fmtRevenue(rev)}</title></rect>`;
+
+        const est = realRevenueEstimate(m.id, d, rev);
+        if (est) {
+          hasAnyEstimate = true;
+          pts.push({ x: bx + (barW - 2) / 2, y: y(est.value), est, d, dim });
+        }
       });
+      if (pts.length) {
+        const dim = ACTIVE.size && !ACTIVE.has(m.id) ? "dim" : "";
+        const path = "M" + pts.map(p => `${p.x},${p.y}`).join(" L");
+        estMarkers += `<path class="est-rev-line ${dim}" d="${path}" stroke="${FILM_COLOR_HEX[m.id]}" />`;
+        pts.forEach(p => {
+          const label = p.est.isActual ? "Actual" : "Est. real";
+          const dotFill = p.est.isActual ? FILM_COLOR_HEX[m.id] : "var(--bg-base)";
+          estMarkers += `<circle class="est-rev-dot ${p.est.isActual ? "actual" : "estimate"} ${dim}" cx="${p.x}" cy="${p.y}" r="3.5" fill="${dotFill}" stroke="${FILM_COLOR_HEX[m.id]}" stroke-width="1.5"><title>${m.name} — ${fmtDate(p.d)}: ${label} ${fmtRevenue(p.est.value)}</title></circle>`;
+        });
+      }
+    });
+    dates.forEach((d, gi) => {
       xlabels += `<text x="${padL + gi * groupW + groupW / 2}" y="${H - 10}" text-anchor="middle" font-size="10.5">${fmtDate(d)}</text>`;
     });
 
+    const legend = hasAnyEstimate
+      ? `<text x="${padL}" y="${padT - 4}" font-size="10" fill="var(--text-3)">dashed line = calibrated real revenue &middot; filled dot = confirmed actual &middot; hollow dot = estimate</text>`
+      : "";
+
     return `<svg class="chart" viewBox="0 0 ${W} ${H}">
       <line class="axis-line" x1="${padL}" x2="${W - padR}" y1="${H - padB}" y2="${H - padB}" />
-      ${gridlines}${bars}${xlabels}
+      ${gridlines}${bars}${estMarkers}${xlabels}${legend}
     </svg>`;
   }
 
@@ -833,10 +879,13 @@
         const band = statusBand(c.pct);
         const isLeader = c.pct != null && c.pct === maxPct && maxPct >= 0 && c.shows >= MIN_SHOWS_FOR_COMPARISON;
         const thin = c.pct != null && c.shows > 0 && c.shows < MIN_SHOWS_FOR_COMPARISON;
+        const actuals = REAL_REVENUE_ACTUALS[c.id];
+        const actualRev = actuals && actuals[d] != null ? actuals[d] : null;
         return `<td>
           ${c.pct == null ? '<span class="cell-fill" style="color:var(--text-3)">&ndash;</span>' :
             `<span class="cell-fill" style="color:${thin ? "var(--text-3)" : band.color}">${isLeader ? '<span class="leader-badge"></span>' : ""}${c.pct}%</span>`}
           <div class="cell-rev">${c.shows ? fmtRevenue(c.rev) + " &middot; " + c.shows + " show" + (c.shows > 1 ? "s" : "") + (thin ? '<span class="thin-note"> &middot; thin sample</span>' : "") : "no shows"}</div>
+          ${actualRev != null ? `<div class="cell-actual">Actual: ${fmtRevenue(actualRev)}</div>` : ""}
         </td>`;
       }).join("");
       return `<tr class="${d === today ? "is-today" : ""}">
@@ -1681,12 +1730,22 @@
         }
       } catch (e) { console.error("revenue_calibration.json failed to load", e); }
 
+      // Confirmed real revenue for specific past dates — ground truth, not an estimate.
+      // Also manually updated, not part of the automated hourly scrape.
+      try {
+        const actualsRes = await fetch("real_revenue_actuals.json?t=" + Date.now(), { cache: "no-store" });
+        if (actualsRes.ok) {
+          const v = await actualsRes.json();
+          if (v) REAL_REVENUE_ACTUALS = v;
+        }
+      } catch (e) { console.error("real_revenue_actuals.json failed to load", e); }
+
       const newest = MOVIES.reduce((acc, m) => !acc || (m.scrapedAt || "") > acc ? m.scrapedAt : acc, null);
       document.getElementById("updatedLine").innerHTML = MOVIES.length
         ? `Last scraped <b>${timeAgo(newest)}</b>`
         : "No data yet.";
       document.getElementById("footnote").innerHTML =
-        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Head-to-head comparisons (trends, revenue, chain breakdown, insights) are West-Bengal-only for all four films, even for The Eken, which also plays a handful of single-screen shows outside West Bengal (see its own tab). District.in only ever lists shows that haven't started yet, so a show's contribution to revenue and fill totals is locked in permanently once its own showtime has passed — totals only grow from there, they never shrink as the day goes on or a date moves into the past. History from before this safeguard existed (release day through 2026-10-15) was reconstructed retroactively from this repository's own hourly commit history. On The Eken's own show-wise tab specifically, an individual show that has already screened stays visible at its last-known percentage (muted, tagged &ldquo;Ended&rdquo;) instead of disappearing the moment district.in drops it — that same tab also offers a CSV/Excel export of whatever's on screen. Source: public showtime pages on district.in, refreshed roughly every 30 minutes via GitHub Actions; BookMyShow-only halls are checked by hand and refreshed on request, not automatically. Where shown, &ldquo;est. real revenue&rdquo; applies a multiplier derived from a distributor's own collection sheet (real revenue &divide; our tracked revenue, for the most recent date that sheet covered) to our tracked total &mdash; it is a manually-updated calibration, not a live number, and the theatre count shown alongside it (e.g. &ldquo;41/86 known WB theatres&rdquo;) reflects that same sheet, not district.in.";
+        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Head-to-head comparisons (trends, revenue, chain breakdown, insights) are West-Bengal-only for all four films, even for The Eken, which also plays a handful of single-screen shows outside West Bengal (see its own tab). District.in only ever lists shows that haven't started yet, so a show's contribution to revenue and fill totals is locked in permanently once its own showtime has passed — totals only grow from there, they never shrink as the day goes on or a date moves into the past. History from before this safeguard existed (release day through 2026-10-15) was reconstructed retroactively from this repository's own hourly commit history. On The Eken's own show-wise tab specifically, an individual show that has already screened stays visible at its last-known percentage (muted, tagged &ldquo;Ended&rdquo;) instead of disappearing the moment district.in drops it — that same tab also offers a CSV/Excel export of whatever's on screen. Source: public showtime pages on district.in, refreshed roughly every 30 minutes via GitHub Actions; BookMyShow-only halls are checked by hand and refreshed on request, not automatically. Where shown, &ldquo;est. real revenue&rdquo; applies a multiplier derived from a distributor's own collection sheet (real revenue &divide; our tracked revenue, for the most recent date that sheet covered) to our tracked total &mdash; it is a manually-updated calibration, not a live number, and the theatre count shown alongside it (e.g. &ldquo;41/86 known WB theatres&rdquo;) reflects that same sheet, not district.in. On the head-to-head-by-day table and the revenue trend chart, a date the distributor sheet has actually confirmed shows its real figure directly (labelled &ldquo;Actual&rdquo;, a filled dot on the chart) rather than the calibrated estimate (a hollow dot) &mdash; actuals always take priority over the multiplier for any date they cover.";
       renderAll();
     } catch (e) {
       document.getElementById("updatedLine").textContent = "Couldn't load data.json.";
