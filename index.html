@@ -168,8 +168,11 @@
   .kpi-card .delta.up { color: var(--good); }
   .kpi-card .delta.down { color: var(--crit); }
   .kpi-card .delta.flat { color: var(--text-3); }
-  .kpi-card .meta { padding-left: 6px; margin-top: 10px; font-size: 11.5px; color: var(--text-3); display: flex; gap: 12px; }
+  .kpi-card .meta { padding-left: 6px; margin-top: 10px; font-size: 11.5px; color: var(--text-3); display: flex; flex-direction: column; gap: 4px; }
   .kpi-card .meta b { font-family: "Outfit", monospace; color: var(--text-2); font-weight: 400; }
+  .kpi-card .revenue-row { display: flex; align-items: baseline; gap: 6px; flex-wrap: wrap; }
+  .kpi-card .revenue-row.real-est b { color: var(--good); }
+  .kpi-card .cal-note { color: var(--text-3); font-size: 10px; }
 
   /* chart panel */
   .panel {
@@ -574,6 +577,11 @@
   let EKEN_SHOW_HISTORY = {}; // date -> { shows: [{cinema,time,audi,fmt,tag,total,avail,filled,fillRate,status,lastSeenAt}] }
                               // Eken-only, every expired show (any fill level) so the show-wise tab can keep showing
                               // a show's last-known percentage after it drops off district.in, instead of it vanishing.
+  let REVENUE_CALIBRATION = {}; // movieId -> { multiplier, totalRealTheatres, asOfDate, updatedAt } — manually
+                                 // updated whenever a distributor's real collection sheet is shared; multiplier is
+                                 // (real total revenue / our district.in-tracked revenue) for the most recent date
+                                 // that sheet covers. Not touched by the hourly scraper — this is a separate,
+                                 // deliberately-lagged calibration layer, not a live number.
 
   // Merge Eken's permanent per-show history into the live cinemas list for one date, so an
   // already-happened show keeps showing its last-known percentage instead of disappearing.
@@ -696,14 +704,20 @@
       if (d && d.shows > 0 && d.shows < MIN_SHOWS_FOR_COMPARISON) {
         deltaHtml = `<span class="delta flat">just ${d.shows} show${d.shows > 1 ? "s" : ""} &mdash; too thin to compare</span>`;
       }
+      const cal = REVENUE_CALIBRATION[m.id];
+      const trackedTheatres = m.cinemas.filter(c => c.shows.length).length;
+      const revenueHtml = cal
+        ? `<span class="revenue-row"><b>${d ? fmtRevenue(d.revenue) : "₹0"}</b> tracked revenue <span class="cal-note">(${trackedTheatres}/${cal.totalRealTheatres} known WB theatres)</span></span>
+           <span class="revenue-row real-est"><b>${d ? fmtRevenue(d.revenue * cal.multiplier) : "₹0"}</b> est. real revenue <span class="cal-note">&times;${cal.multiplier.toFixed(3)}, calibrated ${fmtDate(cal.asOfDate)}</span></span>`
+        : `<span class="revenue-row"><b>${d ? fmtRevenue(d.revenue) : "₹0"}</b> est. revenue</span>`;
       return `<div class="kpi-card">
         <div class="stripe" style="background:${FILM_COLORS[m.id]}"></div>
         <p class="film-name">${m.name}</p>
         <div class="big">${fillPct == null ? "&ndash;" : fillPct}<span class="unit">% filled</span></div>
         ${deltaHtml}
         <div class="meta">
-          <span><b>${d ? d.shows : 0}</b> shows</span>
-          <span><b>${d ? fmtRevenue(d.revenue) : "₹0"}</b> est. revenue</span>
+          <span class="revenue-row"><b>${d ? d.shows : 0}</b> shows</span>
+          ${revenueHtml}
         </div>
       </div>`;
     }).join("");
@@ -1646,12 +1660,23 @@
         }
       } catch (e) { console.error("eken_show_history.json failed to load", e); }
 
+      // Real-revenue calibration — manually updated whenever a distributor's collection
+      // sheet is shared, NOT part of the automated hourly scrape. A static sibling file;
+      // missing is fine (just means no calibration has been set yet for any movie).
+      try {
+        const calRes = await fetch("revenue_calibration.json?t=" + Date.now(), { cache: "no-store" });
+        if (calRes.ok) {
+          const v = await calRes.json();
+          if (v) REVENUE_CALIBRATION = v;
+        }
+      } catch (e) { console.error("revenue_calibration.json failed to load", e); }
+
       const newest = MOVIES.reduce((acc, m) => !acc || (m.scrapedAt || "") > acc ? m.scrapedAt : acc, null);
       document.getElementById("updatedLine").innerHTML = MOVIES.length
         ? `Last scraped <b>${timeAgo(newest)}</b>`
         : "No data yet.";
       document.getElementById("footnote").innerHTML =
-        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Head-to-head comparisons (trends, revenue, chain breakdown, insights) are West-Bengal-only for all four films, even for The Eken, which also plays a handful of single-screen shows outside West Bengal (see its own tab). District.in only ever lists shows that haven't started yet, so a show's contribution to revenue and fill totals is locked in permanently once its own showtime has passed — totals only grow from there, they never shrink as the day goes on or a date moves into the past. History from before this safeguard existed (release day through 2026-10-15) was reconstructed retroactively from this repository's own hourly commit history. On The Eken's own show-wise tab specifically, an individual show that has already screened stays visible at its last-known percentage (muted, tagged &ldquo;Ended&rdquo;) instead of disappearing the moment district.in drops it — that same tab also offers a CSV/Excel export of whatever's on screen. Source: public showtime pages on district.in, refreshed roughly every 30 minutes via GitHub Actions; BookMyShow-only halls are checked by hand and refreshed on request, not automatically.";
+        "Estimated revenue = booked seats &times; the ticket price listed for that seat category on district.in, summed per show; it excludes convenience fees, taxes and any offline/BOM sales, so treat it as a directional gross, not an official number. Fill rate = booked &divide; total seats per showtime, aggregated across price tiers. Cinema chain is inferred from the venue name's prefix on district.in (Cinepolis, INOX, PVR, Miraj Cinemas, SVF Cinemas, Nazrultirtha Cinema), not an official affiliation list; standalone halls group under Independent / Other. Head-to-head comparisons (trends, revenue, chain breakdown, insights) are West-Bengal-only for all four films, even for The Eken, which also plays a handful of single-screen shows outside West Bengal (see its own tab). District.in only ever lists shows that haven't started yet, so a show's contribution to revenue and fill totals is locked in permanently once its own showtime has passed — totals only grow from there, they never shrink as the day goes on or a date moves into the past. History from before this safeguard existed (release day through 2026-10-15) was reconstructed retroactively from this repository's own hourly commit history. On The Eken's own show-wise tab specifically, an individual show that has already screened stays visible at its last-known percentage (muted, tagged &ldquo;Ended&rdquo;) instead of disappearing the moment district.in drops it — that same tab also offers a CSV/Excel export of whatever's on screen. Source: public showtime pages on district.in, refreshed roughly every 30 minutes via GitHub Actions; BookMyShow-only halls are checked by hand and refreshed on request, not automatically. Where shown, &ldquo;est. real revenue&rdquo; applies a multiplier derived from a distributor's own collection sheet (real revenue &divide; our tracked revenue, for the most recent date that sheet covered) to our tracked total &mdash; it is a manually-updated calibration, not a live number, and the theatre count shown alongside it (e.g. &ldquo;41/86 known WB theatres&rdquo;) reflects that same sheet, not district.in.";
       renderAll();
     } catch (e) {
       document.getElementById("updatedLine").textContent = "Couldn't load data.json.";
