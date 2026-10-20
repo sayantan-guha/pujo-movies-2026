@@ -2000,6 +2000,19 @@
         "total": 252
       },
       {
+        "audi": "AUDI04",
+        "avail": 25,
+        "cinema": "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata",
+        "fillRate": 90.1,
+        "filled": 227,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Almost Full",
+        "tag": "DOLBY 7.1",
+        "time": "15:55",
+        "total": 252
+      },
+      {
         "audi": "AUDI 3",
         "avail": 89,
         "cinema": "Cinepolis Lake Mall, Rashbehari, Kolkata",
@@ -2052,6 +2065,19 @@
         "total": 284
       },
       {
+        "audi": "AUDI 4",
+        "avail": 181,
+        "cinema": "Cinepolis Lake Mall, Rashbehari, Kolkata",
+        "fillRate": 30.9,
+        "filled": 81,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Available",
+        "tag": "DOLBY 7.1",
+        "time": "15:45",
+        "total": 262
+      },
+      {
         "audi": "SCREEN 3",
         "avail": 131,
         "cinema": "INOX Burdwan Arcade, B B Ghosh Road, Burdwan",
@@ -2091,17 +2117,17 @@
         "total": 150
       },
       {
-        "cinema": "INOX Burdwan Arcade, B B Ghosh Road, Burdwan",
-        "time": "14:15",
         "audi": "SCREEN 3",
-        "fmt": "2D",
-        "tag": null,
-        "total": 156,
         "avail": 84,
-        "filled": 72,
+        "cinema": "INOX Burdwan Arcade, B B Ghosh Road, Burdwan",
         "fillRate": 46.2,
+        "filled": 72,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T14:48:09+05:30",
         "status": "Available",
-        "lastSeenAt": "2026-10-20T14:48:09+05:30"
+        "tag": null,
+        "time": "14:15",
+        "total": 156
       },
       {
         "audi": "SCREEN 1",
@@ -2234,17 +2260,17 @@
         "total": 338
       },
       {
-        "cinema": "INOX Forum Rangoli Mall, Belur, Howrah",
-        "time": "14:45",
         "audi": "SCREEN 3",
-        "fmt": "2D",
-        "tag": null,
-        "total": 403,
         "avail": 151,
-        "filled": 252,
+        "cinema": "INOX Forum Rangoli Mall, Belur, Howrah",
         "fillRate": 62.5,
+        "filled": 252,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T14:48:09+05:30",
         "status": "Filling Fast",
-        "lastSeenAt": "2026-10-20T14:48:09+05:30"
+        "tag": null,
+        "time": "14:45",
+        "total": 403
       },
       {
         "audi": "SCREEN 1",
@@ -2365,6 +2391,19 @@
       },
       {
         "audi": "SCREEN 1",
+        "avail": 7,
+        "cinema": "INOX South City Mall, South City Mall, Kolkata",
+        "fillRate": 96.7,
+        "filled": 206,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Almost Full",
+        "tag": null,
+        "time": "15:30",
+        "total": 213
+      },
+      {
+        "audi": "SCREEN 1",
         "avail": 160,
         "cinema": "INOX Star Mall, Madhyamgram, Kolkata",
         "fillRate": 10.1,
@@ -2429,6 +2468,19 @@
         "total": 175
       },
       {
+        "audi": "SCREEN 3",
+        "avail": 232,
+        "cinema": "INOX Vega Circle Mall, Sevoke Road, Siliguri",
+        "fillRate": 7.2,
+        "filled": 18,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Available",
+        "tag": null,
+        "time": "15:15",
+        "total": 250
+      },
+      {
         "audi": "SCREEN 2",
         "avail": 239,
         "cinema": "Miraj Cinemas : Aurbindo Mall, Howrah",
@@ -2468,17 +2520,17 @@
         "total": 190
       },
       {
-        "cinema": "Miraj Cinemas : Downtown Mall, Salt Lake",
-        "time": "14:30",
         "audi": "SCREEN 4",
-        "fmt": "2D",
-        "tag": null,
-        "total": 166,
         "avail": 92,
-        "filled": 74,
+        "cinema": "Miraj Cinemas : Downtown Mall, Salt Lake",
         "fillRate": 44.6,
+        "filled": 74,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T14:48:09+05:30",
         "status": "Available",
-        "lastSeenAt": "2026-10-20T14:48:09+05:30"
+        "tag": null,
+        "time": "14:30",
+        "total": 166
       },
       {
         "audi": "SCREEN 4",
@@ -2504,6 +2556,19 @@
         "status": "Available",
         "tag": "RECLINERS",
         "time": "12:55",
+        "total": 191
+      },
+      {
+        "audi": "SCREEN 4",
+        "avail": 85,
+        "cinema": "Miraj Cinemas : The Terminus, New Town",
+        "fillRate": 55.5,
+        "filled": 106,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Available",
+        "tag": "RECLINERS",
+        "time": "15:30",
         "total": 191
       },
       {
@@ -2533,17 +2598,17 @@
         "total": 443
       },
       {
-        "cinema": "Nazrultirtha Cinema : Kolkata",
-        "time": "15:15",
         "audi": "SCREEN 3",
-        "fmt": "2D",
-        "tag": "SVF MUSE",
-        "total": 50,
         "avail": 1,
-        "filled": 49,
+        "cinema": "Nazrultirtha Cinema : Kolkata",
         "fillRate": 98,
+        "filled": 49,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T14:48:09+05:30",
         "status": "Almost Full",
-        "lastSeenAt": "2026-10-20T14:48:09+05:30"
+        "tag": "SVF MUSE",
+        "time": "15:15",
+        "total": 50
       },
       {
         "audi": "AUDI 04",
@@ -2570,6 +2635,19 @@
         "tag": null,
         "time": "13:05",
         "total": 359
+      },
+      {
+        "audi": "AUDI 02",
+        "avail": 83,
+        "cinema": "PVR Avani River Side Mall, Howrah, Kolkata",
+        "fillRate": 80,
+        "filled": 331,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Filling Fast",
+        "tag": null,
+        "time": "15:40",
+        "total": 414
       },
       {
         "audi": "AUDI 03",
@@ -2624,17 +2702,17 @@
         "total": 248
       },
       {
-        "cinema": "PVR Manisquare, Mani Square Mall, Kolkata",
-        "time": "14:35",
         "audi": "SCREEN 1",
-        "fmt": "2D",
-        "tag": "RECLINERS",
-        "total": 267,
         "avail": 146,
-        "filled": 121,
+        "cinema": "PVR Manisquare, Mani Square Mall, Kolkata",
         "fillRate": 45.3,
+        "filled": 121,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T14:48:09+05:30",
         "status": "Available",
-        "lastSeenAt": "2026-10-20T14:48:09+05:30"
+        "tag": "RECLINERS",
+        "time": "14:35",
+        "total": 267
       },
       {
         "audi": "SCREEN 3",
@@ -2648,6 +2726,19 @@
         "tag": "DOLBY ATMOS",
         "time": "13:15",
         "total": 109
+      },
+      {
+        "audi": "SCREEN 3",
+        "avail": 0,
+        "cinema": "Rathindra Multiplex, Kolkata",
+        "fillRate": null,
+        "filled": 0,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Almost Full",
+        "tag": null,
+        "time": "15:30",
+        "total": 0
       },
       {
         "audi": "AUDI 2",
@@ -2676,17 +2767,17 @@
         "total": 150
       },
       {
-        "cinema": "SVF Cinemas : Baruipur Show House, Baruipur",
-        "time": "15:15",
         "audi": "AUDI 1",
-        "fmt": "2D",
-        "tag": "2K",
-        "total": 150,
         "avail": 58,
-        "filled": 92,
+        "cinema": "SVF Cinemas : Baruipur Show House, Baruipur",
         "fillRate": 61.3,
+        "filled": 92,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T14:48:09+05:30",
         "status": "Filling Fast",
-        "lastSeenAt": "2026-10-20T14:48:09+05:30"
+        "tag": "2K",
+        "time": "15:15",
+        "total": 150
       },
       {
         "audi": "SCREEN 2",
@@ -2702,17 +2793,30 @@
         "total": 143
       },
       {
-        "cinema": "SVF Cinemas : City Centre Mall, Habra",
-        "time": "15:05",
         "audi": "SCREEN 2",
-        "fmt": "2D",
-        "tag": "DOLBY 5.1",
-        "total": 143,
         "avail": 25,
-        "filled": 118,
+        "cinema": "SVF Cinemas : City Centre Mall, Habra",
         "fillRate": 82.5,
+        "filled": 118,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T14:48:09+05:30",
         "status": "Filling Fast",
-        "lastSeenAt": "2026-10-20T14:48:09+05:30"
+        "tag": "DOLBY 5.1",
+        "time": "15:05",
+        "total": 143
+      },
+      {
+        "audi": "SCREEN 1",
+        "avail": 176,
+        "cinema": "SVF Cinemas : City Centre Mall, Malda",
+        "fillRate": 9.3,
+        "filled": 18,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Available",
+        "tag": "DOLBY 7.1 ",
+        "time": "16:15",
+        "total": 194
       },
       {
         "audi": "SCREEN 2",
@@ -2728,43 +2832,43 @@
         "total": 283
       },
       {
-        "cinema": "SVF Cinemas : Junction Mall, Durgapur",
-        "time": "14:45",
         "audi": "SCREEN 1",
-        "fmt": "2D",
-        "tag": "DOLBY 7.1.2 ",
-        "total": 271,
         "avail": 172,
-        "filled": 99,
+        "cinema": "SVF Cinemas : Junction Mall, Durgapur",
         "fillRate": 36.5,
+        "filled": 99,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T14:48:09+05:30",
         "status": "Available",
-        "lastSeenAt": "2026-10-20T14:48:09+05:30"
+        "tag": "DOLBY 7.1.2 ",
+        "time": "14:45",
+        "total": 271
       },
       {
-        "cinema": "SVF Cinemas : Kalyani's Multiplex, Raiganj",
-        "time": "14:55",
         "audi": "SCREEN 1",
-        "fmt": "2D",
-        "tag": "2K",
-        "total": 149,
         "avail": 78,
-        "filled": 71,
+        "cinema": "SVF Cinemas : Kalyani's Multiplex, Raiganj",
         "fillRate": 47.7,
+        "filled": 71,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T14:48:09+05:30",
         "status": "Available",
-        "lastSeenAt": "2026-10-20T14:48:09+05:30"
+        "tag": "2K",
+        "time": "14:55",
+        "total": 149
       },
       {
-        "cinema": "SVF Cinemas : PRM Centre Point Mall, Malda",
-        "time": "15:15",
         "audi": "SCREEN 2",
-        "fmt": "2D",
-        "tag": "LASER DOLBY 5.1",
-        "total": 178,
         "avail": 141,
-        "filled": 37,
+        "cinema": "SVF Cinemas : PRM Centre Point Mall, Malda",
         "fillRate": 20.8,
+        "filled": 37,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T14:48:09+05:30",
         "status": "Available",
-        "lastSeenAt": "2026-10-20T14:48:09+05:30"
+        "tag": "LASER DOLBY 5.1",
+        "time": "15:15",
+        "total": 178
       },
       {
         "audi": "SCREEN 1",
@@ -2781,6 +2885,19 @@
       },
       {
         "audi": "SCREEN 2",
+        "avail": 133,
+        "cinema": "SVF Cinemas : PRM Market City Mall, Coochbehar",
+        "fillRate": 22.2,
+        "filled": 38,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Available",
+        "tag": "2K",
+        "time": "16:10",
+        "total": 171
+      },
+      {
+        "audi": "SCREEN 2",
         "avail": 115,
         "cinema": "SVF Cinemas : PRM Market City Mall, Jalpaiguri",
         "fillRate": 20.7,
@@ -2791,6 +2908,19 @@
         "tag": "2K",
         "time": "13:25",
         "total": 145
+      },
+      {
+        "audi": "SCREEN 1",
+        "avail": 82,
+        "cinema": "SVF Cinemas : PRM Market City Mall, Jalpaiguri",
+        "fillRate": 43.8,
+        "filled": 64,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Available",
+        "tag": "5.1 DSS",
+        "time": "16:05",
+        "total": 146
       },
       {
         "audi": "SCREEN 2",
@@ -2819,6 +2949,19 @@
         "total": 148
       },
       {
+        "audi": "SCREEN 2",
+        "avail": 29,
+        "cinema": "SVF Cinemas : Platina Mall, Howrah",
+        "fillRate": 80.4,
+        "filled": 119,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Filling Fast",
+        "tag": "DOLBY 5.1",
+        "time": "16:20",
+        "total": 148
+      },
+      {
         "audi": "SCREEN 1",
         "avail": 141,
         "cinema": "SVF Cinemas : Raj Sammilonee Mall, Durgapur",
@@ -2829,6 +2972,19 @@
         "status": "Available",
         "tag": "2K",
         "time": "14:00",
+        "total": 163
+      },
+      {
+        "audi": "SCREEN 1",
+        "avail": 94,
+        "cinema": "SVF Cinemas : Raj Sammilonee Mall, Durgapur",
+        "fillRate": 42.3,
+        "filled": 69,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Available",
+        "tag": "2K",
+        "time": "16:15",
         "total": 163
       },
       {
@@ -2845,17 +3001,17 @@
         "total": 126
       },
       {
-        "cinema": "SVF Cinemas : Regent Star Mall, Burdwan",
-        "time": "14:35",
         "audi": "SCREEN 3",
-        "fmt": "2D",
-        "tag": "DOLBY 7.1",
-        "total": 135,
         "avail": 64,
-        "filled": 71,
+        "cinema": "SVF Cinemas : Regent Star Mall, Burdwan",
         "fillRate": 52.6,
+        "filled": 71,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T14:48:09+05:30",
         "status": "Available",
-        "lastSeenAt": "2026-10-20T14:48:09+05:30"
+        "tag": "DOLBY 7.1",
+        "time": "14:35",
+        "total": 135
       },
       {
         "audi": "SCREEN 3",
@@ -2884,17 +3040,17 @@
         "total": 209
       },
       {
-        "cinema": "SVF Cinemas : Sentrum Mall, Krishnanagar",
-        "time": "15:20",
         "audi": "AUDI 1",
-        "fmt": "2D",
-        "tag": "2K 7.1 DOLBY",
-        "total": 223,
         "avail": 116,
-        "filled": 107,
+        "cinema": "SVF Cinemas : Sentrum Mall, Krishnanagar",
         "fillRate": 48,
+        "filled": 107,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T14:48:09+05:30",
         "status": "Available",
-        "lastSeenAt": "2026-10-20T14:48:09+05:30"
+        "tag": "2K 7.1 DOLBY",
+        "time": "15:20",
+        "total": 223
       },
       {
         "audi": "SCREEN 4",
@@ -2920,6 +3076,19 @@
         "status": "Available",
         "tag": "2K LASER DOLBY 7.1.2",
         "time": "14:00",
+        "total": 276
+      },
+      {
+        "audi": "SCREEN 4",
+        "avail": 40,
+        "cinema": "SVF Cinemas : Triveni Mall, Serampore",
+        "fillRate": 85.5,
+        "filled": 236,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Filling Fast",
+        "tag": "2K LASER DOLBY 7.1.2",
+        "time": "16:15",
         "total": 276
       },
       {
@@ -2986,9 +3155,22 @@
         "tag": "DOLBY 7.1",
         "time": "11:00",
         "total": 285
+      },
+      {
+        "audi": "SCREEN 1",
+        "avail": 163,
+        "cinema": "Vidyasagar Mancha : SVF Cinemas, Kalyani",
+        "fillRate": 42.8,
+        "filled": 122,
+        "fmt": "2D",
+        "lastSeenAt": "2026-10-20T15:47:07+05:30",
+        "status": "Available",
+        "tag": "DOLBY 7.1",
+        "time": "16:20",
+        "total": 285
       }
     ],
-    "updatedAt": "2026-10-20T15:54:58+05:30"
+    "updatedAt": "2026-10-20T16:56:09+05:30"
   },
   "2026-10-19": {
     "date": "2026-10-19",

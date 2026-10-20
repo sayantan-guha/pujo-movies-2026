@@ -1,7 +1,5 @@
 {
   "230309": {
-    "movieId": "230309",
-    "updatedAt": "2026-10-20T15:54:58+05:30",
     "byDate": {
       "2026-10-15": {
         "revenue": 3979260,
@@ -291,18 +289,30 @@
           "SVF Cinemas : PRM Centre Point Mall, Malda|15:15|SCREEN 2",
           "SVF Cinemas : Sentrum Mall, Krishnanagar|15:20|AUDI 1",
           "SVF Cinemas : Kalyani's Multiplex, Raiganj|14:55|SCREEN 1",
-          "SVF Cinemas : City Centre Mall, Habra|15:05|SCREEN 2"
+          "SVF Cinemas : City Centre Mall, Habra|15:05|SCREEN 2",
+          "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata|15:55|AUDI04",
+          "Cinepolis Lake Mall, Rashbehari, Kolkata|15:45|AUDI 4",
+          "INOX South City Mall, South City Mall, Kolkata|15:30|SCREEN 1",
+          "INOX Vega Circle Mall, Sevoke Road, Siliguri|15:15|SCREEN 3",
+          "Miraj Cinemas : The Terminus, New Town|15:30|SCREEN 4",
+          "PVR Avani River Side Mall, Howrah, Kolkata|15:40|AUDI 02",
+          "Rathindra Multiplex, Kolkata|15:30|SCREEN 3",
+          "SVF Cinemas : City Centre Mall, Malda|16:15|SCREEN 1",
+          "SVF Cinemas : PRM Market City Mall, Coochbehar|16:10|SCREEN 2",
+          "SVF Cinemas : PRM Market City Mall, Jalpaiguri|16:05|SCREEN 1",
+          "SVF Cinemas : Platina Mall, Howrah|16:20|SCREEN 2",
+          "SVF Cinemas : Raj Sammilonee Mall, Durgapur|16:15|SCREEN 1",
+          "SVF Cinemas : Triveni Mall, Serampore|16:15|SCREEN 4",
+          "Vidyasagar Mancha : SVF Cinemas, Kalyani|16:20|SCREEN 1"
         ],
-        "revenue": 1699130,
-        "shows": 79,
-        "totalFilled": 5823,
-        "totalSeats": 17419
+        "revenue": 2276880,
+        "shows": 93,
+        "totalFilled": 7458,
+        "totalSeats": 20384
       }
     }
   },
   "213662": {
-    "movieId": "213662",
-    "updatedAt": "2026-10-20T15:54:58+05:30",
     "byDate": {
       "2026-10-16": {
         "revenue": 3349577,
@@ -533,18 +543,24 @@
           "SVF Cinemas : Wood Square Mall, Narendrapur|15:00|SCREEN 3",
           "SVF Cinemas : Triveni Mall, Serampore|15:00|SCREEN 3",
           "SVF Cinemas : Raj Sammilonee Mall, Durgapur|15:05|SCREEN 3",
-          "SVF Cinemas : Kalyani's Multiplex, Raiganj|15:30|SCREEN 2"
+          "SVF Cinemas : Kalyani's Multiplex, Raiganj|15:30|SCREEN 2",
+          "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata|16:30|AUDI02",
+          "INOX Burdwan Arcade, B B Ghosh Road, Burdwan|15:40|SCREEN 1",
+          "Miraj Cinemas : Aurbindo Mall, Howrah|16:05|SCREEN 1",
+          "SVF Cinemas : City Centre Mall, Habra|15:35|SCREEN 1",
+          "SVF Cinemas : PRM Centre Point Mall, Malda|16:10|SCREEN 3",
+          "SVF Cinemas : PRM Market City Mall, Jalpaiguri|15:40|SCREEN 2",
+          "SVF Cinemas : Regent Star Mall, Burdwan|15:50|SCREEN 1",
+          "SVF Cinemas : Sentrum Mall, Krishnanagar|16:00|AUDI 2"
         ],
-        "revenue": 818830,
-        "shows": 61,
-        "totalFilled": 3447,
-        "totalSeats": 12781
+        "revenue": 1067750,
+        "shows": 69,
+        "totalFilled": 4434,
+        "totalSeats": 14485
       }
     }
   },
   "230211": {
-    "movieId": "230211",
-    "updatedAt": "2026-10-20T15:54:58+05:30",
     "byDate": {
       "2026-10-15": {
         "revenue": 2235390,
@@ -766,18 +782,22 @@
           "SVF Cinemas : Baruipur Show House, Baruipur|15:00|AUDI 2",
           "SVF Cinemas : Regent Star Mall, Burdwan|14:45|SCREEN 2",
           "SVF Cinemas : Raj Sammilonee Mall, Durgapur|15:10|SCREEN 2",
-          "Mahabir Jain Municipalty Cultural, Chudipatti Road, Jiaganj|15:30|MJMC HALL"
+          "Mahabir Jain Municipalty Cultural, Chudipatti Road, Jiaganj|15:30|MJMC HALL",
+          "Cinepolis Acropolis Mall, Rajdanga Road, Kolkata|16:35|AUDI03",
+          "INOX Burdwan Arcade, B B Ghosh Road, Burdwan|15:50|SCREEN 2",
+          "Jyoti Cinema, Maslandapur|16:15|SCREEN 1",
+          "SVF Cinemas : PRM Centre Point Mall, Malda|16:05|SCREEN 1",
+          "SVF Cinemas : Triveni Mall, Serampore|16:00|SCREEN 1",
+          "Zaman Talkies, Near Bus Stand, Domkal|16:30|ZAMAN TALKIES"
         ],
-        "revenue": 1350670,
-        "shows": 51,
-        "totalFilled": 4539,
-        "totalSeats": 11146
+        "revenue": 1659100,
+        "shows": 57,
+        "totalFilled": 5904,
+        "totalSeats": 12821
       }
     }
   },
   "220611": {
-    "movieId": "220611",
-    "updatedAt": "2026-10-20T15:54:58+05:30",
     "byDate": {
       "2026-10-14": {
         "revenue": 91000,
@@ -892,12 +912,14 @@
           "SVF Cinemas : Platina Mall, Howrah|15:05|SCREEN 3",
           "Miraj Cinemas : The Terminus, New Town|14:25|SCREEN 2",
           "INOX Burdwan Arcade, B B Ghosh Road, Burdwan|15:05|SCREEN 4",
-          "INOX ML Acropolis Mall, Siliguri|14:25|AUDI 3"
+          "INOX ML Acropolis Mall, Siliguri|14:25|AUDI 3",
+          "INOX City Centre II, Rajarhat, Kolkata|15:15|SCREEN 2",
+          "INOX Forum Mall, Elgin Road, Kolkata|15:30|SCREEN 1"
         ],
-        "revenue": 275350,
-        "shows": 24,
-        "totalFilled": 1000,
-        "totalSeats": 4206
+        "revenue": 342930,
+        "shows": 26,
+        "totalFilled": 1208,
+        "totalSeats": 4667
       }
     }
   }
